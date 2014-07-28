@@ -12,37 +12,30 @@ namespace Tactics.Game
     {
         private int currentRegion;
         private List<Zone> currentZones;
+        private Dictionary<int, ZoneFactory> zoneFactories;
         private TestZoneFactory testZoneFactory;
 
 
         public RegionFactory()
         {
+            zoneFactories = new Dictionary<int, ZoneFactory>();
             testZoneFactory = new TestZoneFactory();
+            zoneFactories.Add(0, testZoneFactory);
         }
-
-        public void createRegion(int region)
-        {
-            switch (region)
-            {
-                case 0:
-                    currentRegion = region;
-                    testZoneFactory.createZones();
-                    currentZones = testZoneFactory.getRegionZones();
-                    break;
-                case 1:
-                    currentRegion = region;
-                    break;
-                case 2:
-                    currentRegion = region;
-                    break;
-                default:
-                    break;
-            }
-        }
-
+        
         public List<Zone> getCurrentZones()
         {
             return currentZones;
+        }
+
+        public void setCurrentZones(List<Zone> zones)
+        {
+            currentZones = zones;
+        }
+
+        public Dictionary<int, ZoneFactory> getZoneFactories() 
+        {
+            return zoneFactories;
         }
     }
 }

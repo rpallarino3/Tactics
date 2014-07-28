@@ -8,24 +8,18 @@ using Tactics.Game.Environment.TestArea;
 
 namespace Tactics.Game.ZoneFactories
 {
-    class TestZoneFactory
+    class TestZoneFactory : ZoneFactory
     {
-        List<Zone> regionZones;
-
 
         public TestZoneFactory()
         {
             regionZones = new List<Zone>();
         }
 
-        public void createZones()
+        public override void createZones()
         {
             regionZones.Add(new TestZone1(0, 100, 100));
-        }
-
-        public List<Zone> getRegionZones()
-        {
-            return regionZones;
+            regionZones[0].orderTiles();
         }
     }
 }

@@ -41,8 +41,8 @@ namespace Tactics
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferWidth = 900;
-            graphics.PreferredBackBufferHeight = 600;
+            graphics.PreferredBackBufferWidth = 750;
+            graphics.PreferredBackBufferHeight = 500;
             graphics.ApplyChanges();
             IsFixedTimeStep = true;
             TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 30.0f);
@@ -70,6 +70,7 @@ namespace Tactics
             paintHandler = new PaintHandler();
             keyHandler = new KeyHandler();
             logicHandler = new LogicHandler();
+            logicHandler.loadGame(game, contentHandler);
             base.Initialize();
         }
 
@@ -81,7 +82,8 @@ namespace Tactics
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            contentHandler.getRegionContent()[game.getFreeRoamState().getCurrentRegion()].loadContent();
+            //load the menu content at the start of the game
+            //contentHandler.getRegionContent()[game.getFreeRoamState().getCurrentRegion()].loadContent();
 
             // TODO: use this.Content to load your game content here
         }
@@ -108,7 +110,7 @@ namespace Tactics
 
             // TODO: Add your update logic here
             keyHandler.updateKeys(Keyboard.GetState());
-            logicHandler.updateLogic();
+            logicHandler.updateLogic(game, keyHandler, contentHandler);
             base.Update(gameTime);
         }
 

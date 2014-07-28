@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Microsoft.Xna.Framework;
+
 namespace Tactics.Game.Environment.TestArea
 {
     class TestZone1 : Zone
@@ -14,7 +16,8 @@ namespace Tactics.Game.Environment.TestArea
             imageMap = new int[tileWidth, tileHeight];
             this.tileHeight = tileHeight;
             this.tileWidth = tileWidth;
-
+            imageIdentifiers = new List<int>();
+            tileLocations = new List<Vector2>();
             containedZones = new List<Zone>();
         }
 

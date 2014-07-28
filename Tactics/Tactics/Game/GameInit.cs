@@ -17,7 +17,6 @@ namespace Tactics.Game
             gameState = new GameState();
             freeRoamState = new FreeRoamState();
             regionFactory = new RegionFactory();
-            loadGame();
         }
 
         public GameState getGameState()
@@ -35,15 +34,5 @@ namespace Tactics.Game
             return regionFactory;
         }
 
-        public void loadGame()
-        {
-            gameState.setFreeRoamState();
-            regionFactory.createRegion(0);
-            freeRoamState.setCharacterXPos(0);
-            freeRoamState.setCharacterYPos(50);
-            freeRoamState.setCurrentRegion(0);
-            freeRoamState.setCurrentZone(0);
-            freeRoamState.setCharacterFacingDirection(0);
-        }
     }
 }

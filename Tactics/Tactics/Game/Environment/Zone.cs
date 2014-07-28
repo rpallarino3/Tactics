@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Microsoft.Xna.Framework;
+
 namespace Tactics.Game.Environment
 {
     abstract class Zone
@@ -12,6 +14,9 @@ namespace Tactics.Game.Environment
         protected Tile[,] tileMap;
         protected int[,] imageMap;
         protected List<Zone> containedZones;
+
+        protected List<int> imageIdentifiers;
+        protected List<Vector2> tileLocations;
 
         protected int tileHeight;
         protected int tileWidth;
@@ -44,6 +49,16 @@ namespace Tactics.Game.Environment
         public int getTileSize()
         {
             return TILE_SIZE;
+        }
+
+        public List<int> getImageIdentifiers()
+        {
+            return imageIdentifiers;
+        }
+
+        public List<Vector2> getTileLocations()
+        {
+            return tileLocations;
         }
 
         public void fillImageMap()
@@ -99,6 +114,56 @@ namespace Tactics.Game.Environment
                 {
                     tileMap[i, j].setWalkingHeight(walkingHeight);
                     tileMap[i, j].slope(slopedDirection);
+                }
+            }
+        }
+
+        public void orderTiles()
+        {
+            int times;
+            if (tileHeight >= tileWidth)
+            {
+                times = tileHeight;
+            }
+            else
+            {
+                times = tileWidth;
+            }
+
+            for (int i = 0; i < times; i++)
+            {
+                if (i < tileHeight && i < tileWidth)
+                {
+                    for (int j = 0; j < i; j++)
+                    {
+                        imageIdentifiers.Add(imageMap[tileWidth - 1 - i, j]);
+                        tileLocations.Add(new Vector2(tileWidth - 1 - i, j));
+
+                        imageIdentifiers.Add(imageMap[tileWidth - 1 - j, i]);
+                        tileLocations.Add(new Vector2(tileWidth - 1 - j, i));
+                    }
+
+                    imageIdentifiers.Add(imageMap[tileWidth - i - 1, i]);
+                    tileLocations.Add(new Vector2(tileWidth - i - 1, i));
+                }
+                else
+                {
+                    if (i >= tileWidth)
+                    {
+                        for (int j = 0; j < tileWidth; j++)
+                        {
+                            imageIdentifiers.Add(imageMap[tileWidth - 1 - j, i]);
+                            tileLocations.Add(new Vector2(tileWidth - 1 - j, i));
+                        }
+                    }
+                    else
+                    {
+                        for (int j = 0; j < tileHeight; j++)
+                        {
+                            imageIdentifiers.Add(imageMap[tileWidth - 1 - i, j]);
+                            tileLocations.Add(new Vector2(tileWidth - 1 - i, j));
+                        }
+                    }
                 }
             }
         }
