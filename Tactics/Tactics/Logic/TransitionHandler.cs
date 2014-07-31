@@ -15,11 +15,12 @@ namespace Tactics.Logic
         {
         }
 
-        public void createRegion(GameInit gameInit, ContentHandler content, int regionNumber)
+        public void createRegion(GameInit gameInit, ContentHandler content, int regionNumber, int zoneNumber)
         {
             gameInit.getFreeRoamState().setCurrentRegion(regionNumber);
             gameInit.getRegionFactory().getZoneFactories()[regionNumber].createZones();
-            gameInit.getRegionFactory().setCurrentZones(gameInit.getRegionFactory().getZoneFactories()[regionNumber].getRegionZones());
+            gameInit.getFreeRoamState().setCurrentZones(gameInit.getRegionFactory().getZoneFactories()[regionNumber].getRegionZones());
+            gameInit.getFreeRoamState().setCurrentZone(zoneNumber);
             content.getRegionContent()[regionNumber].loadContent();
         }
     }

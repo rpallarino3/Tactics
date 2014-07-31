@@ -23,12 +23,12 @@ namespace Tactics.Logic
         // should find some file and load from it
         public void loadGame(GameInit gameInit, ContentHandler content, TransitionHandler transitionHandler)
         {
-            transitionHandler.createRegion(gameInit, content, 0);
+            transitionHandler.createRegion(gameInit, content, 0, 0);
 
-            gameInit.getFreeRoamState().setCharacterXPos(0);
+            gameInit.getFreeRoamState().setCharacterXPos(50);
             gameInit.getFreeRoamState().setCharacterYPos(50);
-            gameInit.getFreeRoamState().setCurrentRegion(0);
-            gameInit.getFreeRoamState().setCurrentZone(0);
+            //gameInit.getFreeRoamState().setCurrentRegion(0);
+            //gameInit.getFreeRoamState().setCurrentZone(0);
             gameInit.getFreeRoamState().setCharacterFacingDirection(0);
             gameInit.getGameState().setFreeRoamState();
         }

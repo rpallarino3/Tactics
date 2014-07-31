@@ -17,6 +17,7 @@ namespace Tactics.Game.Environment
 
         protected List<int> imageIdentifiers;
         protected List<Vector2> tileLocations;
+        protected List<int> tileHeights;
 
         protected int tileHeight;
         protected int tileWidth;
@@ -59,6 +60,11 @@ namespace Tactics.Game.Environment
         public List<Vector2> getTileLocations()
         {
             return tileLocations;
+        }
+
+        public List<int> getTileHeights()
+        {
+            return tileHeights;
         }
 
         public void fillImageMap()
@@ -138,13 +144,19 @@ namespace Tactics.Game.Environment
                     {
                         imageIdentifiers.Add(imageMap[tileWidth - 1 - i, j]);
                         tileLocations.Add(new Vector2(tileWidth - 1 - i, j));
+                        tileHeights.Add(tileMap[tileWidth - 1 - i, j].getWalkingHeight());
+                        //Console.WriteLine("X: " + (tileWidth - 1 - i) + " Y: " + j);
 
                         imageIdentifiers.Add(imageMap[tileWidth - 1 - j, i]);
                         tileLocations.Add(new Vector2(tileWidth - 1 - j, i));
+                        tileHeights.Add(tileMap[tileWidth - 1 - j, i].getWalkingHeight());
+                        //Console.WriteLine("X: " + (tileWidth - 1 - j) + " Y: " + i);
                     }
 
                     imageIdentifiers.Add(imageMap[tileWidth - i - 1, i]);
                     tileLocations.Add(new Vector2(tileWidth - i - 1, i));
+                    tileHeights.Add(tileMap[tileWidth - i - 1, i].getWalkingHeight());
+                    //Console.WriteLine("X: " + (tileWidth - 1 - i) + " Y: " + i);
                 }
                 else
                 {
@@ -154,6 +166,8 @@ namespace Tactics.Game.Environment
                         {
                             imageIdentifiers.Add(imageMap[tileWidth - 1 - j, i]);
                             tileLocations.Add(new Vector2(tileWidth - 1 - j, i));
+                            tileHeights.Add(tileMap[tileWidth - 1 - j, i].getWalkingHeight());
+                            //Console.WriteLine("X: " + (tileWidth - 1 - j) + " Y: " + i);
                         }
                     }
                     else
@@ -162,6 +176,8 @@ namespace Tactics.Game.Environment
                         {
                             imageIdentifiers.Add(imageMap[tileWidth - 1 - i, j]);
                             tileLocations.Add(new Vector2(tileWidth - 1 - i, j));
+                            tileHeights.Add(tileMap[tileWidth - 1 - i, j].getWalkingHeight());
+                            //Console.WriteLine("X: " + (tileWidth - 1 - i) + " Y: " + j);
                         }
                     }
                 }

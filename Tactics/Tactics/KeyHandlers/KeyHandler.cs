@@ -34,10 +34,7 @@ namespace Tactics.KeyHandlers
             moveRightTime = 0;
             moveLeftTime = 0;
 
-            actionReady = false;
-            backReady = false;
-            m1Ready = false;
-            m2Ready = false;
+            clearAllActions();
 
             leftBump = false;
             rightBump = false;
@@ -73,13 +70,22 @@ namespace Tactics.KeyHandlers
             }
         }
 
+        private void clearAllActions()
+        {
+            actionReady = false;
+            backReady = false;
+            m1Ready = false;
+            m2Ready = false;
+        }
+
+        // need to modify this a bit
         private void checkReadies(KeyboardState keyState)
         {
             if (keyState.IsKeyDown(keybinds.getKeybinds()["ACTION"]) && !previousState.IsKeyDown(keybinds.getKeybinds()["ACTION"]))
             {
                 actionReady = true;
             }
-            else if (!keyState.IsKeyDown(keybinds.getKeybinds()["ACTION"]))
+            else if (!keyState.IsKeyDown(keybinds.getKeybinds()["ACTION"]) || previousState.IsKeyDown(keybinds.getKeybinds()["ACTION"]))
             {
                 actionReady = false;
             }
@@ -88,7 +94,7 @@ namespace Tactics.KeyHandlers
             {
                 backReady = true;
             }
-            else if (!keyState.IsKeyDown(keybinds.getKeybinds()["BACK"]))
+            else if (!keyState.IsKeyDown(keybinds.getKeybinds()["BACK"]) || previousState.IsKeyDown(keybinds.getKeybinds()["BACK"]))
             {
                 backReady = false;
             }
@@ -97,7 +103,7 @@ namespace Tactics.KeyHandlers
             {
                 m1Ready = true;
             }
-            else if (!keyState.IsKeyDown(keybinds.getKeybinds()["MENU1"]))
+            else if (!keyState.IsKeyDown(keybinds.getKeybinds()["MENU1"]) || previousState.IsKeyDown(keybinds.getKeybinds()["MENU1"]))
             {
                 m1Ready = false;
             }
@@ -106,7 +112,7 @@ namespace Tactics.KeyHandlers
             {
                 m2Ready = true;
             }
-            else if (!keyState.IsKeyDown(keybinds.getKeybinds()["MENU2"]))
+            else if (!keyState.IsKeyDown(keybinds.getKeybinds()["MENU2"]) || previousState.IsKeyDown(keybinds.getKeybinds()["MENU2"]))
             {
                 m2Ready = false;
             }
@@ -155,19 +161,19 @@ namespace Tactics.KeyHandlers
         {
             if (key == "ACTION")
             {
-                actionReady = false;
+                clearAllActions();
             }
             else if (key == "BACK")
             {
-                backReady = false;
+                clearAllActions();
             }
             else if (key == "MENU1")
             {
-                m1Ready = false;
+                clearAllActions();
             }
             else if (key == "MENU2")
             {
-                m2Ready = false;
+                clearAllActions();
             }
         }
 

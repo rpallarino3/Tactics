@@ -10,8 +10,6 @@ namespace Tactics.Game
 {
     class RegionFactory
     {
-        private int currentRegion;
-        private List<Zone> currentZones;
         private Dictionary<int, ZoneFactory> zoneFactories;
         private TestZoneFactory testZoneFactory;
 
@@ -21,16 +19,6 @@ namespace Tactics.Game
             zoneFactories = new Dictionary<int, ZoneFactory>();
             testZoneFactory = new TestZoneFactory();
             zoneFactories.Add(0, testZoneFactory);
-        }
-        
-        public List<Zone> getCurrentZones()
-        {
-            return currentZones;
-        }
-
-        public void setCurrentZones(List<Zone> zones)
-        {
-            currentZones = zones;
         }
 
         public Dictionary<int, ZoneFactory> getZoneFactories() 

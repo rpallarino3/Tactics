@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Tactics.Game.Environment;
+
 namespace Tactics.Game
 {
     class FreeRoamState
@@ -12,9 +14,32 @@ namespace Tactics.Game
         private int characterXPos;
         private int characterYPos;
         private int characterFacingDirection;
+        private int characterHeight;
+
+        private List<Zone> currentZones;
 
         public FreeRoamState()
         {
+        }
+
+        public void setCurrentZones(List<Zone> newZones)
+        {
+            currentZones = newZones;
+        }
+
+        public List<Zone> getCurrentZones()
+        {
+            return currentZones;
+        }
+
+        public void setCharacterHeight(int height)
+        {
+            characterHeight = height;
+        }
+
+        public int getCharacterHeight()
+        {
+            return characterHeight;
         }
 
         public int getCurrentRegion()

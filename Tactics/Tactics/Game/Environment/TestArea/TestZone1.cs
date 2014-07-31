@@ -19,11 +19,16 @@ namespace Tactics.Game.Environment.TestArea
             imageIdentifiers = new List<int>();
             tileLocations = new List<Vector2>();
             containedZones = new List<Zone>();
+            tileHeights = new List<int>();
+            fillZoneMap();
         }
 
         private void fillZoneMap()
         {
+            fillImageMap();
             fillTileMap();
+            createTileLevel(50, 50, 20, 20, 1);
+            fillImageRectangle(50, 50, 20, 20, 2);
         }
 
         private void fillImageTileMap()
