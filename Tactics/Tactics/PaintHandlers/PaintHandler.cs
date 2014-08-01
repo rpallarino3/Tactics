@@ -18,6 +18,7 @@ namespace Tactics.PaintHandlers
 
         private readonly Vector2 SCREENSIZE = new Vector2(750, 500);
         private readonly Vector2 TILESIZE = new Vector2(36, 18);
+        private readonly Vector2 EDGESIZE = new Vector2(18, 17);
         private readonly int TILETHICKNESS = 8;
 
         private readonly Vector2 NORMALPLAYERDRAWLOCATION = new Vector2(363, 233);
@@ -68,6 +69,25 @@ namespace Tactics.PaintHandlers
                 if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y + TILETHICKNESS *(Math.Abs(heightDiff) - 1)))
                 {
                     spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getTileImages()[orderedImageList[i]], drawLoc, Color.White);
+                }
+
+                if (orderedTileHeights[i] > 1)
+                {
+                    for (int j = 0; j < orderedTileHeights[i] - 1; j++)
+                    {
+                        Vector2 leftEdgeLoc = drawLoc + new Vector2(0, TILESIZE.Y / 2 + TILETHICKNESS * (j + 1));
+                        Vector2 rightEdgeLoc = leftEdgeLoc + new Vector2(TILESIZE.X / 2, 0);
+
+                        if (checkIfDisplay(leftEdgeLoc, EDGESIZE.X, EDGESIZE.Y))
+                        {
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getLeftWallImages()[orderedImageList[i]], leftEdgeLoc, Color.White);
+                        }
+
+                        if (checkIfDisplay(rightEdgeLoc, EDGESIZE.X, EDGESIZE.Y))
+                        {
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getRightWallImages()[orderedImageList[i]], rightEdgeLoc, Color.White);
+                        }
+                    }
                 }
             }
         }

@@ -40,3 +40,4 @@ C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\
 C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBlue\tilewithedges.xnb
 C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBrown\tilewithedges.xnb
 C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidGreen\tilewithedges.xnb
+C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestCharacter\testplayersprites.xnb

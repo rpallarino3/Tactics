@@ -9,39 +9,30 @@ using Microsoft.Xna.Framework;
 
 namespace Tactics.ContentHandlers
 {
-    abstract class CharacterContentHandler
+    class CharacterContentHandler
     {
-        protected ContentManager content;
-        protected Texture2D spriteSheet;
-        protected Vector2 spriteSize;
-        protected Vector2 blockStart;
-        protected Vector2 blockSize;
+        private ContentManager content;
+        private Dictionary<int, Texture2D> spriteSheets;
 
-        public abstract void loadContent();
+        public CharacterContentHandler(ContentManager content)
+        {
+            this.content = content;
+            spriteSheets = new Dictionary<int, Texture2D>();
+        }
+
+        public void loadContent()
+        {
+            spriteSheets.Add(0, content.Load<Texture2D>("Images/TestCharacter/testplayersprites"));
+        }
 
         public ContentManager getContent()
         {
             return content;
         }
 
-        public Texture2D getSpriteSheet()
+        public Dictionary<int, Texture2D> getSpriteSheets()
         {
-            return spriteSheet;
-        }
-
-        public Vector2 getSpriteSize()
-        {
-            return spriteSize;
-        }
-
-        public Vector2 getBlockStart()
-        {
-            return blockStart;
-        }
-
-        public Vector2 getBlockSize()
-        {
-            return blockSize;
+            return spriteSheets;
         }
     }
 }

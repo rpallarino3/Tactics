@@ -325,6 +325,15 @@
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidGreen\tilewithedges.xnb</Output>
       <Time>2014-07-17T20:56:11.4005041-04:00</Time>
     </Item>
+    <Item>
+      <Source>Images\TestCharacter\testplayersprites.png</Source>
+      <Name>Images\TestCharacter\testplayersprites</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestCharacter\testplayersprites.xnb</Output>
+      <Time>2014-07-30T22:33:09.8841984-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{1186E733-80CB-41C4-AD06-E8DE7147F1E6}</ContentProjectGUID>

@@ -19,7 +19,7 @@ namespace Tactics.ContentHandlers
         private ContentManager battleContent;
 
         private RegionContentHandler testRegionContentHandler;
-        private CharacterContentHandler testCharacterContentHandler;
+        private CharacterContentHandler characterContentHandler;
 
         private Dictionary<int, RegionContentHandler> regionContent;
         private Dictionary<int, CharacterContentHandler> characterContent;
@@ -36,9 +36,8 @@ namespace Tactics.ContentHandlers
             regionContent.Add(0, testRegionContentHandler);
 
             characterContent = new Dictionary<int, CharacterContentHandler>();
-            testCharacterContentHandler = new TestCharacterContentHandler(npcAnimationContent);
-            testCharacterContentHandler.loadContent(); // probably move this somewhere
-            characterContent.Add(0, testCharacterContentHandler);
+            characterContentHandler = new CharacterContentHandler(npcAnimationContent);
+            characterContentHandler.loadContent(); // probably move this somewhere
         }
 
         public Dictionary<int, RegionContentHandler> getRegionContent()
@@ -46,9 +45,9 @@ namespace Tactics.ContentHandlers
             return regionContent;
         }
 
-        public Dictionary<int, CharacterContentHandler> getCharacterContent()
+        public CharacterContentHandler getCharacterContent()
         {
-            return characterContent;
+            return characterContentHandler;
         }
     }
 }

@@ -124,6 +124,36 @@ namespace Tactics.Game.Environment
             }
         }
 
+        public void insertBump(int x, int y, int width, int height, int walkingHeight)
+        {
+            createTileLevel(x + 1, y + 1, width - 2, height - 2, walkingHeight);
+
+            for (int i = x + 1; i < x + width - 2; i++)
+            {
+                tileMap[i, y].setWalkingHeight(walkingHeight);
+                tileMap[i, y].slope(2);
+                tileMap[i, y + height - 1].setWalkingHeight(walkingHeight);
+                tileMap[i, y + height - 1].slope(0);
+            }
+
+            for (int i = y + 1; i < y + height - 2; i++)
+            {
+                tileMap[x, i].setWalkingHeight(walkingHeight);
+                tileMap[x, i].slope(1);
+                tileMap[x + width - 1, i].setWalkingHeight(walkingHeight);
+                tileMap[x + width - 1, i].slope(3);
+            }
+
+            tileMap[x, y].setWalkingHeight(walkingHeight);
+            tileMap[x, y].slope(6);
+            tileMap[x, y + height - 1].setWalkingHeight(walkingHeight);
+            tileMap[x, y + height - 1].slope(4);
+            tileMap[x + width - 1, y + height - 1].setWalkingHeight(walkingHeight);
+            tileMap[x + width - 1, y + height - 1].slope(7);
+            tileMap[x + width - 1, y].setWalkingHeight(walkingHeight);
+            tileMap[x + width - 1, y].slope(5);
+        }
+
         public void orderTiles()
         {
             int times;
