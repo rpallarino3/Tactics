@@ -17,7 +17,7 @@ namespace Tactics.Game.Environment
 
         protected List<int> imageIdentifiers;
         protected List<Vector2> tileLocations;
-        protected List<int> tileHeights;
+        protected List<Tile> orderedTiles;
 
         protected int tileHeight;
         protected int tileWidth;
@@ -62,9 +62,9 @@ namespace Tactics.Game.Environment
             return tileLocations;
         }
 
-        public List<int> getTileHeights()
+        public List<Tile> getOrderedTiles()
         {
-            return tileHeights;
+            return orderedTiles;
         }
 
         public void fillImageMap()
@@ -128,7 +128,7 @@ namespace Tactics.Game.Environment
         {
             createTileLevel(x + 1, y + 1, width - 2, height - 2, walkingHeight);
 
-            for (int i = x + 1; i < x + width - 2; i++)
+            for (int i = x + 1; i < x + width - 1; i++)
             {
                 tileMap[i, y].setWalkingHeight(walkingHeight);
                 tileMap[i, y].slope(2);
@@ -136,7 +136,7 @@ namespace Tactics.Game.Environment
                 tileMap[i, y + height - 1].slope(0);
             }
 
-            for (int i = y + 1; i < y + height - 2; i++)
+            for (int i = y + 1; i < y + height - 1; i++)
             {
                 tileMap[x, i].setWalkingHeight(walkingHeight);
                 tileMap[x, i].slope(1);
@@ -174,18 +174,18 @@ namespace Tactics.Game.Environment
                     {
                         imageIdentifiers.Add(imageMap[tileWidth - 1 - i, j]);
                         tileLocations.Add(new Vector2(tileWidth - 1 - i, j));
-                        tileHeights.Add(tileMap[tileWidth - 1 - i, j].getWalkingHeight());
+                        orderedTiles.Add(tileMap[tileWidth - 1 - i, j]);
                         //Console.WriteLine("X: " + (tileWidth - 1 - i) + " Y: " + j);
 
                         imageIdentifiers.Add(imageMap[tileWidth - 1 - j, i]);
                         tileLocations.Add(new Vector2(tileWidth - 1 - j, i));
-                        tileHeights.Add(tileMap[tileWidth - 1 - j, i].getWalkingHeight());
+                        orderedTiles.Add(tileMap[tileWidth - 1 - j, i]);
                         //Console.WriteLine("X: " + (tileWidth - 1 - j) + " Y: " + i);
                     }
 
                     imageIdentifiers.Add(imageMap[tileWidth - i - 1, i]);
                     tileLocations.Add(new Vector2(tileWidth - i - 1, i));
-                    tileHeights.Add(tileMap[tileWidth - i - 1, i].getWalkingHeight());
+                    orderedTiles.Add(tileMap[tileWidth - i - 1, i]);
                     //Console.WriteLine("X: " + (tileWidth - 1 - i) + " Y: " + i);
                 }
                 else
@@ -196,7 +196,7 @@ namespace Tactics.Game.Environment
                         {
                             imageIdentifiers.Add(imageMap[tileWidth - 1 - j, i]);
                             tileLocations.Add(new Vector2(tileWidth - 1 - j, i));
-                            tileHeights.Add(tileMap[tileWidth - 1 - j, i].getWalkingHeight());
+                            orderedTiles.Add(tileMap[tileWidth - 1 - j, i]);
                             //Console.WriteLine("X: " + (tileWidth - 1 - j) + " Y: " + i);
                         }
                     }
@@ -206,7 +206,7 @@ namespace Tactics.Game.Environment
                         {
                             imageIdentifiers.Add(imageMap[tileWidth - 1 - i, j]);
                             tileLocations.Add(new Vector2(tileWidth - 1 - i, j));
-                            tileHeights.Add(tileMap[tileWidth - 1 - i, j].getWalkingHeight());
+                            orderedTiles.Add(tileMap[tileWidth - 1 - i, j]);
                             //Console.WriteLine("X: " + (tileWidth - 1 - i) + " Y: " + j);
                         }
                     }

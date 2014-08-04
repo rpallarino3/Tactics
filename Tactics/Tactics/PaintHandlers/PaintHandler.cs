@@ -24,6 +24,26 @@ namespace Tactics.PaintHandlers
         private readonly Vector2 NORMALPLAYERDRAWLOCATION = new Vector2(363, 233);
         private readonly Vector2 TILEOFFSET = new Vector2(-17, 3);
 
+
+        // something is wrong here
+        private readonly Vector2 SLOPEBLOFF = new Vector2(1, 0);
+        private readonly Vector2 SLOPEBROFF = new Vector2(0, 0);
+        private readonly Vector2 SLOPEBOFF = new Vector2(1, 0);
+        private readonly Vector2 SLOPELOFF = new Vector2(1, 8);
+        private readonly Vector2 SLOPEROFF = new Vector2(-1, 8);
+        private readonly Vector2 SLOPETLOFF = new Vector2(1, 8);
+        private readonly Vector2 SLOPETROFF = new Vector2(1, 8);
+        private readonly Vector2 SLOPETOFF = new Vector2(1, 8);
+
+        private readonly Vector2 TLSIZE = new Vector2(34, 18);
+        private readonly Vector2 TRSIZE = new Vector2(34, 18);
+        private readonly Vector2 BRSIZE = new Vector2(35, 26);
+        private readonly Vector2 BLSIZE = new Vector2(35, 26);
+        private readonly Vector2 TSIZE = new Vector2(34, 10);
+        private readonly Vector2 BSIZE = new Vector2(34, 26);
+        private readonly Vector2 RSIZE = new Vector2(36, 18);
+        private readonly Vector2 LSIZE = new Vector2(36, 18);
+
         public PaintHandler()
         {
         }
@@ -54,34 +74,127 @@ namespace Tactics.PaintHandlers
 
         private void drawFreeRoamState(SpriteBatch spriteBatch, GameInit gameInit, ContentHandler contentHandler)
         {
-            List<Vector2> orderedTileList = gameInit.getFreeRoamState().getCurrentZones()[gameInit.getFreeRoamState().getCurrentZone()].getTileLocations();
-            List<int> orderedImageList = gameInit.getFreeRoamState().getCurrentZones()[gameInit.getFreeRoamState().getCurrentZone()].getImageIdentifiers();
-            List<int> orderedTileHeights = gameInit.getFreeRoamState().getCurrentZones()[gameInit.getFreeRoamState().getCurrentZone()].getTileHeights();
+            Zone currentZone = gameInit.getFreeRoamState().getCurrentZones()[gameInit.getFreeRoamState().getCurrentZone()];
+            List<Vector2> orderedTileList = currentZone.getTileLocations();
+            List<int> orderedImageList = currentZone.getImageIdentifiers();
+            List<Tile> orderedTiles = currentZone.getOrderedTiles();
+
 
             for (int i = orderedTileList.Count - 1; i >= 0; i--)
             {
-                int heightDiff = gameInit.getFreeRoamState().getCharacterHeight() - orderedTileHeights[i];
+                Tile currentTile = orderedTiles[i];
+                int heightDiff = gameInit.getFreeRoamState().getCharacterHeight() - currentTile.getWalkingHeight();
                 int xDiff = gameInit.getFreeRoamState().getCharacterXPos() - (int)orderedTileList[i].X;
                 int yDiff = gameInit.getFreeRoamState().getCharacterYPos() - (int)orderedTileList[i].Y;
 
                 Vector2 drawLoc = NORMALPLAYERDRAWLOCATION + TILEOFFSET + new Vector2((TILESIZE.X / 2) * (xDiff + yDiff), (TILESIZE.Y / 2) * (-xDiff + yDiff) + TILETHICKNESS * heightDiff);
 
-                if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y + TILETHICKNESS *(Math.Abs(heightDiff) - 1)))
+                if (currentTile.isSloped())
                 {
-                    spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getTileImages()[orderedImageList[i]], drawLoc, Color.White);
+                    int direction = currentTile.getSlopedOrientation();
+                    if (direction == 0)
+                    {
+                        if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
+                        {
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getTopLeftSlope()[orderedImageList[i]], drawLoc, Color.White);
+                        }
+                    }
+                    else if (direction == 1)
+                    {
+                        if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
+                        {
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getTopRightSlope()[orderedImageList[i]], drawLoc, Color.White);
+                        }
+                    }
+                    else if (direction == 2)
+                    {
+                        if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
+                        {
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getBottomRightSlope()[orderedImageList[i]], drawLoc, Color.White);
+                        }
+                    }
+                    else if (direction == 3)
+                    {
+                        if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
+                        {
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getBottomLeftSlope()[orderedImageList[i]], drawLoc, Color.White);
+                        }
+                    }
+                    else if (direction == 4)
+                    {
+                        if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
+                        {
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getTopSlope()[orderedImageList[i]], drawLoc, Color.White);
+                        }
+                    }
+                    else if (direction == 5)
+                    {
+                        if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
+                        {
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getBottomSlope()[orderedImageList[i]], drawLoc, Color.White);
+                        }
+                    }
+                    else if (direction == 6)
+                    {
+                        if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
+                        {
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getRightSlope()[orderedImageList[i]], drawLoc, Color.White);
+                        }
+                    }
+                    else if (direction == 7)
+                    {
+                        if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
+                        {
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getLeftSlope()[orderedImageList[i]], drawLoc, Color.White);
+                        }
+                    }
+                }
+                else
+                {
+                    if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y + TILETHICKNESS * (Math.Abs(heightDiff) - 1)))
+                    {
+                        spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getTileImages()[orderedImageList[i]], drawLoc, Color.White);
+                    }
                 }
 
-                if (orderedTileHeights[i] > 1)
+                // change this to look at next tiles
+                if (orderedTileList[i].X == currentZone.getTileWidth() - 1)
                 {
-                    for (int j = 0; j < orderedTileHeights[i] - 1; j++)
+                    for (int j = 0; j < currentTile.getWalkingHeight(); j++)
                     {
                         Vector2 leftEdgeLoc = drawLoc + new Vector2(0, TILESIZE.Y / 2 + TILETHICKNESS * (j + 1));
-                        Vector2 rightEdgeLoc = leftEdgeLoc + new Vector2(TILESIZE.X / 2, 0);
 
                         if (checkIfDisplay(leftEdgeLoc, EDGESIZE.X, EDGESIZE.Y))
                         {
                             spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getLeftWallImages()[orderedImageList[i]], leftEdgeLoc, Color.White);
                         }
+
+                    }
+                    
+                }
+                else
+                {
+                    int leftHeightDiff = currentTile.getWalkingHeight() - currentZone.getTileMap()[(int)orderedTileList[i].X + 1, (int)orderedTileList[i].Y].getWalkingHeight();
+
+                    if (leftHeightDiff > 1)
+                    {
+                        for (int j = 0; j < leftHeightDiff - 1; j++)
+                        {
+                            Vector2 leftEdgeLoc = drawLoc + new Vector2(0, TILESIZE.Y / 2 + TILETHICKNESS * (j + 1));
+
+                            if (checkIfDisplay(leftEdgeLoc, EDGESIZE.X, EDGESIZE.Y))
+                            {
+                                spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getLeftWallImages()[orderedImageList[i]], leftEdgeLoc, Color.White);
+                            }
+                        }
+                    }
+                }
+
+                if (orderedTileList[i].Y == 0)
+                {
+                    for (int j = 0; j < currentTile.getWalkingHeight(); j++)
+                    {
+                        Vector2 rightEdgeLoc = drawLoc + new Vector2(0, TILESIZE.Y / 2 + TILETHICKNESS * (j + 1)) + new Vector2(TILESIZE.X / 2, 0);
 
                         if (checkIfDisplay(rightEdgeLoc, EDGESIZE.X, EDGESIZE.Y))
                         {
@@ -89,6 +202,24 @@ namespace Tactics.PaintHandlers
                         }
                     }
                 }
+                else
+                {
+                    int rightHeightDiff = currentTile.getWalkingHeight() - currentZone.getTileMap()[(int)orderedTileList[i].X, (int)orderedTileList[i].Y - 1].getWalkingHeight();
+
+                    if (rightHeightDiff > 1)
+                    {
+                        for (int j = 0; j < rightHeightDiff - 1; j++)
+                        {
+                            Vector2 rightEdgeLoc = drawLoc + new Vector2(0, TILESIZE.Y / 2 + TILETHICKNESS * (j + 1)) + new Vector2(TILESIZE.X / 2, 0);
+
+                            if (checkIfDisplay(rightEdgeLoc, EDGESIZE.X, EDGESIZE.Y))
+                            {
+                                spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getRightWallImages()[orderedImageList[i]], rightEdgeLoc, Color.White);
+                            }
+                        }
+                    }
+                }
+                
             }
         }
 

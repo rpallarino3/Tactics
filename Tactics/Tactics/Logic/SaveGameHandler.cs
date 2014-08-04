@@ -25,8 +25,8 @@ namespace Tactics.Logic
         {
             transitionHandler.createRegion(gameInit, content, 0, 0);
 
-            gameInit.getFreeRoamState().setCharacterXPos(50);
-            gameInit.getFreeRoamState().setCharacterYPos(50);
+            gameInit.getFreeRoamState().setCharacterXPos(90);
+            gameInit.getFreeRoamState().setCharacterYPos(90);
             //gameInit.getFreeRoamState().setCurrentRegion(0);
             //gameInit.getFreeRoamState().setCurrentZone(0);
             gameInit.getFreeRoamState().setCharacterFacingDirection(0);

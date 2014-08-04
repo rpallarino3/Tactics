@@ -19,7 +19,7 @@ namespace Tactics.Game.Environment.TestArea
             imageIdentifiers = new List<int>();
             tileLocations = new List<Vector2>();
             containedZones = new List<Zone>();
-            tileHeights = new List<int>();
+            orderedTiles = new List<Tile>();
             fillZoneMap();
         }
 
@@ -32,7 +32,7 @@ namespace Tactics.Game.Environment.TestArea
             createTileLevel(50, 50, 50, 50, 2);
             fillImageRectangle(50, 50, 50, 50, 2);
             createTileLevel(90, 90, 10, 10, 10);
-            insertBump(10, 10, 10, 10, 3);
+            insertBump(10, 10, 10, 10, 2);
         }
 
         private void fillImageTileMap()

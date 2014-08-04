@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBlue\slopebottomleft.xnb</Output>
-      <Time>2014-07-12T16:37:23.1156019-04:00</Time>
+      <Time>2014-08-02T23:04:40.4537248-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBlue\slopebottomright.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBlue\slopebottomright.xnb</Output>
-      <Time>2014-07-12T16:37:23.116602-04:00</Time>
+      <Time>2014-08-02T23:04:40.4677256-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBlue\slopedown.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBlue\slopedown.xnb</Output>
-      <Time>2014-07-12T16:37:23.1186021-04:00</Time>
+      <Time>2014-08-02T23:04:40.4717259-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBlue\slopeleft.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBlue\slopeleft.xnb</Output>
-      <Time>2014-07-12T16:37:23.1186021-04:00</Time>
+      <Time>2014-08-02T23:04:40.4757261-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBlue\sloperight.png</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBlue\sloperight.xnb</Output>
-      <Time>2014-07-12T16:37:23.1196021-04:00</Time>
+      <Time>2014-08-02T23:04:40.4787263-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBlue\slopetop.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBlue\slopetop.xnb</Output>
-      <Time>2014-07-12T16:37:23.1206022-04:00</Time>
+      <Time>2014-08-02T23:04:40.4837265-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBlue\slopetopleft.png</Source>
@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBlue\slopetopleft.xnb</Output>
-      <Time>2014-07-12T16:37:23.1216023-04:00</Time>
+      <Time>2014-08-02T23:04:40.4857267-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBlue\slopetopright.png</Source>
@@ -89,7 +89,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBlue\slopetopright.xnb</Output>
-      <Time>2014-07-12T16:37:23.1226023-04:00</Time>
+      <Time>2014-08-02T23:04:40.4887268-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBlue\tile.png</Source>
@@ -125,7 +125,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBrown\slopebottomleft.xnb</Output>
-      <Time>2014-07-12T16:37:23.1266025-04:00</Time>
+      <Time>2014-08-02T23:04:53.9964994-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBrown\slopebottomright.png</Source>
@@ -134,7 +134,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBrown\slopebottomright.xnb</Output>
-      <Time>2014-07-12T16:37:23.1286027-04:00</Time>
+      <Time>2014-08-02T23:04:53.9784984-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBrown\slopedown.png</Source>
@@ -143,7 +143,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBrown\slopedown.xnb</Output>
-      <Time>2014-07-12T16:37:23.1296027-04:00</Time>
+      <Time>2014-08-02T23:04:53.9814986-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBrown\slopeleft.png</Source>
@@ -152,7 +152,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBrown\slopeleft.xnb</Output>
-      <Time>2014-07-12T16:37:23.1316028-04:00</Time>
+      <Time>2014-08-02T23:04:53.9844987-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBrown\sloperight.png</Source>
@@ -161,7 +161,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBrown\sloperight.xnb</Output>
-      <Time>2014-07-12T16:37:23.1326029-04:00</Time>
+      <Time>2014-08-02T23:04:53.9864989-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBrown\slopetop.png</Source>
@@ -170,7 +170,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBrown\slopetop.xnb</Output>
-      <Time>2014-07-12T16:37:23.1336029-04:00</Time>
+      <Time>2014-08-02T23:04:53.988499-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBrown\slopetopleft.png</Source>
@@ -179,7 +179,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBrown\slopetopleft.xnb</Output>
-      <Time>2014-07-12T16:37:23.134603-04:00</Time>
+      <Time>2014-08-02T23:04:53.9914991-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBrown\slopetopright.png</Source>
@@ -188,7 +188,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidBrown\slopetopright.xnb</Output>
-      <Time>2014-07-12T16:37:23.1356031-04:00</Time>
+      <Time>2014-08-02T23:04:53.9934993-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidBrown\tile.png</Source>
@@ -224,7 +224,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidGreen\slopebottomleft.xnb</Output>
-      <Time>2014-07-12T16:37:23.1416034-04:00</Time>
+      <Time>2014-08-02T23:05:06.6582236-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidGreen\slopebottomright.png</Source>
@@ -233,7 +233,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidGreen\slopebottomright.xnb</Output>
-      <Time>2014-07-12T16:37:23.1436035-04:00</Time>
+      <Time>2014-08-02T23:05:06.6602238-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidGreen\slopedown.png</Source>
@@ -242,7 +242,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidGreen\slopedown.xnb</Output>
-      <Time>2014-07-12T16:37:23.1456036-04:00</Time>
+      <Time>2014-08-02T23:05:06.6632239-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidGreen\slopeleft.png</Source>
@@ -251,7 +251,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidGreen\slopeleft.xnb</Output>
-      <Time>2014-07-12T16:37:23.1476037-04:00</Time>
+      <Time>2014-08-02T23:05:06.6662241-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidGreen\sloperight.png</Source>
@@ -260,7 +260,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidGreen\sloperight.xnb</Output>
-      <Time>2014-07-12T16:37:23.1486038-04:00</Time>
+      <Time>2014-08-02T23:05:06.6682242-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidGreen\slopetop.png</Source>
@@ -269,7 +269,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidGreen\slopetop.xnb</Output>
-      <Time>2014-07-12T16:37:23.1496039-04:00</Time>
+      <Time>2014-08-02T23:05:06.6702243-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidGreen\slopetopleft.png</Source>
@@ -278,7 +278,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidGreen\slopetopleft.xnb</Output>
-      <Time>2014-07-12T16:37:23.1506039-04:00</Time>
+      <Time>2014-08-02T23:05:06.6722244-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidGreen\slopetopright.png</Source>
@@ -287,7 +287,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestZones\SolidGreen\slopetopright.xnb</Output>
-      <Time>2014-07-12T16:37:23.152604-04:00</Time>
+      <Time>2014-08-02T23:05:06.6742246-04:00</Time>
     </Item>
     <Item>
       <Source>Images\TestZones\SolidGreen\tile.png</Source>

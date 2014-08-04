@@ -45,7 +45,7 @@ namespace Tactics.ContentHandlers.Test
             leftSlope.Add(content.Load<Texture2D>("Images/TestZones/SolidBlue/slopeleft"));
             rightSlope.Add(content.Load<Texture2D>("Images/TestZones/SolidBlue/sloperight"));
             topSlope.Add(content.Load<Texture2D>("Images/TestZones/SolidBlue/slopetop"));
-            bottomSlope.Add(content.Load<Texture2D>("Images/TestZones/SolidBlue/slopetop"));
+            bottomSlope.Add(content.Load<Texture2D>("Images/TestZones/SolidBlue/slopedown"));
         }
 
         private void loadGreenTileImages()
@@ -60,7 +60,7 @@ namespace Tactics.ContentHandlers.Test
             leftSlope.Add(content.Load<Texture2D>("Images/TestZones/SolidGreen/slopeleft"));
             rightSlope.Add(content.Load<Texture2D>("Images/TestZones/SolidGreen/sloperight"));
             topSlope.Add(content.Load<Texture2D>("Images/TestZones/SolidGreen/slopetop"));
-            bottomSlope.Add(content.Load<Texture2D>("Images/TestZones/SolidGreen/slopetop"));
+            bottomSlope.Add(content.Load<Texture2D>("Images/TestZones/SolidGreen/slopedown"));
         }
 
         private void loadBrownTileImages()
@@ -75,7 +75,7 @@ namespace Tactics.ContentHandlers.Test
             leftSlope.Add(content.Load<Texture2D>("Images/TestZones/SolidBrown/slopeleft"));
             rightSlope.Add(content.Load<Texture2D>("Images/TestZones/SolidBrown/sloperight"));
             topSlope.Add(content.Load<Texture2D>("Images/TestZones/SolidBrown/slopetop"));
-            bottomSlope.Add(content.Load<Texture2D>("Images/TestZones/SolidBrown/slopetop"));
+            bottomSlope.Add(content.Load<Texture2D>("Images/TestZones/SolidBrown/slopedown"));
         }
     }
 }
