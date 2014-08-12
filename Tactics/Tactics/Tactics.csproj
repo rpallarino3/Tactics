@@ -77,7 +77,10 @@
     <Compile Include="ContentHandlers\RegionContentHandler.cs" />
     <Compile Include="ContentHandlers\Test\TestRegionContentHandler.cs" />
     <Compile Include="Debug\Debugger.cs" />
+    <Compile Include="Game\Animations\Animation.cs" />
+    <Compile Include="Game\Characters\Character.cs" />
     <Compile Include="Game\Animations\HumanoidAnimations.cs" />
+    <Compile Include="Game\Characters\HumanoidCharacter.cs" />
     <Compile Include="Game\Environment\Region.cs" />
     <Compile Include="Game\Environment\TestArea\TestZone1.cs" />
     <Compile Include="Game\Environment\Tile.cs" />

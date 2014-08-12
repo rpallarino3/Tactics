@@ -7,42 +7,78 @@ using Microsoft.Xna.Framework;
 
 namespace Tactics.Game.Animations
 {
-    class HumanoidAnimations
+    class HumanoidAnimations : Animation
     {
-        private Vector2 spriteStart;
-        private Vector2 spriteSize;
-        private Vector2 sectionSize;
-
-        private Dictionary<string, Tuple<int, int>> animations;
 
         public HumanoidAnimations()
         {
-
-            spriteStart = new Vector2(1, 1);
             spriteSize = new Vector2(24, 34);
             sectionSize = new Vector2(30, 40);
 
-            animations = new Dictionary<string, Tuple<int, int>>();
+            animations = new List<int>();
+            animationOffsets = new List<List<Vector2>>();
             fillAnimations();
         }
 
         private void fillAnimations()
         {
-            animations.Add("STATIONARYTR", new Tuple<int, int>(0, 1));
-            animations.Add("STATIONARYBR", new Tuple<int, int>(1, 1));
-            animations.Add("STATIONARYBL", new Tuple<int, int>(2, 1));
-            animations.Add("STATIONARYTL", new Tuple<int, int>(3, 1));
+            List<Vector2> tempList = new List<Vector2>();
 
-            animations.Add("WALKTR", new Tuple<int, int>(4, 3));
-            animations.Add("WALKBR", new Tuple<int, int>(5, 3));
-            animations.Add("WALKBL", new Tuple<int, int>(6, 3));
-            animations.Add("WALKTL", new Tuple<int, int>(7, 3));
+            // top right
+            animations.Add(1);
+            tempList.Clear();
+            tempList.Add(new Vector2(0, 0));
+            animationOffsets.Add(tempList);
 
-        }
+            // bottom right
+            animations.Add(1);
+            tempList.Clear();
+            tempList.Add(new Vector2(0, 0));
+            animationOffsets.Add(tempList);
 
-        public Vector2 getSpriteStart()
-        {
-            return spriteStart;
+            // bottom left
+            animations.Add(1);
+            tempList.Clear();
+            tempList.Add(new Vector2(0, 0));
+            animationOffsets.Add(tempList);
+
+            // top left
+            animations.Add(1);
+            tempList.Clear();
+            tempList.Add(new Vector2(0, 0));
+            animationOffsets.Add(tempList);
+
+            // walk top right
+            animations.Add(3);
+            tempList.Clear();
+            tempList.Add(new Vector2(0, 0));
+            tempList.Add(new Vector2(0, 0));
+            tempList.Add(new Vector2(0, 0));
+            animationOffsets.Add(tempList);
+
+            // walk bottom right
+            animations.Add(3);
+            tempList.Clear();
+            tempList.Add(new Vector2(0, 0));
+            tempList.Add(new Vector2(0, 0));
+            tempList.Add(new Vector2(0, 0));
+            animationOffsets.Add(tempList);
+
+            // walk bottom left
+            animations.Add(3);
+            tempList.Clear();
+            tempList.Add(new Vector2(0, 0));
+            tempList.Add(new Vector2(0, 0));
+            tempList.Add(new Vector2(0, 0));
+            animationOffsets.Add(tempList);
+
+            // walk top left
+            animations.Add(3);
+            tempList.Clear();
+            tempList.Add(new Vector2(0, 0));
+            tempList.Add(new Vector2(0, 0));
+            tempList.Add(new Vector2(0, 0));
+            animationOffsets.Add(tempList);
         }
 
         public Vector2 getSpriteSize()
