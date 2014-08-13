@@ -48,7 +48,37 @@ namespace Tactics.Logic
 
         private void updateFreeRoamLogic(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)
         {
+            updateFreeRoamPlayerLogic(gameInit, keyHandler, content);
         }
+
+        private void updateFreeRoamPlayerLogic(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)
+        {
+            if (!checkActions(gameInit, keyHandler, content))
+            {
+                if (!checkMove(gameInit, keyHandler, content))
+                {
+                    if (!checkMenu(gameInit, keyHandler, content))
+                    {
+                    }
+                }
+            }
+        }
+
+        private bool checkActions(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)
+        {
+            return true;
+        }
+
+        private bool checkMove(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)
+        {
+            return true;
+        }
+
+        private bool checkMenu(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)
+        {
+            return true;
+        }
+
 
         private void updateBattleLogic(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)
         {

@@ -13,14 +13,20 @@ namespace Tactics.Game.Characters
 
         private CharacterAnimations characterAnimations;
 
-        public Character(int type)
+        public Character(int type, CharacterAnimations characterAnimations)
         {
             this.type = type;
+            this.characterAnimations = characterAnimations;
         }
 
         public int getType()
         {
             return type;
+        }
+
+        public CharacterAnimations getCharacterAnimations()
+        {
+            return characterAnimations;
         }
     }
 }

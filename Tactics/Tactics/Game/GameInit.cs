@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Tactics.Game.Characters;
+
 namespace Tactics.Game
 {
     class GameInit
@@ -11,12 +13,16 @@ namespace Tactics.Game
         private GameState gameState;
         private FreeRoamState freeRoamState;
         private RegionFactory regionFactory;
+        private CharacterFactory characterFactory;
+        private Party party;
 
         public GameInit()
         {
             gameState = new GameState();
             freeRoamState = new FreeRoamState();
             regionFactory = new RegionFactory();
+            characterFactory = new CharacterFactory();
+            party = new Party();
         }
 
         public GameState getGameState()
@@ -32,6 +38,16 @@ namespace Tactics.Game
         public RegionFactory getRegionFactory()
         {
             return regionFactory;
+        }
+
+        public CharacterFactory getCharacterFactory()
+        {
+            return characterFactory;
+        }
+
+        public Party getParty()
+        {
+            return party;
         }
 
     }

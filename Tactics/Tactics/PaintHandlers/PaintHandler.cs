@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using Tactics.Game;
 using Tactics.ContentHandlers;
 using Tactics.Game.Environment;
+using Tactics.Game.Characters;
 
 namespace Tactics.PaintHandlers
 {
@@ -22,7 +23,7 @@ namespace Tactics.PaintHandlers
         private readonly int TILETHICKNESS = 8;
 
         private readonly Vector2 NORMALPLAYERDRAWLOCATION = new Vector2(363, 233);
-        private readonly Vector2 TILEOFFSET = new Vector2(-17, 3);
+        private readonly Vector2 TILEOFFSET = new Vector2(-5, 20);
 
 
         // something is wrong here
@@ -88,6 +89,7 @@ namespace Tactics.PaintHandlers
                 int yDiff = gameInit.getFreeRoamState().getCharacterYPos() - (int)orderedTileList[i].Y;
 
                 Vector2 drawLoc = NORMALPLAYERDRAWLOCATION + TILEOFFSET + new Vector2((TILESIZE.X / 2) * (xDiff + yDiff), (TILESIZE.Y / 2) * (-xDiff + yDiff) + TILETHICKNESS * heightDiff);
+                
 
                 if (currentTile.isSloped())
                 {
@@ -220,6 +222,20 @@ namespace Tactics.PaintHandlers
                     }
                 }
                 
+                if (orderedTileList[i].X == gameInit.getFreeRoamState().getCharacterXPos())
+                {
+                    if (orderedTileList[i].Y == gameInit.getFreeRoamState().getCharacterYPos())
+                    {
+                        Texture2D texture = contentHandler.getCharacterContent().getSpriteSheets()[gameInit.getParty().getPartyMembers()[0].getType()];
+                        Character character = gameInit.getParty().getPartyMembers()[0];
+                        int rectX = character.getCharacterAnimations().getCurrentAnimationColumn() * (int)character.getCharacterAnimations().getAnimations().getSectionSize().X;
+                        int rectY = character.getCharacterAnimations().getCurrentAnimationRow() * (int)character.getCharacterAnimations().getAnimations().getSectionSize().Y;
+                        int xSize = (int)character.getCharacterAnimations().getAnimations().getSpriteSize().X;
+                        int ySize = (int)character.getCharacterAnimations().getAnimations().getSpriteSize().Y;
+                        Rectangle sourceRec = new Rectangle(rectX, rectY, xSize, ySize);
+                        spriteBatch.Draw(texture, NORMALPLAYERDRAWLOCATION, sourceRec, Color.White);
+                    }
+                }
             }
         }
 

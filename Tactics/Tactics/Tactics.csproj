@@ -79,8 +79,10 @@
     <Compile Include="Debug\Debugger.cs" />
     <Compile Include="Game\Animations\Animation.cs" />
     <Compile Include="Game\Characters\Character.cs" />
+    <Compile Include="Game\Characters\CharacterAnimation\CharacterAnimations.cs" />
     <Compile Include="Game\Animations\HumanoidAnimations.cs" />
-    <Compile Include="Game\Characters\HumanoidCharacter.cs" />
+    <Compile Include="Game\Characters\CharacterAnimation\HumanoidCharacterAnimations.cs" />
+    <Compile Include="Game\Characters\CharacterFactory.cs" />
     <Compile Include="Game\Environment\Region.cs" />
     <Compile Include="Game\Environment\TestArea\TestZone1.cs" />
     <Compile Include="Game\Environment\Tile.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="Game\FreeRoamState.cs" />
     <Compile Include="Game\GameInit.cs" />
     <Compile Include="Game\GameState.cs" />
+    <Compile Include="Game\Party.cs" />
     <Compile Include="Game\RegionFactory.cs" />
     <Compile Include="Game\ZoneFactories\TestZoneFactory.cs" />
     <Compile Include="KeyHandlers\Keybinds.cs" />
