@@ -57,21 +57,43 @@ namespace Tactics.Logic
             {
                 if (!checkMove(gameInit, keyHandler, content))
                 {
-                    if (!checkMenu(gameInit, keyHandler, content))
-                    {
-                    }
                 }
+                else
+                {
+                }
+            }
+            else
+            {
             }
         }
 
         private bool checkActions(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)
         {
-            return true;
+            if (keyHandler.isActionReady())
+            {
+                return true;
+            }
+
+            if (keyHandler.isBackReady())
+            {
+                return true;
+            }
+
+            if (keyHandler.isM1Ready())
+            {
+                return true;
+            }
+
+            if (keyHandler.isM2Ready())
+            {
+                return true;
+            }
+            return false;
         }
 
         private bool checkMove(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)
         {
-            return true;
+            return movementHandler.checkMove(gameInit, keyHandler, content);
         }
 
         private bool checkMenu(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)

@@ -83,9 +83,11 @@
     <Compile Include="Game\Animations\HumanoidAnimations.cs" />
     <Compile Include="Game\Characters\CharacterAnimation\HumanoidCharacterAnimations.cs" />
     <Compile Include="Game\Characters\CharacterFactory.cs" />
+    <Compile Include="Game\Environment\ManipulatableObject.cs" />
     <Compile Include="Game\Environment\Region.cs" />
     <Compile Include="Game\Environment\TestArea\TestZone1.cs" />
     <Compile Include="Game\Environment\Tile.cs" />
+    <Compile Include="Game\Environment\TrafficMap.cs" />
     <Compile Include="Game\Environment\Zone.cs" />
     <Compile Include="Game\Environment\ZoneFactory.cs" />
     <Compile Include="Game\FreeRoamState.cs" />
