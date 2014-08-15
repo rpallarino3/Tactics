@@ -75,7 +75,7 @@ namespace Tactics.PaintHandlers
 
         private void drawFreeRoamState(SpriteBatch spriteBatch, GameInit gameInit, ContentHandler contentHandler)
         {
-            Zone currentZone = gameInit.getFreeRoamState().getCurrentZones()[gameInit.getFreeRoamState().getCurrentZone()];
+            Zone currentZone = gameInit.getFreeRoamState().getCurrentZone();
             List<Vector2> orderedTileList = currentZone.getTileLocations();
             List<int> orderedImageList = currentZone.getImageIdentifiers();
             List<Tile> orderedTiles = currentZone.getOrderedTiles();
@@ -84,9 +84,9 @@ namespace Tactics.PaintHandlers
             for (int i = orderedTileList.Count - 1; i >= 0; i--)
             {
                 Tile currentTile = orderedTiles[i];
-                int heightDiff = gameInit.getFreeRoamState().getCharacterHeight() - currentTile.getWalkingHeight();
-                int xDiff = gameInit.getFreeRoamState().getCharacterXPos() - (int)orderedTileList[i].X;
-                int yDiff = gameInit.getFreeRoamState().getCharacterYPos() - (int)orderedTileList[i].Y;
+                int heightDiff = gameInit.getParty().getPartyMembers()[0].getHeight() - currentTile.getWalkingHeight();
+                int xDiff = gameInit.getParty().getPartyMembers()[0].getX() - (int)orderedTileList[i].X;
+                int yDiff = gameInit.getParty().getPartyMembers()[0].getY() - (int)orderedTileList[i].Y;
 
                 Vector2 drawLoc = NORMALPLAYERDRAWLOCATION + TILEOFFSET + new Vector2((TILESIZE.X / 2) * (xDiff + yDiff), (TILESIZE.Y / 2) * (-xDiff + yDiff) + TILETHICKNESS * heightDiff);
                 
@@ -222,9 +222,9 @@ namespace Tactics.PaintHandlers
                     }
                 }
                 
-                if (orderedTileList[i].X == gameInit.getFreeRoamState().getCharacterXPos())
+                if (orderedTileList[i].X == gameInit.getParty().getPartyMembers()[0].getX())
                 {
-                    if (orderedTileList[i].Y == gameInit.getFreeRoamState().getCharacterYPos())
+                    if (orderedTileList[i].Y == gameInit.getParty().getPartyMembers()[0].getY())
                     {
                         Texture2D texture = contentHandler.getCharacterContent().getSpriteSheets()[gameInit.getParty().getPartyMembers()[0].getType()];
                         Character character = gameInit.getParty().getPartyMembers()[0];

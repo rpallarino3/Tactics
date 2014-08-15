@@ -57,9 +57,53 @@ namespace Tactics.Logic
             {
                 if (!checkMove(gameInit, keyHandler, content))
                 {
+                    int direction = gameInit.getParty().getPartyMembers()[0].getFacingDirection();
+
+                    if (direction == 0)
+                    {
+                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(0);
+                    }
+                    else if (direction == 1)
+                    {
+                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(1);
+                    }
+                    else if (direction == 2)
+                    {
+                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(2);
+                    }
+                    else if (direction == 3)
+                    {
+                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(3);
+                    }
                 }
                 else
                 {
+                    int direction = gameInit.getParty().getPartyMembers()[0].getFacingDirection();
+
+                    if (direction == 0)
+                    {
+                        gameInit.getParty().getPartyMembers()[0].setXPosition(gameInit.getParty().getPartyMembers()[0].getX() - 1);
+                        gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
+                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(0);
+                    }
+                    else if (direction == 1)
+                    {
+                        gameInit.getParty().getPartyMembers()[0].setXPosition(gameInit.getParty().getPartyMembers()[0].getX() + 1);
+                        gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
+                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(1);
+                    }
+                    else if (direction == 2)
+                    {
+                        gameInit.getParty().getPartyMembers()[0].setYPosition(gameInit.getParty().getPartyMembers()[0].getY() - 1);
+                        gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
+                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(2);
+                    }
+                    else if (direction == 3)
+                    {
+                        gameInit.getParty().getPartyMembers()[0].setYPosition(gameInit.getParty().getPartyMembers()[0].getY() + 1);
+                        gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
+                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(3);
+                    }
                 }
             }
             else
@@ -69,7 +113,7 @@ namespace Tactics.Logic
 
         private bool checkActions(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)
         {
-            if (keyHandler.isActionReady())
+            if (checkMainAction(gameInit, keyHandler))
             {
                 return true;
             }
@@ -89,6 +133,94 @@ namespace Tactics.Logic
                 return true;
             }
             return false;
+        }
+
+        private bool checkMainAction(GameInit gameInit, KeyHandler keyHandler)
+        {
+            int direction = gameInit.getParty().getPartyMembers()[0].getFacingDirection();
+
+            if (direction == 0)
+            {
+                int targetX = gameInit.getParty().getPartyMembers()[0].getX() - 1;
+                int targetY = gameInit.getParty().getPartyMembers()[0].getY();
+
+                if (targetX < 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    checkForInteract(gameInit, targetX, targetY);
+                }
+            }
+            else if (direction == 1)
+            {
+                int targetX = gameInit.getParty().getPartyMembers()[0].getX() + 1;
+                int targetY = gameInit.getParty().getPartyMembers()[0].getY();
+
+                if (targetX >= gameInit.getFreeRoamState().getCurrentZone().getTileWidth())
+                {
+                    return false;
+                }
+                else
+                {
+                    checkForInteract(gameInit, targetX, targetY);
+                }
+            }
+            else if (direction == 2)
+            {
+                int targetX = gameInit.getParty().getPartyMembers()[0].getX();
+                int targetY = gameInit.getParty().getPartyMembers()[0].getY() - 1;
+
+                if (targetY < 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    checkForInteract(gameInit, targetX, targetY);
+                }
+            }
+            else if (direction == 3)
+            {
+                int targetX = gameInit.getParty().getPartyMembers()[0].getX();
+                int targetY = gameInit.getParty().getPartyMembers()[0].getY() + 1;
+
+                if (targetY >= gameInit.getFreeRoamState().getCurrentZone().getTileHeight())
+                {
+                    return false;
+                }
+                else
+                {
+                    checkForInteract(gameInit, targetX, targetY);
+                }
+            }
+            else
+            {
+                return false;
+            }
+            return false;
+        }
+
+        private bool checkForInteract(GameInit gameInit, int targetX, int targetY)
+        {
+            if (gameInit.getFreeRoamState().getCurrentZone().getTrafficMap().getCharacterBooleanMap()[targetX, targetY])
+            {
+                // talk to character
+                return true;
+            }
+            else
+            {
+                if (gameInit.getFreeRoamState().getCurrentZone().getTrafficMap().getObjectBooleanMap()[targetX, targetY])
+                {
+                    //active object
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
 
         private bool checkMove(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)

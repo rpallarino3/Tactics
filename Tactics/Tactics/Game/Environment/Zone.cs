@@ -14,6 +14,7 @@ namespace Tactics.Game.Environment
         protected Tile[,] tileMap;
         protected int[,] imageMap;
         protected List<Zone> containedZones;
+        protected TrafficMap trafficMap;
 
         protected List<int> imageIdentifiers;
         protected List<Vector2> tileLocations;
@@ -21,7 +22,12 @@ namespace Tactics.Game.Environment
 
         protected int tileHeight;
         protected int tileWidth;
-                
+
+        public TrafficMap getTrafficMap()
+        {
+            return trafficMap;
+        }
+
         public Tile[,] getTileMap()
         {
             return tileMap;

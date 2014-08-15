@@ -21,7 +21,21 @@ namespace Tactics.Game.Environment
             objectBooleanMap = new bool[width, height];
             characterMap = new Character[width, height];
             objectMap = new ManipulatableObject[width, height];
+            fillMaps(width, height);
         }
+
+        private void fillMaps(int width, int height)
+        {
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    characterBooleanMap[i, j] = false;
+                    objectBooleanMap[i, j] = false;
+                }
+            }
+        }
+
 
         public bool[,] getCharacterBooleanMap()
         {

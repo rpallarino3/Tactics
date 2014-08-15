@@ -11,10 +11,6 @@ namespace Tactics.Game
     {
         private int currentRegion;
         private int currentZone;
-        private int characterXPos;
-        private int characterYPos;
-        private int characterFacingDirection;
-        private int characterHeight;
 
         private List<Zone> currentZones;
 
@@ -32,16 +28,6 @@ namespace Tactics.Game
             return currentZones;
         }
 
-        public void setCharacterHeight(int height)
-        {
-            characterHeight = height;
-        }
-
-        public int getCharacterHeight()
-        {
-            return characterHeight;
-        }
-
         public int getCurrentRegion()
         {
             return currentRegion;
@@ -52,7 +38,12 @@ namespace Tactics.Game
             currentRegion = region;
         }
 
-        public int getCurrentZone()
+        public Zone getCurrentZone()
+        {
+            return currentZones[currentZone];
+        }
+
+        public int getCurrentZoneNumber()
         {
             return currentZone;
         }
@@ -60,36 +51,6 @@ namespace Tactics.Game
         public void setCurrentZone(int zone)
         {
             currentZone = zone;
-        }
-
-        public int getCharacterXPos()
-        {
-            return characterXPos;
-        }
-
-        public void setCharacterXPos(int pos)
-        {
-            characterXPos = pos;
-        }
-
-        public int getCharacterYPos()
-        {
-            return characterYPos;
-        }
-
-        public void setCharacterYPos(int pos)
-        {
-            characterYPos = pos;
-        }
-
-        public int getCharacterFacingDirection()
-        {
-            return characterFacingDirection;
-        }
-
-        public void setCharacterFacingDirection(int dir)
-        {
-            characterFacingDirection = dir;
         }
     }
 }

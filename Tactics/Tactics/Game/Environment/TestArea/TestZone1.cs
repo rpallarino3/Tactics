@@ -20,6 +20,7 @@ namespace Tactics.Game.Environment.TestArea
             tileLocations = new List<Vector2>();
             containedZones = new List<Zone>();
             orderedTiles = new List<Tile>();
+            trafficMap = new TrafficMap(tileWidth, tileHeight);
             fillZoneMap();
         }
 
