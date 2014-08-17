@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Tactics.Game.Characters.CharacterAnimation;
+using Microsoft.Xna.Framework;
 
 namespace Tactics.Game.Characters
 {
@@ -16,6 +17,8 @@ namespace Tactics.Game.Characters
         private int height;
         private int facingDirection;
 
+        private Vector2 tileDrawOffset;
+
         private CharacterAnimations characterAnimations;
 
         public Character(int type, CharacterAnimations characterAnimations)
@@ -26,6 +29,7 @@ namespace Tactics.Game.Characters
             yPos = 0;
             height = 0;
             facingDirection = 0;
+            tileDrawOffset = new Vector2(0, 0);
         }
 
         public int getFacingDirection()
@@ -96,6 +100,16 @@ namespace Tactics.Game.Characters
         public CharacterAnimations getCharacterAnimations()
         {
             return characterAnimations;
+        }
+
+        public Vector2 getTileDrawOffset()
+        {
+            return tileDrawOffset;
+        }
+
+        public void setTileDrawOffset(Vector2 offset)
+        {
+            tileDrawOffset = offset;
         }
     }
 }

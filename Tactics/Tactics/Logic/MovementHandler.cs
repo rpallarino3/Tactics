@@ -7,16 +7,27 @@ using Microsoft.Xna.Framework;
 using Tactics.Game;
 using Tactics.KeyHandlers;
 using Tactics.ContentHandlers;
+using Tactics.Game.Environment;
 
 namespace Tactics.Logic
 {
     class MovementHandler
     {
         private readonly int HEIGHT_THRESHOLD = 1;
-        private readonly int TURN_THRESHOLD = 5;
+        private readonly int TURN_THRESHOLD = 3;
+
+        private bool moving;
+        private int switchThreshold;
+        private List<Vector2> movementOffsets;
+        private int movementIndex;
+
+        private TileMovementVectors tileMovementVectors;
 
         public MovementHandler()
         {
+            moving = false;
+            tileMovementVectors = new TileMovementVectors();
+            switchThreshold = 0;
         }
 
         public bool checkMove(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)
@@ -25,9 +36,9 @@ namespace Tactics.Logic
 
             if (direction == 0)
             {
+                gameInit.getParty().getPartyMembers()[0].setFacingDirection(0);
                 if (keyHandler.getUpTime() < TURN_THRESHOLD)
                 {
-                    gameInit.getParty().getPartyMembers()[0].setFacingDirection(0);
                     return false;
                 }
                 else
@@ -44,9 +55,9 @@ namespace Tactics.Logic
             }
             else if (direction == 1)
             {
+                gameInit.getParty().getPartyMembers()[0].setFacingDirection(1);
                 if (keyHandler.getDownTime() < TURN_THRESHOLD)
                 {
-                    gameInit.getParty().getPartyMembers()[0].setFacingDirection(1);
                     return false;
                 }
                 else
@@ -63,9 +74,9 @@ namespace Tactics.Logic
             }
             else if (direction == 2)
             {
+                gameInit.getParty().getPartyMembers()[0].setFacingDirection(2);
                 if (keyHandler.getRightTime() < TURN_THRESHOLD)
                 {
-                    gameInit.getParty().getPartyMembers()[0].setFacingDirection(2);
                     return false;
                 }
                 else
@@ -82,9 +93,9 @@ namespace Tactics.Logic
             }
             else if (direction == 3)
             {
+                gameInit.getParty().getPartyMembers()[0].setFacingDirection(3);
                 if (keyHandler.getLeftTime() < TURN_THRESHOLD)
                 {
-                    gameInit.getParty().getPartyMembers()[0].setFacingDirection(3);
                     return false;
                 }
                 else
@@ -183,9 +194,155 @@ namespace Tactics.Logic
             }
             else
             {
+                //Console.WriteLine("Greatest: " + greatest);
                 return greatest;
             }
 
+        }
+
+        public void movePlayer(GameInit gameInit)
+        {
+            int direction = gameInit.getParty().getPartyMembers()[0].getFacingDirection();
+
+            if (direction == 0)
+            {
+                int x = gameInit.getParty().getPartyMembers()[0].getX();
+                int y = gameInit.getParty().getPartyMembers()[0].getY();
+
+                Tile currentTile = gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y];
+                Tile destinationTile = gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x - 1, y];
+
+                if (currentTile.isSloped())
+                {
+                    if (destinationTile.isSloped())
+                    {
+                    }
+                    else
+                    {
+                        if (destinationTile.getWalkingHeight() > currentTile.getWalkingHeight())
+                        {
+                        }
+                        else if (destinationTile.getWalkingHeight() < currentTile.getWalkingHeight())
+                        {
+                        }
+                        else
+                        {
+                        }
+                    }
+                }
+                else
+                {
+                    if (destinationTile.isSloped())
+                    {
+                    }
+                    else
+                    {
+                        if (destinationTile.getWalkingHeight() > currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(4);
+                            movementOffsets = tileMovementVectors.getVectors(0, "FFH");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
+                        }
+                        else if (destinationTile.getWalkingHeight() < currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(4);
+                            movementOffsets = tileMovementVectors.getVectors(0, "FFL");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
+                        }
+                        else
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(4);
+                            movementOffsets = tileMovementVectors.getVectors(0, "FFS");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 7;
+                        }
+                    }
+                }
+            }
+            else if (direction == 1)
+            {
+            }
+            else if (direction == 2)
+            {
+            }
+            else if (direction == 3)
+            {
+            }
+        }
+
+        public void updateMove(GameInit gameInit)
+        {
+            movementIndex++;
+            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().advanceAnimation();
+            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+
+            if (movementIndex == switchThreshold)
+            {
+                int direction = gameInit.getParty().getPartyMembers()[0].getFacingDirection();
+
+                if (direction == 0)
+                {
+                    gameInit.getParty().getPartyMembers()[0].moveUp();
+                    int x = gameInit.getParty().getPartyMembers()[0].getX();
+                    int y = gameInit.getParty().getPartyMembers()[0].getY();
+                    gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].getWalkingHeight());
+                    
+                }
+                else if (direction == 1)
+                {
+                    gameInit.getParty().getPartyMembers()[0].moveDown();
+                    int x = gameInit.getParty().getPartyMembers()[0].getX();
+                    int y = gameInit.getParty().getPartyMembers()[0].getY();
+                    gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].getWalkingHeight());
+                }
+                else if (direction == 2)
+                {
+                    gameInit.getParty().getPartyMembers()[0].moveRight();
+                    int x = gameInit.getParty().getPartyMembers()[0].getX();
+                    int y = gameInit.getParty().getPartyMembers()[0].getY();
+                    gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].getWalkingHeight());
+                }
+                else if (direction == 3)
+                {
+                    gameInit.getParty().getPartyMembers()[0].moveLeft();
+                    int x = gameInit.getParty().getPartyMembers()[0].getX();
+                    int y = gameInit.getParty().getPartyMembers()[0].getY();
+                    gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].getWalkingHeight());
+                }
+            }
+
+            if (movementIndex == movementOffsets.Count - 1)
+            {
+                moving = false;
+            }
+        }
+
+        public bool isMoving()
+        {
+            return moving;
+        }
+
+        public void setMoving(bool move)
+        {
+            moving = move;
+        }
+
+        public int getSwitchThreshold()
+        {
+            return switchThreshold;
+        }
+
+        public void setSwitchTheshold(int threshold)
+        {
+            switchThreshold = threshold;
         }
     }
 }

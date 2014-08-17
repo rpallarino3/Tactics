@@ -80,17 +80,16 @@ namespace Tactics.PaintHandlers
             List<int> orderedImageList = currentZone.getImageIdentifiers();
             List<Tile> orderedTiles = currentZone.getOrderedTiles();
 
-
             for (int i = orderedTileList.Count - 1; i >= 0; i--)
             {
                 Tile currentTile = orderedTiles[i];
                 int heightDiff = gameInit.getParty().getPartyMembers()[0].getHeight() - currentTile.getWalkingHeight();
                 int xDiff = gameInit.getParty().getPartyMembers()[0].getX() - (int)orderedTileList[i].X;
                 int yDiff = gameInit.getParty().getPartyMembers()[0].getY() - (int)orderedTileList[i].Y;
+                Vector2 playerOffset = gameInit.getParty().getPartyMembers()[0].getTileDrawOffset();
 
-                Vector2 drawLoc = NORMALPLAYERDRAWLOCATION + TILEOFFSET + new Vector2((TILESIZE.X / 2) * (xDiff + yDiff), (TILESIZE.Y / 2) * (-xDiff + yDiff) + TILETHICKNESS * heightDiff);
+                Vector2 drawLoc = -playerOffset + NORMALPLAYERDRAWLOCATION + TILEOFFSET + new Vector2((TILESIZE.X / 2) * (xDiff + yDiff), (TILESIZE.Y / 2) * (-xDiff + yDiff) + TILETHICKNESS * heightDiff);
                 
-
                 if (currentTile.isSloped())
                 {
                     int direction = currentTile.getSlopedOrientation();
@@ -241,9 +240,9 @@ namespace Tactics.PaintHandlers
 
         private bool checkIfDisplay(Vector2 drawLoc, float width, float height)
         {
-            if (drawLoc.X < SCREENSIZE.X && drawLoc.X + width > 0)
+            if (drawLoc.X < SCREENSIZE.X && drawLoc.X + width >= -10)
             {
-                if (drawLoc.Y < SCREENSIZE.Y && drawLoc.Y + height > 0)
+                if (drawLoc.Y < SCREENSIZE.Y && drawLoc.Y + height >= -10)
                 {
                     return true;
                 }

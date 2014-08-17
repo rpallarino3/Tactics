@@ -7,6 +7,8 @@ using Tactics.KeyHandlers;
 using Tactics.Game;
 using Tactics.ContentHandlers;
 
+using Microsoft.Xna.Framework;
+
 namespace Tactics.Logic
 {
     class LogicHandler
@@ -53,62 +55,122 @@ namespace Tactics.Logic
 
         private void updateFreeRoamPlayerLogic(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)
         {
-            if (!checkActions(gameInit, keyHandler, content))
+            //Console.WriteLine("PLAYER X: " + gameInit.getParty().getPartyMembers()[0].getX());
+            //Console.WriteLine("PLAYER Y: " + gameInit.getParty().getPartyMembers()[0].getY());
+            if (movementHandler.isMoving())
             {
-                if (!checkMove(gameInit, keyHandler, content))
+                movementHandler.updateMove(gameInit);
+            }
+            else
+            {
+                if (!checkActions(gameInit, keyHandler, content))
                 {
-                    int direction = gameInit.getParty().getPartyMembers()[0].getFacingDirection();
+                    if (!checkMove(gameInit, keyHandler, content))
+                    {
+                        int direction = gameInit.getParty().getPartyMembers()[0].getFacingDirection();
 
-                    if (direction == 0)
-                    {
-                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(0);
+                        if (direction == 0)
+                        {
+                            int x = gameInit.getParty().getPartyMembers()[0].getX();
+                            int y = gameInit.getParty().getPartyMembers()[0].getY();
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(0);
+
+                            if (gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].isSloped())
+                            {
+                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, -8));
+                            }
+                            else
+                            {
+                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, 0));
+                            }
+                        }
+                        else if (direction == 1)
+                        {
+                            int x = gameInit.getParty().getPartyMembers()[0].getX();
+                            int y = gameInit.getParty().getPartyMembers()[0].getY();
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(1);
+
+                            if (gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].isSloped())
+                            {
+                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, -8));
+                            }
+                            else
+                            {
+                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, 0));
+                            }
+                        }
+                        else if (direction == 2)
+                        {
+                            int x = gameInit.getParty().getPartyMembers()[0].getX();
+                            int y = gameInit.getParty().getPartyMembers()[0].getY();
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(2);
+
+                            if (gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].isSloped())
+                            {
+                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, -8));
+                            }
+                            else
+                            {
+                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, 0));
+                            }
+                        }
+                        else if (direction == 3)
+                        {
+                            int x = gameInit.getParty().getPartyMembers()[0].getX();
+                            int y = gameInit.getParty().getPartyMembers()[0].getY();
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(3);
+
+                            if (gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].isSloped())
+                            {
+                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, -8));
+                            }
+                            else
+                            {
+                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, 0));
+                            }
+                        }
                     }
-                    else if (direction == 1)
+                    else
                     {
-                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(1);
-                    }
-                    else if (direction == 2)
-                    {
-                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(2);
-                    }
-                    else if (direction == 3)
-                    {
-                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(3);
+                        movementHandler.movePlayer(gameInit);
+
+                        int direction = gameInit.getParty().getPartyMembers()[0].getFacingDirection();
+
+                        if (direction == 0)
+                        {
+                            //gameInit.getParty().getPartyMembers()[0].setXPosition(gameInit.getParty().getPartyMembers()[0].getX() - 1);
+                            //gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
+                            //gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(0);
+                        }
+                        else if (direction == 1)
+                        {
+                            gameInit.getParty().getPartyMembers()[0].setXPosition(gameInit.getParty().getPartyMembers()[0].getX() + 1);
+                            gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(1);
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, 0));
+                        }
+                        else if (direction == 2)
+                        {
+                            gameInit.getParty().getPartyMembers()[0].setYPosition(gameInit.getParty().getPartyMembers()[0].getY() - 1);
+                            gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(2);
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, 0));
+                        }
+                        else if (direction == 3)
+                        {
+                            gameInit.getParty().getPartyMembers()[0].setYPosition(gameInit.getParty().getPartyMembers()[0].getY() + 1);
+                            gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(3);
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, 0));
+                        }
                     }
                 }
                 else
                 {
-                    int direction = gameInit.getParty().getPartyMembers()[0].getFacingDirection();
-
-                    if (direction == 0)
-                    {
-                        gameInit.getParty().getPartyMembers()[0].setXPosition(gameInit.getParty().getPartyMembers()[0].getX() - 1);
-                        gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
-                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(0);
-                    }
-                    else if (direction == 1)
-                    {
-                        gameInit.getParty().getPartyMembers()[0].setXPosition(gameInit.getParty().getPartyMembers()[0].getX() + 1);
-                        gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
-                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(1);
-                    }
-                    else if (direction == 2)
-                    {
-                        gameInit.getParty().getPartyMembers()[0].setYPosition(gameInit.getParty().getPartyMembers()[0].getY() - 1);
-                        gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
-                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(2);
-                    }
-                    else if (direction == 3)
-                    {
-                        gameInit.getParty().getPartyMembers()[0].setYPosition(gameInit.getParty().getPartyMembers()[0].getY() + 1);
-                        gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
-                        gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(3);
-                    }
                 }
+                //Console.WriteLine(gameInit.getParty().getPartyMembers()[0].getTileDrawOffset());
             }
-            else
-            {
-            }
+            
         }
 
         private bool checkActions(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)

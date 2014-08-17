@@ -32,6 +32,7 @@ namespace Tactics.Game.Characters.CharacterAnimation
         {
             animationFinished = false;
             currentAnimationRow = animation;
+            currentAnimationColumn = 0;
         }
     }
 }

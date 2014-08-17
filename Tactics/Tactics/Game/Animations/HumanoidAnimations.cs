@@ -22,6 +22,7 @@ namespace Tactics.Game.Animations
 
         private void fillAnimations()
         {
+            // fix the temp list shit
             List<Vector2> tempList = new List<Vector2>();
 
             // top right
@@ -49,7 +50,7 @@ namespace Tactics.Game.Animations
             animationOffsets.Add(tempList);
 
             // walk top right
-            animations.Add(3);
+            animations.Add(9);
             tempList.Clear();
             tempList.Add(new Vector2(0, 0));
             tempList.Add(new Vector2(0, 0));
@@ -57,7 +58,7 @@ namespace Tactics.Game.Animations
             animationOffsets.Add(tempList);
 
             // walk bottom right
-            animations.Add(3);
+            animations.Add(9);
             tempList.Clear();
             tempList.Add(new Vector2(0, 0));
             tempList.Add(new Vector2(0, 0));
@@ -65,7 +66,7 @@ namespace Tactics.Game.Animations
             animationOffsets.Add(tempList);
 
             // walk bottom left
-            animations.Add(3);
+            animations.Add(9);
             tempList.Clear();
             tempList.Add(new Vector2(0, 0));
             tempList.Add(new Vector2(0, 0));
@@ -73,7 +74,7 @@ namespace Tactics.Game.Animations
             animationOffsets.Add(tempList);
 
             // walk top left
-            animations.Add(3);
+            animations.Add(9);
             tempList.Clear();
             tempList.Add(new Vector2(0, 0));
             tempList.Add(new Vector2(0, 0));

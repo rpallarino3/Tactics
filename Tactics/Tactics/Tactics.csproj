@@ -101,6 +101,7 @@
     <Compile Include="Logic\LogicHandler.cs" />
     <Compile Include="Logic\MovementHandler.cs" />
     <Compile Include="Logic\SaveGameHandler.cs" />
+    <Compile Include="Logic\TileMovementVectors.cs" />
     <Compile Include="Logic\TransitionHandler.cs" />
     <Compile Include="PaintHandlers\PaintHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
