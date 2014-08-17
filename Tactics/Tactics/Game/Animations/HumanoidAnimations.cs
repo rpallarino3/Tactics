@@ -50,7 +50,7 @@ namespace Tactics.Game.Animations
             animationOffsets.Add(tempList);
 
             // walk top right
-            animations.Add(9);
+            animations.Add(6);
             tempList.Clear();
             tempList.Add(new Vector2(0, 0));
             tempList.Add(new Vector2(0, 0));
@@ -58,7 +58,7 @@ namespace Tactics.Game.Animations
             animationOffsets.Add(tempList);
 
             // walk bottom right
-            animations.Add(9);
+            animations.Add(6);
             tempList.Clear();
             tempList.Add(new Vector2(0, 0));
             tempList.Add(new Vector2(0, 0));
@@ -66,7 +66,7 @@ namespace Tactics.Game.Animations
             animationOffsets.Add(tempList);
 
             // walk bottom left
-            animations.Add(9);
+            animations.Add(6);
             tempList.Clear();
             tempList.Add(new Vector2(0, 0));
             tempList.Add(new Vector2(0, 0));
@@ -74,7 +74,7 @@ namespace Tactics.Game.Animations
             animationOffsets.Add(tempList);
 
             // walk top left
-            animations.Add(9);
+            animations.Add(6);
             tempList.Clear();
             tempList.Add(new Vector2(0, 0));
             tempList.Add(new Vector2(0, 0));

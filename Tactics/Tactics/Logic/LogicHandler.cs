@@ -77,7 +77,7 @@ namespace Tactics.Logic
 
                             if (gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].isSloped())
                             {
-                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, -8));
+                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, 4));
                             }
                             else
                             {
@@ -92,7 +92,7 @@ namespace Tactics.Logic
 
                             if (gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].isSloped())
                             {
-                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, -8));
+                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, 4));
                             }
                             else
                             {
@@ -107,7 +107,7 @@ namespace Tactics.Logic
 
                             if (gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].isSloped())
                             {
-                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, -8));
+                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, 4));
                             }
                             else
                             {
@@ -122,7 +122,7 @@ namespace Tactics.Logic
 
                             if (gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].isSloped())
                             {
-                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, -8));
+                                gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, 4));
                             }
                             else
                             {
@@ -133,36 +133,6 @@ namespace Tactics.Logic
                     else
                     {
                         movementHandler.movePlayer(gameInit);
-
-                        int direction = gameInit.getParty().getPartyMembers()[0].getFacingDirection();
-
-                        if (direction == 0)
-                        {
-                            //gameInit.getParty().getPartyMembers()[0].setXPosition(gameInit.getParty().getPartyMembers()[0].getX() - 1);
-                            //gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
-                            //gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(0);
-                        }
-                        else if (direction == 1)
-                        {
-                            gameInit.getParty().getPartyMembers()[0].setXPosition(gameInit.getParty().getPartyMembers()[0].getX() + 1);
-                            gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
-                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(1);
-                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, 0));
-                        }
-                        else if (direction == 2)
-                        {
-                            gameInit.getParty().getPartyMembers()[0].setYPosition(gameInit.getParty().getPartyMembers()[0].getY() - 1);
-                            gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
-                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(2);
-                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, 0));
-                        }
-                        else if (direction == 3)
-                        {
-                            gameInit.getParty().getPartyMembers()[0].setYPosition(gameInit.getParty().getPartyMembers()[0].getY() + 1);
-                            gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[gameInit.getParty().getPartyMembers()[0].getX(), gameInit.getParty().getPartyMembers()[0].getY()].getWalkingHeight());
-                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(3);
-                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(new Vector2(0, 0));
-                        }
                     }
                 }
                 else

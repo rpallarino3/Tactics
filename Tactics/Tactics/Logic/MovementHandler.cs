@@ -216,17 +216,44 @@ namespace Tactics.Logic
                 {
                     if (destinationTile.isSloped())
                     {
-                    }
-                    else
-                    {
                         if (destinationTile.getWalkingHeight() > currentTile.getWalkingHeight())
                         {
-                        }
-                        else if (destinationTile.getWalkingHeight() < currentTile.getWalkingHeight())
-                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(4);
+                            movementOffsets = tileMovementVectors.getVectors(0, "SUSU");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
                         }
                         else
                         {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(4);
+                            movementOffsets = tileMovementVectors.getVectors(0, "SDSD");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
+                        }
+                    }
+                    else
+                    {
+                        if (destinationTile.getWalkingHeight() < currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(4);
+                            movementOffsets = tileMovementVectors.getVectors(0, "SDF");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
+                        }
+                        else
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(4);
+                            movementOffsets = tileMovementVectors.getVectors(0, "SUF");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
                         }
                     }
                 }
@@ -234,6 +261,24 @@ namespace Tactics.Logic
                 {
                     if (destinationTile.isSloped())
                     {
+                        if (destinationTile.getWalkingHeight() > currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(4);
+                            movementOffsets = tileMovementVectors.getVectors(0, "FSU");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
+                        }
+                        else
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(4);
+                            movementOffsets = tileMovementVectors.getVectors(0, "FSD");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
+                        }
                     }
                     else
                     {
@@ -262,19 +307,336 @@ namespace Tactics.Logic
                             gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(4);
                             movementOffsets = tileMovementVectors.getVectors(0, "FFS");
                             gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
-                            switchThreshold = 7;
+                            switchThreshold = 4;
+                        }
+                    }                    
+                }
+
+            }
+            else if (direction == 1)
+            {
+                int x = gameInit.getParty().getPartyMembers()[0].getX();
+                int y = gameInit.getParty().getPartyMembers()[0].getY();
+
+                Tile currentTile = gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y];
+                Tile destinationTile = gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y + 1];
+
+                if (currentTile.isSloped())
+                {
+                    if (destinationTile.isSloped())
+                    {
+                        if (destinationTile.getWalkingHeight() > currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(5);
+                            movementOffsets = tileMovementVectors.getVectors(1, "SUSU");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                        else
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(5);
+                            movementOffsets = tileMovementVectors.getVectors(1, "SDSD");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                    }
+                    else
+                    {
+                        if (destinationTile.getWalkingHeight() < currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(5);
+                            movementOffsets = tileMovementVectors.getVectors(1, "SDF");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                        else
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(5);
+                            movementOffsets = tileMovementVectors.getVectors(1, "SUF");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                    }
+                }
+                else
+                {
+                    if (destinationTile.isSloped())
+                    {
+                        if (destinationTile.getWalkingHeight() > currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(5);
+                            movementOffsets = tileMovementVectors.getVectors(1, "FSU");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                        else
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(5);
+                            movementOffsets = tileMovementVectors.getVectors(1, "FSD");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                    }
+                    else
+                    {
+                        if (destinationTile.getWalkingHeight() > currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(5);
+                            movementOffsets = tileMovementVectors.getVectors(1, "FFH");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                        else if (destinationTile.getWalkingHeight() < currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(5);
+                            movementOffsets = tileMovementVectors.getVectors(1, "FFL");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                        else
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(5);
+                            movementOffsets = tileMovementVectors.getVectors(1, "FFS");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                    }
+                }
+                
+            }
+            else if (direction == 2)
+            {
+                int x = gameInit.getParty().getPartyMembers()[0].getX();
+                int y = gameInit.getParty().getPartyMembers()[0].getY();
+
+                Tile currentTile = gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y];
+                Tile destinationTile = gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y - 1];
+
+                if (currentTile.isSloped())
+                {
+                    if (destinationTile.isSloped())
+                    {
+                        if (destinationTile.getWalkingHeight() > currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(6);
+                            movementOffsets = tileMovementVectors.getVectors(2, "SUSU");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                        else
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(6);
+                            movementOffsets = tileMovementVectors.getVectors(2, "SDSD");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                    }
+                    else
+                    {
+                        if (destinationTile.getWalkingHeight() < currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(6);
+                            movementOffsets = tileMovementVectors.getVectors(2, "SDF");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                        else
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(6);
+                            movementOffsets = tileMovementVectors.getVectors(2, "SUF");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                    }
+                }
+                else
+                {
+                    if (destinationTile.isSloped())
+                    {
+                        if (destinationTile.getWalkingHeight() > currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(6);
+                            movementOffsets = tileMovementVectors.getVectors(2, "FSU");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                        else
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(6);
+                            movementOffsets = tileMovementVectors.getVectors(2, "FSD");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                    }
+                    else
+                    {
+                        if (destinationTile.getWalkingHeight() > currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(6);
+                            movementOffsets = tileMovementVectors.getVectors(2, "FFH");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                        else if (destinationTile.getWalkingHeight() < currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(6);
+                            movementOffsets = tileMovementVectors.getVectors(2, "FFL");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
+                        }
+                        else
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(6);
+                            movementOffsets = tileMovementVectors.getVectors(2, "FFS");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 1;
                         }
                     }
                 }
             }
-            else if (direction == 1)
-            {
-            }
-            else if (direction == 2)
-            {
-            }
             else if (direction == 3)
             {
+                int x = gameInit.getParty().getPartyMembers()[0].getX();
+                int y = gameInit.getParty().getPartyMembers()[0].getY();
+
+                Tile currentTile = gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y];
+                Tile destinationTile = gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y + 1];
+
+                if (currentTile.isSloped())
+                {
+                    if (destinationTile.isSloped())
+                    {
+                        if (destinationTile.getWalkingHeight() > currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(7);
+                            movementOffsets = tileMovementVectors.getVectors(3, "SUSU");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
+                        }
+                        else
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(7);
+                            movementOffsets = tileMovementVectors.getVectors(3, "SDSD");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
+                        }
+                    }
+                    else
+                    {
+                        if (destinationTile.getWalkingHeight() < currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(7);
+                            movementOffsets = tileMovementVectors.getVectors(3, "SDF");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
+                        }
+                        else
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(7);
+                            movementOffsets = tileMovementVectors.getVectors(3, "SUF");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
+                        }
+                    }
+                }
+                else
+                {
+                    if (destinationTile.isSloped())
+                    {
+                        if (destinationTile.getWalkingHeight() > currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(7);
+                            movementOffsets = tileMovementVectors.getVectors(3, "FSU");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
+                        }
+                        else
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(7);
+                            movementOffsets = tileMovementVectors.getVectors(3, "FSD");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
+                        }
+                    }
+                    else
+                    {
+                        if (destinationTile.getWalkingHeight() > currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(7);
+                            movementOffsets = tileMovementVectors.getVectors(3, "FFH");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
+                        }
+                        else if (destinationTile.getWalkingHeight() < currentTile.getWalkingHeight())
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(7);
+                            movementOffsets = tileMovementVectors.getVectors(3, "FFL");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 5;
+                        }
+                        else
+                        {
+                            moving = true;
+                            movementIndex = 0;
+                            gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(7);
+                            movementOffsets = tileMovementVectors.getVectors(3, "FFS");
+                            gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
+                            switchThreshold = 4;
+                        }
+                    }
+                }
             }
         }
 
