@@ -283,7 +283,7 @@ namespace Tactics.Logic
                             moving = true;
                             movementIndex = 0;
                             gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(4);
-                            movementOffsets = tileMovementVectors.getVectors(0, "SDSD");
+                            movementOffsets = tileMovementVectors.getVectors(0, "SDF");
                             gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
                             switchThreshold = 5;
                         }
@@ -417,12 +417,11 @@ namespace Tactics.Logic
                         }
                         else
                         {
-                            Console.WriteLine("SDF DOWN");
                             //SDF
                             moving = true;
                             movementIndex = 0;
                             gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(5);
-                            movementOffsets = tileMovementVectors.getVectors(1, "SDSD");
+                            movementOffsets = tileMovementVectors.getVectors(1, "SDF");
                             gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
                             switchThreshold = 1;
                         }
@@ -558,7 +557,7 @@ namespace Tactics.Logic
                             moving = true;
                             movementIndex = 0;
                             gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(6);
-                            movementOffsets = tileMovementVectors.getVectors(2, "SDSD");
+                            movementOffsets = tileMovementVectors.getVectors(2, "SDF");
                             gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
                             switchThreshold = 1;
                         }
@@ -693,7 +692,7 @@ namespace Tactics.Logic
                             moving = true;
                             movementIndex = 0;
                             gameInit.getParty().getPartyMembers()[0].getCharacterAnimations().setNewAnimation(7);
-                            movementOffsets = tileMovementVectors.getVectors(3, "SDSD");
+                            movementOffsets = tileMovementVectors.getVectors(3, "SDF");
                             gameInit.getParty().getPartyMembers()[0].setTileDrawOffset(movementOffsets[movementIndex]);
                             switchThreshold = 5;
                         }
