@@ -34,6 +34,9 @@ namespace Tactics.Game.Environment.TestArea
             fillImageRectangle(50, 50, 50, 50, 2);
             createTileLevel(90, 90, 10, 10, 10);
             insertBump(10, 10, 10, 10, 2);
+            insertBump(11, 11, 8, 8, 3);
+            createTileLevel(14, 14, 2, 2, 4);
+            createTileLevel(14, 44, 2, 2, 0);
         }
 
         private void fillImageTileMap()

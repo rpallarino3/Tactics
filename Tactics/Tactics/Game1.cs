@@ -107,11 +107,20 @@ namespace Tactics
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
+            if (Keyboard.GetState().IsKeyDown(Keys.F1))
+            {
+                TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 3.0f);
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.F2))
+            {
+                TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 30.0f);
+            }
             // TODO: Add your update logic here
             keyHandler.updateKeys(Keyboard.GetState());
             logicHandler.updateLogic(game, keyHandler, contentHandler);
             base.Update(gameTime);
+
+            
         }
 
         /// <summary>

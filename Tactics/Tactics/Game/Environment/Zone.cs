@@ -114,6 +114,7 @@ namespace Tactics.Game.Environment
                 for (int j = y; j < y + height; j++)
                 {
                     tileMap[i, j].setWalkingHeight(walkingHeight);
+                    tileMap[i, j].flatten();
                 }
             }
         }

@@ -57,6 +57,7 @@ namespace Tactics.Logic
         {
             //Console.WriteLine("PLAYER X: " + gameInit.getParty().getPartyMembers()[0].getX());
             //Console.WriteLine("PLAYER Y: " + gameInit.getParty().getPartyMembers()[0].getY());
+            //Console.WriteLine("HEIGHT: " + gameInit.getParty().getPartyMembers()[0].getHeight());
             if (movementHandler.isMoving())
             {
                 movementHandler.updateMove(gameInit);

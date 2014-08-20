@@ -32,11 +32,11 @@ namespace Tactics.Logic
         {
             List<Vector2> tempList = new List<Vector2>();
 
-            tempList.Add(new Vector2(-3, -1));
-            tempList.Add(new Vector2(-6, -2));
-            tempList.Add(new Vector2(-9, -4));
-            tempList.Add(new Vector2(-12, -5));
-            tempList.Add(new Vector2(3, 2));
+            tempList.Add(new Vector2(-3, -2));
+            tempList.Add(new Vector2(-6, -3));
+            tempList.Add(new Vector2(-9, -5));
+            tempList.Add(new Vector2(-12, -6));
+            tempList.Add(new Vector2(3, 1));
             tempList.Add(new Vector2(0, 0));
 
             leftVectors.Add("FFS", tempList);
@@ -44,12 +44,12 @@ namespace Tactics.Logic
 
             List<Vector2> tempList0 = new List<Vector2>();
 
-            tempList0.Add(new Vector2(-2, -1));
-            tempList0.Add(new Vector2(-4, -3));
-            tempList0.Add(new Vector2(-6, -4));
-            tempList0.Add(new Vector2(-8, -6));
-            tempList0.Add(new Vector2(-10, -8));
-            tempList0.Add(new Vector2(6, 7));
+            tempList0.Add(new Vector2(-2, -2));
+            tempList0.Add(new Vector2(-4, -4));
+            tempList0.Add(new Vector2(-6, -6));
+            tempList0.Add(new Vector2(-8, -8));
+            tempList0.Add(new Vector2(-10, -9));
+            tempList0.Add(new Vector2(6, 6));
             tempList0.Add(new Vector2(4, 4));
             tempList0.Add(new Vector2(2, 2));
             tempList0.Add(new Vector2(0, 0));
@@ -59,14 +59,14 @@ namespace Tactics.Logic
 
             List<Vector2> tempList1 = new List<Vector2>();
 
-            tempList1.Add(new Vector2(-2, -1));
-            tempList1.Add(new Vector2(-4, -2));
-            tempList1.Add(new Vector2(-6, -4));
-            tempList1.Add(new Vector2(-8, -5));
-            tempList1.Add(new Vector2(-10, 0));
-            tempList1.Add(new Vector2(6, 4));
-            tempList1.Add(new Vector2(4, 2));
-            tempList1.Add(new Vector2(2, 1));
+            tempList1.Add(new Vector2(-2, -2));
+            tempList1.Add(new Vector2(-4, -4));
+            tempList1.Add(new Vector2(-6, -6));
+            tempList1.Add(new Vector2(-8, -4));
+            tempList1.Add(new Vector2(-10, -4));
+            tempList1.Add(new Vector2(6, -3));
+            tempList1.Add(new Vector2(4, -2));
+            tempList1.Add(new Vector2(2, -1));
             tempList1.Add(new Vector2(0, 0));
 
             leftVectors.Add("FFL", tempList1);
@@ -76,13 +76,13 @@ namespace Tactics.Logic
 
             tempList2.Add(new Vector2(-2, -1));
             tempList2.Add(new Vector2(-4, -2));
-            tempList2.Add(new Vector2(-6, -4));
-            tempList2.Add(new Vector2(-8, -5));
-            tempList2.Add(new Vector2(-10, -7));
-            tempList2.Add(new Vector2(6, 6));
-            tempList2.Add(new Vector2(4, 4));
-            tempList2.Add(new Vector2(2, 2));
-            tempList2.Add(new Vector2(0, 0));
+            tempList2.Add(new Vector2(-6, -3));
+            tempList2.Add(new Vector2(-8, -4));
+            tempList2.Add(new Vector2(-10, -5));
+            tempList2.Add(new Vector2(6, 10));
+            tempList2.Add(new Vector2(4, 8));
+            tempList2.Add(new Vector2(2, 6));
+            tempList2.Add(new Vector2(0, 4));
 
             leftVectors.Add("FSU", tempList2);
 
@@ -91,27 +91,27 @@ namespace Tactics.Logic
 
             tempList3.Add(new Vector2(-2, -1));
             tempList3.Add(new Vector2(-4, -2));
-            tempList3.Add(new Vector2(-6, -4));
-            tempList3.Add(new Vector2(-8, -5));
-            tempList3.Add(new Vector2(-10, 0));
-            tempList3.Add(new Vector2(6, 0));
-            tempList3.Add(new Vector2(4, 0));
-            tempList3.Add(new Vector2(2, 0));
-            tempList3.Add(new Vector2(0, 0));
+            tempList3.Add(new Vector2(-6, -3));
+            tempList3.Add(new Vector2(-8, -4));
+            tempList3.Add(new Vector2(-10, -5));
+            tempList3.Add(new Vector2(6, 4));
+            tempList3.Add(new Vector2(4, 4));
+            tempList3.Add(new Vector2(2, 4));
+            tempList3.Add(new Vector2(0, 4));
 
             leftVectors.Add("FSD", tempList3);
 
 
             List<Vector2> tempList4 = new List<Vector2>();
 
-            tempList4.Add(new Vector2(-2, -2));
-            tempList4.Add(new Vector2(-4, -4));
-            tempList4.Add(new Vector2(-6, -6));
-            tempList4.Add(new Vector2(-8, -8));
-            tempList4.Add(new Vector2(-10, -9));
-            tempList4.Add(new Vector2(6, 4));
-            tempList4.Add(new Vector2(4, 2));
-            tempList4.Add(new Vector2(2, 1));
+            tempList4.Add(new Vector2(-2, 3));
+            tempList4.Add(new Vector2(-4, 2));
+            tempList4.Add(new Vector2(-6, 1));
+            tempList4.Add(new Vector2(-8, 0));
+            tempList4.Add(new Vector2(-10, -1));
+            tempList4.Add(new Vector2(6, 6));
+            tempList4.Add(new Vector2(4, 4));
+            tempList4.Add(new Vector2(2, 2));
             tempList4.Add(new Vector2(0, 0));
 
             leftVectors.Add("SUF", tempList4);
@@ -119,13 +119,13 @@ namespace Tactics.Logic
 
             List<Vector2> tempList5 = new List<Vector2>();
 
-            tempList5.Add(new Vector2(-2, 0));
-            tempList5.Add(new Vector2(-4, 0));
-            tempList5.Add(new Vector2(-6, 0));
-            tempList5.Add(new Vector2(-8, 0));
-            tempList5.Add(new Vector2(-10, 0));
-            tempList5.Add(new Vector2(6, 5));
-            tempList5.Add(new Vector2(4, 3));
+            tempList5.Add(new Vector2(-2, 4));
+            tempList5.Add(new Vector2(-4, 4));
+            tempList5.Add(new Vector2(-6, 4));
+            tempList5.Add(new Vector2(-8, 4));
+            tempList5.Add(new Vector2(-10, 4));
+            tempList5.Add(new Vector2(6, 3));
+            tempList5.Add(new Vector2(4, 2));
             tempList5.Add(new Vector2(2, 1));
             tempList5.Add(new Vector2(0, 0));
 
@@ -134,44 +134,54 @@ namespace Tactics.Logic
 
             List<Vector2> tempList6 = new List<Vector2>();
 
-            tempList6.Add(new Vector2(-2, -2));
-            tempList6.Add(new Vector2(-4, -4));
-            tempList6.Add(new Vector2(-6, -6));
-            tempList6.Add(new Vector2(-8, -8));
-            tempList6.Add(new Vector2(-10, -11));
-            tempList6.Add(new Vector2(6, 6));
-            tempList6.Add(new Vector2(4, 4));
-            tempList6.Add(new Vector2(2, 2));
-            tempList6.Add(new Vector2(0, 0));
+            tempList6.Add(new Vector2(-2, 2));
+            tempList6.Add(new Vector2(-4, 0));
+            tempList6.Add(new Vector2(-6, -2));
+            tempList6.Add(new Vector2(-8, -4));
+            tempList6.Add(new Vector2(-10, -5));
+            tempList6.Add(new Vector2(6, 10));
+            tempList6.Add(new Vector2(4, 8));
+            tempList6.Add(new Vector2(2, 6));
+            tempList6.Add(new Vector2(0, 4));
 
             leftVectors.Add("SUSU", tempList6);
 
 
             List<Vector2> tempList7 = new List<Vector2>();
 
-            tempList7.Add(new Vector2(-2, 0));
-            tempList7.Add(new Vector2(-4, 0));
-            tempList7.Add(new Vector2(-6, 0));
-            tempList7.Add(new Vector2(-8, 0));
-            tempList7.Add(new Vector2(-10, -1));
-            tempList7.Add(new Vector2(6, 0));
-            tempList7.Add(new Vector2(4, 0));
-            tempList7.Add(new Vector2(2, 0));
-            tempList7.Add(new Vector2(0, 0));
+            tempList7.Add(new Vector2(-2, 4));
+            tempList7.Add(new Vector2(-4, 4));
+            tempList7.Add(new Vector2(-6, 4));
+            tempList7.Add(new Vector2(-8, 4));
+            tempList7.Add(new Vector2(-10, 3));
+            tempList7.Add(new Vector2(6, 4));
+            tempList7.Add(new Vector2(4, 4));
+            tempList7.Add(new Vector2(2, 4));
+            tempList7.Add(new Vector2(0, 4));
 
             leftVectors.Add("SDSD", tempList7);
 
+            List<Vector2> tempList8 = new List<Vector2>();
+
+            tempList8.Add(new Vector2(-3, 2));
+            tempList8.Add(new Vector2(-6, 1));
+            tempList8.Add(new Vector2(-9, -1));
+            tempList8.Add(new Vector2(-12, -2));
+            tempList8.Add(new Vector2(3, 5));
+            tempList8.Add(new Vector2(0, 4));
+
+            leftVectors.Add("SASA", tempList8);
         }
 
         private void fillDown()
         {
             List<Vector2> tempList = new List<Vector2>();
 
-            tempList.Add(new Vector2(-3, 1));
-            tempList.Add(new Vector2(-6, 2));
-            tempList.Add(new Vector2(-9, 4));
-            tempList.Add(new Vector2(-12, 5));
-            tempList.Add(new Vector2(3, -2));
+            tempList.Add(new Vector2(-3, 2));
+            tempList.Add(new Vector2(12, -6));
+            tempList.Add(new Vector2(9, -4));
+            tempList.Add(new Vector2(6, -3));
+            tempList.Add(new Vector2(3, -1));
             tempList.Add(new Vector2(0, 0));
 
             downVectors.Add("FFS", tempList);
@@ -179,14 +189,14 @@ namespace Tactics.Logic
 
             List<Vector2> tempList0 = new List<Vector2>();
 
-            tempList0.Add(new Vector2(-2, 1));
-            tempList0.Add(new Vector2(-4, 3));
-            tempList0.Add(new Vector2(-6, 4));
-            tempList0.Add(new Vector2(-8, 6));
-            tempList0.Add(new Vector2(-10, 8));
-            tempList0.Add(new Vector2(6, -7));
-            tempList0.Add(new Vector2(4, -4));
-            tempList0.Add(new Vector2(2, -2));
+            tempList0.Add(new Vector2(-2, -3));
+            tempList0.Add(new Vector2(14, -4));
+            tempList0.Add(new Vector2(12, -5));
+            tempList0.Add(new Vector2(10, -7));
+            tempList0.Add(new Vector2(8, -5));
+            tempList0.Add(new Vector2(6, -3));
+            tempList0.Add(new Vector2(4, -2));
+            tempList0.Add(new Vector2(2, -1));
             tempList0.Add(new Vector2(0, 0));
 
             downVectors.Add("FFH", tempList0);
@@ -194,14 +204,14 @@ namespace Tactics.Logic
 
             List<Vector2> tempList1 = new List<Vector2>();
 
-            tempList1.Add(new Vector2(-2, 1));
-            tempList1.Add(new Vector2(-4, 2));
-            tempList1.Add(new Vector2(-6, 4));
-            tempList1.Add(new Vector2(-8, 5));
-            tempList1.Add(new Vector2(-10, 0));
-            tempList1.Add(new Vector2(6, -4));
-            tempList1.Add(new Vector2(4, -2));
-            tempList1.Add(new Vector2(2, -1));
+            tempList1.Add(new Vector2(-2, 2));
+            tempList1.Add(new Vector2(14, -13));
+            tempList1.Add(new Vector2(12, -11));
+            tempList1.Add(new Vector2(10, -9));
+            tempList1.Add(new Vector2(8, -8));
+            tempList1.Add(new Vector2(6, -6));
+            tempList1.Add(new Vector2(4, -4));
+            tempList1.Add(new Vector2(2, -2));
             tempList1.Add(new Vector2(0, 0));
 
             downVectors.Add("FFL", tempList1);
@@ -209,92 +219,103 @@ namespace Tactics.Logic
 
             List<Vector2> tempList2 = new List<Vector2>();
 
-            tempList2.Add(new Vector2(-4, 2));
-            tempList2.Add(new Vector2(-8, 4));
-            tempList2.Add(new Vector2(-12, 6));
-            tempList2.Add(new Vector2(-16, 8));
-            tempList2.Add(new Vector2(-20, 10));
-            tempList2.Add(new Vector2(-24, 10));
-            tempList2.Add(new Vector2(-28, 10));
-            tempList2.Add(new Vector2(-32, 10));
-            tempList2.Add(new Vector2(-36, 10));
+            tempList2.Add(new Vector2(-2, 1));
+            tempList2.Add(new Vector2(14, 1));
+            tempList2.Add(new Vector2(12, 2));
+            tempList2.Add(new Vector2(10, 3));
+            tempList2.Add(new Vector2(8, 4));
+            tempList2.Add(new Vector2(6, 4));
+            tempList2.Add(new Vector2(4, 4));
+            tempList2.Add(new Vector2(2, 4));
+            tempList2.Add(new Vector2(0, 4));
 
-            downVectors.Add("FSU", tempList);
+            downVectors.Add("FSU", tempList2);
 
 
             List<Vector2> tempList3 = new List<Vector2>();
 
-            tempList3.Add(new Vector2(-4, 2));
-            tempList3.Add(new Vector2(-8, 4));
-            tempList3.Add(new Vector2(-12, 6));
-            tempList3.Add(new Vector2(-16, 8));
-            tempList3.Add(new Vector2(-20, 11));
-            tempList3.Add(new Vector2(-24, 14));
-            tempList3.Add(new Vector2(-28, 18));
-            tempList3.Add(new Vector2(-32, 22));
-            tempList3.Add(new Vector2(-36, 26));
+            tempList3.Add(new Vector2(-2, 1));
+            tempList3.Add(new Vector2(14, -7));
+            tempList3.Add(new Vector2(12, -6));
+            tempList3.Add(new Vector2(10, -5));
+            tempList3.Add(new Vector2(8, -4));
+            tempList3.Add(new Vector2(6, -2));
+            tempList3.Add(new Vector2(4, 0));
+            tempList3.Add(new Vector2(2, 2));
+            tempList3.Add(new Vector2(0, 4));
 
-            downVectors.Add("FSD", tempList);
+            downVectors.Add("FSD", tempList3);
 
 
             List<Vector2> tempList4 = new List<Vector2>();
 
-            tempList4.Add(new Vector2(-4, 0));
-            tempList4.Add(new Vector2(-8, 0));
-            tempList4.Add(new Vector2(-12, 0));
-            tempList4.Add(new Vector2(-16, 0));
-            tempList4.Add(new Vector2(-20, 2));
-            tempList4.Add(new Vector2(-24, 4));
-            tempList4.Add(new Vector2(-28, 6));
-            tempList4.Add(new Vector2(-32, 8));
-            tempList4.Add(new Vector2(-36, 10));
+            tempList4.Add(new Vector2(-2, 4));
+            tempList4.Add(new Vector2(14, -5));
+            tempList4.Add(new Vector2(12, -5));
+            tempList4.Add(new Vector2(10, -5));
+            tempList4.Add(new Vector2(8, -4));
+            tempList4.Add(new Vector2(6, -3));
+            tempList4.Add(new Vector2(4, -2));
+            tempList4.Add(new Vector2(2, -1));
+            tempList4.Add(new Vector2(0, 0));
 
-            downVectors.Add("SUF", tempList);
+            downVectors.Add("SUF", tempList4);
 
 
             List<Vector2> tempList5 = new List<Vector2>();
 
-            tempList5.Add(new Vector2(-4, 4));
-            tempList5.Add(new Vector2(-8, 8));
-            tempList5.Add(new Vector2(-12, 12));
-            tempList5.Add(new Vector2(-16, 16));
-            tempList5.Add(new Vector2(-20, 18));
-            tempList5.Add(new Vector2(-24, 20));
-            tempList5.Add(new Vector2(-28, 22));
-            tempList5.Add(new Vector2(-32, 24));
-            tempList5.Add(new Vector2(-36, 26));
+            tempList5.Add(new Vector2(-2, 6));
+            tempList5.Add(new Vector2(14, -9));
+            tempList5.Add(new Vector2(12, -7));
+            tempList5.Add(new Vector2(10, -5));
+            tempList5.Add(new Vector2(8, -4));
+            tempList5.Add(new Vector2(6, -3));
+            tempList5.Add(new Vector2(4, -2));
+            tempList5.Add(new Vector2(2, -1));
+            tempList5.Add(new Vector2(0, 0));
 
-            downVectors.Add("SDF", tempList);
+            downVectors.Add("SDF", tempList5);
 
 
             List<Vector2> tempList6 = new List<Vector2>();
 
-            tempList6.Add(new Vector2(-4, 0));
-            tempList6.Add(new Vector2(-8, 0));
-            tempList6.Add(new Vector2(-12, 0));
-            tempList6.Add(new Vector2(-16, 1));
-            tempList6.Add(new Vector2(-20, 1));
-            tempList6.Add(new Vector2(-24, 2));
-            tempList6.Add(new Vector2(-28, 2));
-            tempList6.Add(new Vector2(-32, 2));
-            tempList6.Add(new Vector2(-36, 2));
+            tempList6.Add(new Vector2(-2, 4));
+            tempList6.Add(new Vector2(14, 3));
+            tempList6.Add(new Vector2(12, 3));
+            tempList6.Add(new Vector2(10, 3));
+            tempList6.Add(new Vector2(8, 4));
+            tempList6.Add(new Vector2(6, 4));
+            tempList6.Add(new Vector2(4, 4));
+            tempList6.Add(new Vector2(2, 4));
+            tempList6.Add(new Vector2(0, 4));
 
-            downVectors.Add("SUSU", tempList);
+            downVectors.Add("SUSU", tempList6);
 
 
             List<Vector2> tempList7 = new List<Vector2>();
 
-            tempList7.Add(new Vector2(-4, 4));
-            tempList7.Add(new Vector2(-8, 8));
-            tempList7.Add(new Vector2(-12, 12));
-            tempList7.Add(new Vector2(-16, 16));
-            tempList7.Add(new Vector2(-20, 19));
-            tempList7.Add(new Vector2(-24, 22));
-            tempList7.Add(new Vector2(-28, 26));
-            tempList7.Add(new Vector2(-32, 30));
-            tempList7.Add(new Vector2(-36, 34));
+            tempList7.Add(new Vector2(-2, 6));
+            tempList7.Add(new Vector2(14, -9));
+            tempList7.Add(new Vector2(12, -7));
+            tempList7.Add(new Vector2(10, -5));
+            tempList7.Add(new Vector2(8, -4));
+            tempList7.Add(new Vector2(6, -2));
+            tempList7.Add(new Vector2(4, 0));
+            tempList7.Add(new Vector2(2, 2));
+            tempList7.Add(new Vector2(0, 4));
 
-            downVectors.Add("SDSD", tempList);
+            downVectors.Add("SDSD", tempList7);
+
+            List<Vector2> tempList8 = new List<Vector2>();
+
+            tempList8.Add(new Vector2(-3, 6));
+            tempList8.Add(new Vector2(12, -2));
+            tempList8.Add(new Vector2(9, 0));
+            tempList8.Add(new Vector2(6, 1));
+            tempList8.Add(new Vector2(3, 3));
+            tempList8.Add(new Vector2(0, 4));
+
+            downVectors.Add("SASA", tempList8);
 
         }
 
@@ -302,11 +323,11 @@ namespace Tactics.Logic
         {
             List<Vector2> tempList = new List<Vector2>();
 
-            tempList.Add(new Vector2(3, 1));
-            tempList.Add(new Vector2(6, 2));
-            tempList.Add(new Vector2(9, 4));
-            tempList.Add(new Vector2(12, 5));
-            tempList.Add(new Vector2(-3, -2));
+            tempList.Add(new Vector2(3, 2));
+            tempList.Add(new Vector2(-12, -6));
+            tempList.Add(new Vector2(-9, -4));
+            tempList.Add(new Vector2(-6, -3));
+            tempList.Add(new Vector2(-3, -1));
             tempList.Add(new Vector2(0, 0));
 
             rightVectors.Add("FFS", tempList);
@@ -314,14 +335,14 @@ namespace Tactics.Logic
 
             List<Vector2> tempList0 = new List<Vector2>();
 
-            tempList0.Add(new Vector2(2, 1));
-            tempList0.Add(new Vector2(4, 3));
-            tempList0.Add(new Vector2(6, 4));
-            tempList0.Add(new Vector2(8, 6));
-            tempList0.Add(new Vector2(10, 8));
-            tempList0.Add(new Vector2(-6, -7));
-            tempList0.Add(new Vector2(-4, -4));
-            tempList0.Add(new Vector2(-2, -2));
+            tempList0.Add(new Vector2(2, -3));
+            tempList0.Add(new Vector2(-14, -4));
+            tempList0.Add(new Vector2(-12, -5));
+            tempList0.Add(new Vector2(-10, -7));
+            tempList0.Add(new Vector2(-8, -5));
+            tempList0.Add(new Vector2(-6, -3));
+            tempList0.Add(new Vector2(-4, -2));
+            tempList0.Add(new Vector2(-2, -1));
             tempList0.Add(new Vector2(0, 0));
 
             rightVectors.Add("FFH", tempList0);
@@ -329,14 +350,14 @@ namespace Tactics.Logic
 
             List<Vector2> tempList1 = new List<Vector2>();
 
-            tempList1.Add(new Vector2(2, 1));
-            tempList1.Add(new Vector2(4, 2));
-            tempList1.Add(new Vector2(6, 4));
-            tempList1.Add(new Vector2(8, 5));
-            tempList1.Add(new Vector2(10, 0));
-            tempList1.Add(new Vector2(-6, -4));
-            tempList1.Add(new Vector2(-4, -2));
-            tempList1.Add(new Vector2(-2, -1));
+            tempList1.Add(new Vector2(2, 2));
+            tempList1.Add(new Vector2(-14, -13));
+            tempList1.Add(new Vector2(-12, -11));
+            tempList1.Add(new Vector2(-10, -9));
+            tempList1.Add(new Vector2(-8, -8));
+            tempList1.Add(new Vector2(-6, -6));
+            tempList1.Add(new Vector2(-4, -4));
+            tempList1.Add(new Vector2(-2, -2));
             tempList1.Add(new Vector2(0, 0));
 
             rightVectors.Add("FFL", tempList1);
@@ -344,92 +365,103 @@ namespace Tactics.Logic
 
             List<Vector2> tempList2 = new List<Vector2>();
 
-            tempList2.Add(new Vector2(4, 2));
-            tempList2.Add(new Vector2(8, 4));
-            tempList2.Add(new Vector2(12, 6));
-            tempList2.Add(new Vector2(16, 8));
-            tempList2.Add(new Vector2(20, 10));
-            tempList2.Add(new Vector2(24, 10));
-            tempList2.Add(new Vector2(28, 10));
-            tempList2.Add(new Vector2(32, 10));
-            tempList2.Add(new Vector2(36, 10));
+            tempList2.Add(new Vector2(2, 1));
+            tempList2.Add(new Vector2(-14, 1));
+            tempList2.Add(new Vector2(-12, 2));
+            tempList2.Add(new Vector2(-10, 3));
+            tempList2.Add(new Vector2(-8, 4));
+            tempList2.Add(new Vector2(-6, 4));
+            tempList2.Add(new Vector2(-4, 4));
+            tempList2.Add(new Vector2(-2, 4));
+            tempList2.Add(new Vector2(0, 4));
 
-            rightVectors.Add("FSU", tempList);
+            rightVectors.Add("FSU", tempList2);
 
 
             List<Vector2> tempList3 = new List<Vector2>();
 
-            tempList3.Add(new Vector2(4, 2));
-            tempList3.Add(new Vector2(8, 4));
-            tempList3.Add(new Vector2(12, 6));
-            tempList3.Add(new Vector2(16, 8));
-            tempList3.Add(new Vector2(20, 11));
-            tempList3.Add(new Vector2(24, 14));
-            tempList3.Add(new Vector2(28, 18));
-            tempList3.Add(new Vector2(32, 22));
-            tempList3.Add(new Vector2(36, 26));
+            tempList3.Add(new Vector2(2, 1));
+            tempList3.Add(new Vector2(-14, -7));
+            tempList3.Add(new Vector2(-12, -6));
+            tempList3.Add(new Vector2(-10, -5));
+            tempList3.Add(new Vector2(-8, -4));
+            tempList3.Add(new Vector2(-6, -2));
+            tempList3.Add(new Vector2(-4, 0));
+            tempList3.Add(new Vector2(-2, 2));
+            tempList3.Add(new Vector2(0, 4));
 
-            rightVectors.Add("FSD", tempList);
+            rightVectors.Add("FSD", tempList3);
 
 
             List<Vector2> tempList4 = new List<Vector2>();
 
-            tempList4.Add(new Vector2(4, 0));
-            tempList4.Add(new Vector2(8, 0));
-            tempList4.Add(new Vector2(12, 0));
-            tempList4.Add(new Vector2(16, 0));
-            tempList4.Add(new Vector2(20, 2));
-            tempList4.Add(new Vector2(24, 4));
-            tempList4.Add(new Vector2(28, 6));
-            tempList4.Add(new Vector2(32, 8));
-            tempList4.Add(new Vector2(36, 10));
+            tempList4.Add(new Vector2(2, 4));
+            tempList4.Add(new Vector2(-14, -5));
+            tempList4.Add(new Vector2(-12, -5));
+            tempList4.Add(new Vector2(-10, -5));
+            tempList4.Add(new Vector2(-8, -4));
+            tempList4.Add(new Vector2(-6, -3));
+            tempList4.Add(new Vector2(-4, -2));
+            tempList4.Add(new Vector2(-2, -1));
+            tempList4.Add(new Vector2(0, 0));
 
-            rightVectors.Add("SUF", tempList);
+            rightVectors.Add("SUF", tempList4);
 
 
             List<Vector2> tempList5 = new List<Vector2>();
 
-            tempList5.Add(new Vector2(4, 4));
-            tempList5.Add(new Vector2(8, 8));
-            tempList5.Add(new Vector2(12, 12));
-            tempList5.Add(new Vector2(16, 16));
-            tempList5.Add(new Vector2(20, 18));
-            tempList5.Add(new Vector2(24, 20));
-            tempList5.Add(new Vector2(28, 22));
-            tempList5.Add(new Vector2(32, 24));
-            tempList5.Add(new Vector2(36, 26));
+            tempList5.Add(new Vector2(2, 6));
+            tempList5.Add(new Vector2(-14, -9));
+            tempList5.Add(new Vector2(-12, -7));
+            tempList5.Add(new Vector2(-10, -5));
+            tempList5.Add(new Vector2(-8, -4));
+            tempList5.Add(new Vector2(-6, -3));
+            tempList5.Add(new Vector2(-4, -2));
+            tempList5.Add(new Vector2(-2, -1));
+            tempList5.Add(new Vector2(0, 0));
 
-            rightVectors.Add("SDF", tempList);
+            rightVectors.Add("SDF", tempList5);
 
 
             List<Vector2> tempList6 = new List<Vector2>();
 
-            tempList6.Add(new Vector2(4, 0));
-            tempList6.Add(new Vector2(8, 0));
-            tempList6.Add(new Vector2(12, 0));
-            tempList6.Add(new Vector2(16, 1));
-            tempList6.Add(new Vector2(20, 1));
-            tempList6.Add(new Vector2(24, 2));
-            tempList6.Add(new Vector2(28, 2));
-            tempList6.Add(new Vector2(32, 2));
-            tempList6.Add(new Vector2(36, 2));
+            tempList6.Add(new Vector2(2, 4));
+            tempList6.Add(new Vector2(-14, 3));
+            tempList6.Add(new Vector2(-12, 3));
+            tempList6.Add(new Vector2(-10, 3));
+            tempList6.Add(new Vector2(-8, 4));
+            tempList6.Add(new Vector2(-6, 4));
+            tempList6.Add(new Vector2(-4, 4));
+            tempList6.Add(new Vector2(-2, 4));
+            tempList6.Add(new Vector2(0, 4));
 
-            rightVectors.Add("SUSU", tempList);
+            rightVectors.Add("SUSU", tempList6);
 
 
             List<Vector2> tempList7 = new List<Vector2>();
 
-            tempList7.Add(new Vector2(4, 4));
-            tempList7.Add(new Vector2(8, 8));
-            tempList7.Add(new Vector2(12, 12));
-            tempList7.Add(new Vector2(16, 16));
-            tempList7.Add(new Vector2(20, 19));
-            tempList7.Add(new Vector2(24, 22));
-            tempList7.Add(new Vector2(28, 26));
-            tempList7.Add(new Vector2(32, 30));
-            tempList7.Add(new Vector2(36, 34));
+            tempList7.Add(new Vector2(2, 6));
+            tempList7.Add(new Vector2(-14, -9));
+            tempList7.Add(new Vector2(-12, -7));
+            tempList7.Add(new Vector2(-10, -5));
+            tempList7.Add(new Vector2(-8, -4));
+            tempList7.Add(new Vector2(-6, -2));
+            tempList7.Add(new Vector2(-4, 0));
+            tempList7.Add(new Vector2(-2, 2));
+            tempList7.Add(new Vector2(0, 4));
 
-            rightVectors.Add("SDSD", tempList);
+            rightVectors.Add("SDSD", tempList7);
+
+            List<Vector2> tempList8 = new List<Vector2>();
+
+            tempList8.Add(new Vector2(3, 6));
+            tempList8.Add(new Vector2(-12, -2));
+            tempList8.Add(new Vector2(-9, 0));
+            tempList8.Add(new Vector2(-6, 1));
+            tempList8.Add(new Vector2(-3, 3));
+            tempList8.Add(new Vector2(0, 4));
+
+            rightVectors.Add("SASA", tempList8);
 
         }
 
@@ -437,11 +469,11 @@ namespace Tactics.Logic
         {
             List<Vector2> tempList = new List<Vector2>();
 
-            tempList.Add(new Vector2(3, -1));
-            tempList.Add(new Vector2(6, -2));
-            tempList.Add(new Vector2(9, -4));
-            tempList.Add(new Vector2(12, -5));
-            tempList.Add(new Vector2(-3, 2));
+            tempList.Add(new Vector2(3, -2));
+            tempList.Add(new Vector2(6, -3));
+            tempList.Add(new Vector2(9, -5));
+            tempList.Add(new Vector2(12, -6));
+            tempList.Add(new Vector2(-3, 1));
             tempList.Add(new Vector2(0, 0));
 
             upVectors.Add("FFS", tempList);
@@ -449,12 +481,12 @@ namespace Tactics.Logic
 
             List<Vector2> tempList0 = new List<Vector2>();
 
-            tempList0.Add(new Vector2(2, -1));
-            tempList0.Add(new Vector2(4, -3));
-            tempList0.Add(new Vector2(6, -4));
-            tempList0.Add(new Vector2(8, -6));
-            tempList0.Add(new Vector2(10, -8));
-            tempList0.Add(new Vector2(-6, 7));
+            tempList0.Add(new Vector2(2, -2));
+            tempList0.Add(new Vector2(4, -4));
+            tempList0.Add(new Vector2(6, -6));
+            tempList0.Add(new Vector2(8, -8));
+            tempList0.Add(new Vector2(10, -9));
+            tempList0.Add(new Vector2(-6, 6));
             tempList0.Add(new Vector2(-4, 4));
             tempList0.Add(new Vector2(-2, 2));
             tempList0.Add(new Vector2(0, 0));
@@ -464,14 +496,14 @@ namespace Tactics.Logic
 
             List<Vector2> tempList1 = new List<Vector2>();
 
-            tempList1.Add(new Vector2(2, -1));
-            tempList1.Add(new Vector2(4, -2));
-            tempList1.Add(new Vector2(6, -4));
-            tempList1.Add(new Vector2(8, -5));
-            tempList1.Add(new Vector2(10, 0));
-            tempList1.Add(new Vector2(-6, 4));
-            tempList1.Add(new Vector2(-4, 2));
-            tempList1.Add(new Vector2(-2, 1));
+            tempList1.Add(new Vector2(2, -2));
+            tempList1.Add(new Vector2(4, -4));
+            tempList1.Add(new Vector2(6, -6));
+            tempList1.Add(new Vector2(8, -4));
+            tempList1.Add(new Vector2(10, -4));
+            tempList1.Add(new Vector2(-6, -3));
+            tempList1.Add(new Vector2(-4, -2));
+            tempList1.Add(new Vector2(-2, -1));
             tempList1.Add(new Vector2(0, 0));
 
             upVectors.Add("FFL", tempList1);
@@ -481,12 +513,12 @@ namespace Tactics.Logic
 
             tempList2.Add(new Vector2(2, -1));
             tempList2.Add(new Vector2(4, -2));
-            tempList2.Add(new Vector2(6, -4));
-            tempList2.Add(new Vector2(8, -5));
-            tempList2.Add(new Vector2(10, -6));
-            tempList2.Add(new Vector2(-6, 9));
-            tempList2.Add(new Vector2(-4, 7));
-            tempList2.Add(new Vector2(-2, 5));
+            tempList2.Add(new Vector2(6, -3));
+            tempList2.Add(new Vector2(8, -4));
+            tempList2.Add(new Vector2(10, -5));
+            tempList2.Add(new Vector2(-6, 10));
+            tempList2.Add(new Vector2(-4, 8));
+            tempList2.Add(new Vector2(-2, 6));
             tempList2.Add(new Vector2(0, 4));
 
             upVectors.Add("FSU", tempList2);
@@ -496,27 +528,27 @@ namespace Tactics.Logic
 
             tempList3.Add(new Vector2(2, -1));
             tempList3.Add(new Vector2(4, -2));
-            tempList3.Add(new Vector2(6, -4));
-            tempList3.Add(new Vector2(8, -5));
-            tempList3.Add(new Vector2(10, 0));
-            tempList3.Add(new Vector2(-6, 0));
-            tempList3.Add(new Vector2(-4, 0));
-            tempList3.Add(new Vector2(-2, 0));
-            tempList3.Add(new Vector2(0, 0));
+            tempList3.Add(new Vector2(6, -3));
+            tempList3.Add(new Vector2(8, -4));
+            tempList3.Add(new Vector2(10, -5));
+            tempList3.Add(new Vector2(-6, 4));
+            tempList3.Add(new Vector2(-4, 4));
+            tempList3.Add(new Vector2(-2, 4));
+            tempList3.Add(new Vector2(0, 4));
 
             upVectors.Add("FSD", tempList3);
 
 
             List<Vector2> tempList4 = new List<Vector2>();
 
-            tempList4.Add(new Vector2(2, -2));
-            tempList4.Add(new Vector2(4, -4));
-            tempList4.Add(new Vector2(6, -6));
-            tempList4.Add(new Vector2(8, -8));
-            tempList4.Add(new Vector2(10, -9));
-            tempList4.Add(new Vector2(-6, 4));
-            tempList4.Add(new Vector2(-4, 2));
-            tempList4.Add(new Vector2(-2, 1));
+            tempList4.Add(new Vector2(2, 3));
+            tempList4.Add(new Vector2(4, 2));
+            tempList4.Add(new Vector2(6, 1));
+            tempList4.Add(new Vector2(8, 0));
+            tempList4.Add(new Vector2(10, -1));
+            tempList4.Add(new Vector2(-6, 6));
+            tempList4.Add(new Vector2(-4, 4));
+            tempList4.Add(new Vector2(-2, 2));
             tempList4.Add(new Vector2(0, 0));
 
             upVectors.Add("SUF", tempList4);
@@ -524,13 +556,13 @@ namespace Tactics.Logic
 
             List<Vector2> tempList5 = new List<Vector2>();
 
-            tempList5.Add(new Vector2(2, 0));
-            tempList5.Add(new Vector2(4, 0));
-            tempList5.Add(new Vector2(6, 0));
-            tempList5.Add(new Vector2(8, 0));
-            tempList5.Add(new Vector2(10, 0));
-            tempList5.Add(new Vector2(-6, 5));
-            tempList5.Add(new Vector2(-4, 3));
+            tempList5.Add(new Vector2(2, 4));
+            tempList5.Add(new Vector2(4, 4));
+            tempList5.Add(new Vector2(6, 4));
+            tempList5.Add(new Vector2(8, 4));
+            tempList5.Add(new Vector2(10, 4));
+            tempList5.Add(new Vector2(-6, 3));
+            tempList5.Add(new Vector2(-4, 2));
             tempList5.Add(new Vector2(-2, 1));
             tempList5.Add(new Vector2(0, 0));
 
@@ -539,33 +571,43 @@ namespace Tactics.Logic
 
             List<Vector2> tempList6 = new List<Vector2>();
 
-            tempList6.Add(new Vector2(2, -2));
-            tempList6.Add(new Vector2(4, -4));
-            tempList6.Add(new Vector2(6, -6));
-            tempList6.Add(new Vector2(8, -8));
-            tempList6.Add(new Vector2(10, -11));
-            tempList6.Add(new Vector2(-6, 6));
-            tempList6.Add(new Vector2(-4, 4));
-            tempList6.Add(new Vector2(-2, 2));
-            tempList6.Add(new Vector2(0, 0));
+            tempList6.Add(new Vector2(2, 2));
+            tempList6.Add(new Vector2(4, 0));
+            tempList6.Add(new Vector2(6, -2));
+            tempList6.Add(new Vector2(8, -4));
+            tempList6.Add(new Vector2(10, -5));
+            tempList6.Add(new Vector2(-6, 10));
+            tempList6.Add(new Vector2(-4, 8));
+            tempList6.Add(new Vector2(-2, 6));
+            tempList6.Add(new Vector2(0, 4));
 
             upVectors.Add("SUSU", tempList6);
 
 
             List<Vector2> tempList7 = new List<Vector2>();
 
-            tempList7.Add(new Vector2(2, 0));
-            tempList7.Add(new Vector2(4, 0));
-            tempList7.Add(new Vector2(6, 0));
-            tempList7.Add(new Vector2(8, 0));
-            tempList7.Add(new Vector2(10, -1));
-            tempList7.Add(new Vector2(-6, 0));
-            tempList7.Add(new Vector2(-4, 0));
-            tempList7.Add(new Vector2(-2, 0));
-            tempList7.Add(new Vector2(0, 0));
+            tempList7.Add(new Vector2(2, 4));
+            tempList7.Add(new Vector2(4, 4));
+            tempList7.Add(new Vector2(6, 4));
+            tempList7.Add(new Vector2(8, 4));
+            tempList7.Add(new Vector2(10, 3));
+            tempList7.Add(new Vector2(-6, 4));
+            tempList7.Add(new Vector2(-4, 4));
+            tempList7.Add(new Vector2(-2, 4));
+            tempList7.Add(new Vector2(0, 4));
 
             upVectors.Add("SDSD", tempList7);
 
+            List<Vector2> tempList8 = new List<Vector2>();
+
+            tempList8.Add(new Vector2(3, 2));
+            tempList8.Add(new Vector2(6, 1));
+            tempList8.Add(new Vector2(9, -1));
+            tempList8.Add(new Vector2(12, -2));
+            tempList8.Add(new Vector2(-3, 5));
+            tempList8.Add(new Vector2(0, 4));
+
+            upVectors.Add("SASA", tempList8);
         }
 
 
