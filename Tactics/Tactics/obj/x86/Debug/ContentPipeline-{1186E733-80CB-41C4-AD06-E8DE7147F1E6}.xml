@@ -334,6 +334,15 @@
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\TestCharacter\testplayersprites.xnb</Output>
       <Time>2014-08-16T21:09:19.5247336-04:00</Time>
     </Item>
+    <Item>
+      <Source>Images\Objects\testbarrel.png</Source>
+      <Name>Images\Objects\testbarrel</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\Objects\testbarrel.xnb</Output>
+      <Time>2014-08-20T21:20:28.4593984-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{1186E733-80CB-41C4-AD06-E8DE7147F1E6}</ContentProjectGUID>

@@ -24,6 +24,7 @@ namespace Tactics.ContentHandlers.Test
             rightSlope = new List<Texture2D>();
             topSlope = new List<Texture2D>();
             bottomSlope = new List<Texture2D>();
+            manipulatableObjects = new List<Texture2D>();
         }
 
         public override void loadContent()
@@ -31,6 +32,12 @@ namespace Tactics.ContentHandlers.Test
             loadBlueTileImages();
             loadGreenTileImages();
             loadBrownTileImages();
+            loadObjects();
+        }
+
+        private void loadObjects()
+        {
+            manipulatableObjects.Add(content.Load<Texture2D>("Images/Objects/testbarrel"));
         }
 
         private void loadBlueTileImages()

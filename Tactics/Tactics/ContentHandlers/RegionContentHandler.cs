@@ -24,11 +24,23 @@ namespace Tactics.ContentHandlers
         protected List<Texture2D> topSlope;
         protected List<Texture2D> bottomSlope;
 
+        protected List<Texture2D> manipulatableObjects;
+
         public abstract void loadContent();
 
         public void unloadContent()
         {
             content.Unload();
+        }
+
+        public List<Texture2D> getObjectContent()
+        {
+            return manipulatableObjects;
+        }
+
+        public Texture2D getSpecificObjectImage(int index)
+        {
+            return manipulatableObjects[index];
         }
 
         public List<Texture2D> getTileImages()

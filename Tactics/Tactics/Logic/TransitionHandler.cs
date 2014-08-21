@@ -5,6 +5,7 @@ using System.Text;
 
 using Tactics.Game;
 using Tactics.ContentHandlers;
+using Tactics.Game.Environment;
 
 namespace Tactics.Logic
 {
@@ -22,6 +23,11 @@ namespace Tactics.Logic
             gameInit.getFreeRoamState().setCurrentZones(gameInit.getRegionFactory().getZoneFactories()[regionNumber].getRegionZones());
             gameInit.getFreeRoamState().setCurrentZone(zoneNumber);
             content.getRegionContent()[regionNumber].loadContent();
+        }
+
+        public void transition(GameInit gameInit, Tile currentTile)
+        {
+
         }
     }
 }

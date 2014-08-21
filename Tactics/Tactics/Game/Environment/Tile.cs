@@ -23,6 +23,11 @@ namespace Tactics.Game.Environment
 
         private int walkingHeight;
 
+        private bool transition;
+        private int transitionDirection;
+        private bool regionTransition;
+        private int destination;
+
 
         public Tile(bool sloped, int walkingHeight)
         {
@@ -35,6 +40,34 @@ namespace Tactics.Game.Environment
             this.sloped = sloped;
             this.slopedOrientation = slopedOrientation;
             this.walkingHeight = walkingHeight;
+        }
+
+        public bool isTransition()
+        {
+            return transition;
+        }
+
+        public int getTransitionDirection()
+        {
+            return transitionDirection;
+        }
+
+        public bool isRegionTransition()
+        {
+            return regionTransition;
+        }
+
+        public int getDestination()
+        {
+            return destination;
+        }
+
+        public void createTransition(bool isRegionTrans, int destination, int direction)
+        {
+            transition = true;
+            regionTransition = isRegionTrans;
+            this.destination = destination;
+            transitionDirection = direction;
         }
 
         public void setWalkingHeight(int height)

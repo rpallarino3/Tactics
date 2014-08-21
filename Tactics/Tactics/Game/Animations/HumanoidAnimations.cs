@@ -81,15 +81,5 @@ namespace Tactics.Game.Animations
             tempList.Add(new Vector2(0, 0));
             animationOffsets.Add(tempList);
         }
-
-        public Vector2 getSpriteSize()
-        {
-            return spriteSize;
-        }
-
-        public Vector2 getSectionSize()
-        {
-            return sectionSize;
-        }
     }
 }

@@ -84,6 +84,9 @@
     <Compile Include="Game\Characters\CharacterAnimation\HumanoidCharacterAnimations.cs" />
     <Compile Include="Game\Characters\CharacterFactory.cs" />
     <Compile Include="Game\Environment\ManipulatableObject.cs" />
+    <Compile Include="Game\Environment\ManipulatableObjects\Objects\Barrel.cs" />
+    <Compile Include="Game\Environment\ManipulatableObjects\Animations\BarrelAnimation.cs" />
+    <Compile Include="Game\Environment\ManipulatableObjects\Animations\ObjectAnimation.cs" />
     <Compile Include="Game\Environment\Region.cs" />
     <Compile Include="Game\Environment\TestArea\TestZone1.cs" />
     <Compile Include="Game\Environment\Tile.cs" />
