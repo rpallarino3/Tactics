@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Tactics.Game.Environment.ManipulatableObjects.Animations;
+using Tactics.Game.Characters;
 
 namespace Tactics.Game.Environment.ManipulatableObjects.Objects
 {
@@ -16,10 +17,21 @@ namespace Tactics.Game.Environment.ManipulatableObjects.Objects
             yLoc = y;
             type = 0;
             animation = new BarrelAnimation();
+
+            finishedActivation = true;
+            upInteract = true;
+            downInteract = true;
+            rightInteract = true;
+            leftInteract = true;
         }
 
-        public override void activate()
+        public override void activate(GameInit gameInit, Character interactingCharacter)
         {
+        }
+
+        public override void continueActivation(GameInit gameInit, Character interactingCharacter)
+        {
+
         }
     }
 }

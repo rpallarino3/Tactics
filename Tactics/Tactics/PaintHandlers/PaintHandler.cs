@@ -49,31 +49,31 @@ namespace Tactics.PaintHandlers
         {
         }
 
-        public void draw(SpriteBatch spriteBatch, GameInit gameInit, ContentHandler contentHandler)
+        public void draw(SpriteBatch spriteBatch, GameInit gameInit, ContentHandler contentHandler, Color color)
         {
             if (gameInit.getGameState().getState() == gameInit.getGameState().START_STATE)
             {
-                drawStartState(spriteBatch, gameInit, contentHandler);
+                drawStartState(spriteBatch, gameInit, contentHandler, color);
             }
             else if (gameInit.getGameState().getState() == gameInit.getGameState().FREE_ROAM_STATE)
             {
-                drawFreeRoamState(spriteBatch, gameInit, contentHandler);
+                drawFreeRoamState(spriteBatch, gameInit, contentHandler, color);
             }
             else if (gameInit.getGameState().getState() == gameInit.getGameState().BATTLE_STATE)
             {
-                drawBattleState(spriteBatch, gameInit, contentHandler);
+                drawBattleState(spriteBatch, gameInit, contentHandler, color);
             }
             else if (gameInit.getGameState().getState() == gameInit.getGameState().PAUSE_STATE)
             {
-                drawPauseState(spriteBatch, gameInit, contentHandler);
+                drawPauseState(spriteBatch, gameInit, contentHandler, color);
             }
         }
 
-        private void drawStartState(SpriteBatch spriteBatch, GameInit gameInit, ContentHandler contentHandler)
+        private void drawStartState(SpriteBatch spriteBatch, GameInit gameInit, ContentHandler contentHandler, Color color)
         {
         }
 
-        private void drawFreeRoamState(SpriteBatch spriteBatch, GameInit gameInit, ContentHandler contentHandler)
+        private void drawFreeRoamState(SpriteBatch spriteBatch, GameInit gameInit, ContentHandler contentHandler, Color color)
         {
             Zone currentZone = gameInit.getFreeRoamState().getCurrentZone();
             List<Vector2> orderedTileList = currentZone.getTileLocations();
@@ -97,56 +97,56 @@ namespace Tactics.PaintHandlers
                     {
                         if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
                         {
-                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getTopLeftSlope()[orderedImageList[i]], drawLoc, Color.White);
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getTopLeftSlope()[orderedImageList[i]], drawLoc, color);
                         }
                     }
                     else if (direction == 1)
                     {
                         if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
                         {
-                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getTopRightSlope()[orderedImageList[i]], drawLoc, Color.White);
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getTopRightSlope()[orderedImageList[i]], drawLoc, color);
                         }
                     }
                     else if (direction == 2)
                     {
                         if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
                         {
-                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getBottomRightSlope()[orderedImageList[i]], drawLoc, Color.White);
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getBottomRightSlope()[orderedImageList[i]], drawLoc, color);
                         }
                     }
                     else if (direction == 3)
                     {
                         if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
                         {
-                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getBottomLeftSlope()[orderedImageList[i]], drawLoc, Color.White);
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getBottomLeftSlope()[orderedImageList[i]], drawLoc, color);
                         }
                     }
                     else if (direction == 4)
                     {
                         if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
                         {
-                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getTopSlope()[orderedImageList[i]], drawLoc, Color.White);
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getTopSlope()[orderedImageList[i]], drawLoc, color);
                         }
                     }
                     else if (direction == 5)
                     {
                         if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
                         {
-                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getBottomSlope()[orderedImageList[i]], drawLoc, Color.White);
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getBottomSlope()[orderedImageList[i]], drawLoc, color);
                         }
                     }
                     else if (direction == 6)
                     {
                         if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
                         {
-                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getRightSlope()[orderedImageList[i]], drawLoc, Color.White);
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getRightSlope()[orderedImageList[i]], drawLoc, color);
                         }
                     }
                     else if (direction == 7)
                     {
                         if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y))
                         {
-                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getLeftSlope()[orderedImageList[i]], drawLoc, Color.White);
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getLeftSlope()[orderedImageList[i]], drawLoc, color);
                         }
                     }
                 }
@@ -154,7 +154,7 @@ namespace Tactics.PaintHandlers
                 {
                     if (checkIfDisplay(drawLoc, TILESIZE.X, TILESIZE.Y + TILETHICKNESS * (Math.Abs(heightDiff) - 1)))
                     {
-                        spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getTileImages()[orderedImageList[i]], drawLoc, Color.White);
+                        spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getTileImages()[orderedImageList[i]], drawLoc, color);
                     }
                 }
 
@@ -167,7 +167,7 @@ namespace Tactics.PaintHandlers
 
                         if (checkIfDisplay(leftEdgeLoc, EDGESIZE.X, EDGESIZE.Y))
                         {
-                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getLeftWallImages()[orderedImageList[i]], leftEdgeLoc, Color.White);
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getLeftWallImages()[orderedImageList[i]], leftEdgeLoc, color);
                         }
 
                     }
@@ -185,7 +185,7 @@ namespace Tactics.PaintHandlers
 
                             if (checkIfDisplay(leftEdgeLoc, EDGESIZE.X, EDGESIZE.Y))
                             {
-                                spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getLeftWallImages()[orderedImageList[i]], leftEdgeLoc, Color.White);
+                                spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getLeftWallImages()[orderedImageList[i]], leftEdgeLoc, color);
                             }
                         }
                     }
@@ -199,7 +199,7 @@ namespace Tactics.PaintHandlers
 
                         if (checkIfDisplay(rightEdgeLoc, EDGESIZE.X, EDGESIZE.Y))
                         {
-                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getRightWallImages()[orderedImageList[i]], rightEdgeLoc, Color.White);
+                            spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getRightWallImages()[orderedImageList[i]], rightEdgeLoc, color);
                         }
                     }
                 }
@@ -215,7 +215,7 @@ namespace Tactics.PaintHandlers
 
                             if (checkIfDisplay(rightEdgeLoc, EDGESIZE.X, EDGESIZE.Y))
                             {
-                                spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getRightWallImages()[orderedImageList[i]], rightEdgeLoc, Color.White);
+                                spriteBatch.Draw(contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getRightWallImages()[orderedImageList[i]], rightEdgeLoc, color);
                             }
                         }
                     }
@@ -232,7 +232,7 @@ namespace Tactics.PaintHandlers
                         int xSize = (int)character.getCharacterAnimations().getAnimations().getSpriteSize().X;
                         int ySize = (int)character.getCharacterAnimations().getAnimations().getSpriteSize().Y;
                         Rectangle sourceRec = new Rectangle(rectX, rectY, xSize, ySize);
-                        spriteBatch.Draw(texture, NORMALPLAYERDRAWLOCATION, sourceRec, Color.White);
+                        spriteBatch.Draw(texture, NORMALPLAYERDRAWLOCATION, sourceRec, color);
                     }
                 }
             }
@@ -250,11 +250,11 @@ namespace Tactics.PaintHandlers
             return false;
         }
 
-        private void drawBattleState(SpriteBatch spriteBatch, GameInit gameInit, ContentHandler contentHandler)
+        private void drawBattleState(SpriteBatch spriteBatch, GameInit gameInit, ContentHandler contentHandler, Color color)
         {
         }
 
-        private void drawPauseState(SpriteBatch spriteBatch, GameInit gameInit, ContentHandler contentHandler)
+        private void drawPauseState(SpriteBatch spriteBatch, GameInit gameInit, ContentHandler contentHandler, Color color)
         {
         }
     }

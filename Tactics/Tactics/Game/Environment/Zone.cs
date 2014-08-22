@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Tactics.Game.Characters;
+using Tactics.Game.Environment.ManipulatableObjects;
+
 using Microsoft.Xna.Framework;
 
 namespace Tactics.Game.Environment
@@ -71,6 +74,28 @@ namespace Tactics.Game.Environment
         public List<Tile> getOrderedTiles()
         {
             return orderedTiles;
+        }
+
+        public void addObject(ManipulatableObject obj, int x, int y)
+        {
+            trafficMap.getObjectBooleanMap()[x, y] = true;
+            trafficMap.getObjectMap()[x, y] = obj;
+        }
+
+        public void addCharacter(Character character, int x, int y)
+        {
+            trafficMap.getCharacterBooleanMap()[x, y] = true;
+            trafficMap.getCharacterMap()[x, y] = character;
+        }
+
+        public void clearObject(int x, int y)
+        {
+            trafficMap.getObjectBooleanMap()[x, y] = false;
+        }
+
+        public void clearCharacter(int x, int y)
+        {
+            trafficMap.getCharacterBooleanMap()[x, y] = false;
         }
 
         public void fillImageMap()

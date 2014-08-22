@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Tactics.Game.Characters;
+using Tactics.Game.Environment;
 
 namespace Tactics.Game
 {

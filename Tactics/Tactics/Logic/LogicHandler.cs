@@ -8,6 +8,7 @@ using Tactics.Game;
 using Tactics.ContentHandlers;
 
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Tactics.Logic
 {
@@ -16,12 +17,17 @@ namespace Tactics.Logic
         private SaveGameHandler saveGameHandler;
         private TransitionHandler transitionHandler;
         private MovementHandler movementHandler;
+        private ObjectHandler objectHandler;
+
+        private Color drawColor;
 
         public LogicHandler()
         {
             saveGameHandler = new SaveGameHandler();
             transitionHandler = new TransitionHandler();
             movementHandler = new MovementHandler();
+            objectHandler = new ObjectHandler();
+            drawColor = Color.White;
         }
 
         public void updateLogic(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)
@@ -279,6 +285,11 @@ namespace Tactics.Logic
         public void loadGame(GameInit gameInit, ContentHandler content)
         {
             saveGameHandler.loadGame(gameInit, content, transitionHandler);
+        }
+
+        public Color getDrawColor()
+        {
+            return drawColor;
         }
 
     }

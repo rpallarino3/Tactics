@@ -132,7 +132,7 @@ namespace Tactics
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            paintHandler.draw(spriteBatch, game, contentHandler);
+            paintHandler.draw(spriteBatch, game, contentHandler, logicHandler.getDrawColor());
             spriteBatch.End();
 
             base.Draw(gameTime);
