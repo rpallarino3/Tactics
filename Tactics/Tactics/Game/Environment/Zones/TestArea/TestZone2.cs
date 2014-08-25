@@ -38,10 +38,10 @@ namespace Tactics.Game.Environment.Zones.TestArea
             createTileLevel(0, 20, 10, 30, 7);
             createTileLevel(10, 30, 4, 6, 8);
             createTileLevel(24, 0, 2, 1, 1);
-            insertBump(30, 30, 14, 14, 1);
-            insertBump(31, 31, 12, 12, 2);
-            insertBump(32, 32, 10, 10, 3);
-            insertBump(33, 33, 8, 8, 4);
+            insertBump(30, 30, 14, 14, 2);
+            insertBump(31, 31, 12, 12, 3);
+            insertBump(32, 32, 10, 10, 4);
+            insertBump(33, 33, 8, 8, 5);
             fillImageRectangle(0, 1, 50, 49, 1);
             fillImageRectangle(24, 0, 2, 1, 1);
             fillImageRectangle(10, 30, 4, 6, 2);
@@ -49,6 +49,8 @@ namespace Tactics.Game.Environment.Zones.TestArea
             addObject(new Barrel(35, 35), 37, 35);
             addObject(new Barrel(35, 35), 35, 37);
             addObject(new Barrel(35, 35), 37, 37);
+
+            tileMap[25, 0].createTransition(false, 0, 2, new Vector2(50, 99));
         }
     }
 }

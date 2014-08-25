@@ -18,14 +18,14 @@ namespace Tactics.Game.Environment.ManipulatableObjects.Objects
             type = 0;
             animation = new BarrelAnimation();
 
-            finishedActivation = true;
+            finishedActivating = true;
             upInteract = true;
             downInteract = true;
             rightInteract = true;
             leftInteract = true;
         }
 
-        public override void activate(GameInit gameInit, Character interactingCharacter)
+        public override void activate(GameInit gameInit, Character interactingCharacter, int activationCode)
         {
         }
 

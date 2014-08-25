@@ -37,6 +37,7 @@ namespace Tactics.Game.Environment.Zones.TestArea
             insertBump(11, 11, 8, 8, 3);
             createTileLevel(14, 14, 2, 2, 4);
             createTileLevel(14, 44, 2, 2, 0);
+            tileMap[50, 99].createTransition(false, 1, 3, new Vector2(25, 0));
         }
     }
 }

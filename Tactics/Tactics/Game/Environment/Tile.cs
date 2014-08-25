@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Microsoft.Xna.Framework;
+
 namespace Tactics.Game.Environment
 {
     class Tile
@@ -27,6 +29,7 @@ namespace Tactics.Game.Environment
         private int transitionDirection;
         private bool regionTransition;
         private int destination;
+        private Vector2 destinationTile;
 
 
         public Tile(bool sloped, int walkingHeight)
@@ -62,12 +65,13 @@ namespace Tactics.Game.Environment
             return destination;
         }
 
-        public void createTransition(bool isRegionTrans, int destination, int direction)
+        public void createTransition(bool isRegionTrans, int destination, int direction, Vector2 destinationTile)
         {
             transition = true;
             regionTransition = isRegionTrans;
             this.destination = destination;
             transitionDirection = direction;
+            this.destinationTile = destinationTile;
         }
 
         public void setWalkingHeight(int height)
@@ -101,7 +105,10 @@ namespace Tactics.Game.Environment
             return walkingHeight;
         }
 
-
+        public Vector2 getDestinationTile()
+        {
+            return destinationTile;
+        }
 
 
     }

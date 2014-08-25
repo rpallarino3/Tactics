@@ -75,7 +75,7 @@ namespace Tactics.Game.Environment
         {
             return orderedTiles;
         }
-
+        
         public void addObject(ManipulatableObject obj, int x, int y)
         {
             trafficMap.getObjectBooleanMap()[x, y] = true;

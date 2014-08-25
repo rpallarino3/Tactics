@@ -18,6 +18,7 @@ namespace Tactics.Logic
         private TransitionHandler transitionHandler;
         private MovementHandler movementHandler;
         private ObjectHandler objectHandler;
+        private ActionHandler actionHandler;
 
         private Color drawColor;
 
@@ -27,6 +28,7 @@ namespace Tactics.Logic
             transitionHandler = new TransitionHandler();
             movementHandler = new MovementHandler();
             objectHandler = new ObjectHandler();
+            actionHandler = new ActionHandler();
             drawColor = Color.White;
         }
 
@@ -68,22 +70,32 @@ namespace Tactics.Logic
             {
                 movementHandler.updateMove(gameInit);
             }
+            else if (transitionHandler.isTransitioning())
+            {
+                transitionHandler.continueTransition(gameInit);
+                drawColor = transitionHandler.getFadeColor();
+            }
+            else if (actionHandler.isActivating())
+            {
+                actionHandler.continueActivation(gameInit);
+            }
             else
             {
-                if (!checkActions(gameInit, keyHandler, content))
+                if (!actionHandler.checkActions(gameInit, keyHandler, content))
                 {
                     if (!checkMove(gameInit, keyHandler, content))
                     {
                         int x = gameInit.getParty().getPartyMembers()[0].getX();
                         int y = gameInit.getParty().getPartyMembers()[0].getY();
+                        int direction = gameInit.getParty().getPartyMembers()[0].getFacingDirection();
 
-                        if (gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].isTransition())
+                        if (gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].isTransition() && gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].getTransitionDirection() == direction)
                         {
-                            transitionHandler.transition(gameInit, gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y]);
+                            gameInit.getParty().getPartyMembers()[0].setFacingDirection(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y].getTransitionDirection());
+                            transitionHandler.startTransition(gameInit, gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y]);
                         }
                         else
                         {
-                            int direction = gameInit.getParty().getPartyMembers()[0].getFacingDirection();
 
                             if (direction == 0)
                             {
@@ -138,7 +150,7 @@ namespace Tactics.Logic
                                 }
                             }
                         }
-                        
+
                     }
                     else
                     {
@@ -148,121 +160,8 @@ namespace Tactics.Logic
                 else
                 {
                 }
-                //Console.WriteLine(gameInit.getParty().getPartyMembers()[0].getTileDrawOffset());
             }
             
-        }
-
-        private bool checkActions(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)
-        {
-            if (checkMainAction(gameInit, keyHandler))
-            {
-                return true;
-            }
-
-            if (keyHandler.isBackReady())
-            {
-                return true;
-            }
-
-            if (keyHandler.isM1Ready())
-            {
-                return true;
-            }
-
-            if (keyHandler.isM2Ready())
-            {
-                return true;
-            }
-            return false;
-        }
-
-        private bool checkMainAction(GameInit gameInit, KeyHandler keyHandler)
-        {
-            int direction = gameInit.getParty().getPartyMembers()[0].getFacingDirection();
-
-            if (direction == 0)
-            {
-                int targetX = gameInit.getParty().getPartyMembers()[0].getX() - 1;
-                int targetY = gameInit.getParty().getPartyMembers()[0].getY();
-
-                if (targetX < 0)
-                {
-                    return false;
-                }
-                else
-                {
-                    checkForInteract(gameInit, targetX, targetY);
-                }
-            }
-            else if (direction == 1)
-            {
-                int targetX = gameInit.getParty().getPartyMembers()[0].getX() + 1;
-                int targetY = gameInit.getParty().getPartyMembers()[0].getY();
-
-                if (targetX >= gameInit.getFreeRoamState().getCurrentZone().getTileWidth())
-                {
-                    return false;
-                }
-                else
-                {
-                    checkForInteract(gameInit, targetX, targetY);
-                }
-            }
-            else if (direction == 2)
-            {
-                int targetX = gameInit.getParty().getPartyMembers()[0].getX();
-                int targetY = gameInit.getParty().getPartyMembers()[0].getY() - 1;
-
-                if (targetY < 0)
-                {
-                    return false;
-                }
-                else
-                {
-                    checkForInteract(gameInit, targetX, targetY);
-                }
-            }
-            else if (direction == 3)
-            {
-                int targetX = gameInit.getParty().getPartyMembers()[0].getX();
-                int targetY = gameInit.getParty().getPartyMembers()[0].getY() + 1;
-
-                if (targetY >= gameInit.getFreeRoamState().getCurrentZone().getTileHeight())
-                {
-                    return false;
-                }
-                else
-                {
-                    checkForInteract(gameInit, targetX, targetY);
-                }
-            }
-            else
-            {
-                return false;
-            }
-            return false;
-        }
-
-        private bool checkForInteract(GameInit gameInit, int targetX, int targetY)
-        {
-            if (gameInit.getFreeRoamState().getCurrentZone().getTrafficMap().getCharacterBooleanMap()[targetX, targetY])
-            {
-                // talk to character
-                return true;
-            }
-            else
-            {
-                if (gameInit.getFreeRoamState().getCurrentZone().getTrafficMap().getObjectBooleanMap()[targetX, targetY])
-                {
-                    //active object
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
         }
 
         private bool checkMove(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)

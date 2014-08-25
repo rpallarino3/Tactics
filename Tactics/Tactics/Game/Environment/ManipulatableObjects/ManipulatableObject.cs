@@ -16,14 +16,14 @@ namespace Tactics.Game.Environment.ManipulatableObjects
         protected int xLoc;
         protected int yLoc;
         protected ObjectAnimation animation;
-        protected bool finishedActivation;
+        protected bool finishedActivating;
 
         protected bool upInteract;
         protected bool downInteract;
         protected bool rightInteract;
         protected bool leftInteract;
 
-        public abstract void activate(GameInit gameInit, Character interactingCharacter);
+        public abstract void activate(GameInit gameInit, Character interactingCharacter, int activationCode);
         public abstract void continueActivation(GameInit gameInit, Character interactingCharacter);
 
         public int getXLoc()
@@ -63,7 +63,31 @@ namespace Tactics.Game.Environment.ManipulatableObjects
 
         public bool isFinishedActivating()
         {
-            return finishedActivation;
+            return finishedActivating;
+        }
+
+        public bool checkForInteract(int direction)
+        {
+            if (direction == 0)
+            {
+                return downInteract;
+            }
+            else if (direction == 1)
+            {
+                return upInteract;
+            }
+            else if (direction == 2)
+            {
+                return leftInteract;
+            }
+            else if (direction == 3)
+            {
+                return rightInteract;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

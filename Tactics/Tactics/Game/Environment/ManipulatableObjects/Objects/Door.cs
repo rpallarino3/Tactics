@@ -5,6 +5,7 @@ using System.Text;
 
 using Tactics.Game.Environment.ManipulatableObjects.Animations;
 using Tactics.Game.Characters;
+using Microsoft.Xna.Framework;
 
 namespace Tactics.Game.Environment.ManipulatableObjects.Objects
 {
@@ -12,6 +13,7 @@ namespace Tactics.Game.Environment.ManipulatableObjects.Objects
     {
         private int destination;
         private bool locked;
+        private Vector2 destinationTile;
 
         public Door(int x, int y, int destination, int side, bool locked)
         {
@@ -24,7 +26,7 @@ namespace Tactics.Game.Environment.ManipulatableObjects.Objects
             this.destination = destination;
             this.locked = locked;
 
-            finishedActivation = true;
+            finishedActivating = true;
             upInteract = false;
             downInteract = false;
             rightInteract = false;
@@ -58,17 +60,23 @@ namespace Tactics.Game.Environment.ManipulatableObjects.Objects
             return locked;
         }
 
-        public int getDestination(int destination)
+        public int getDestination()
         {
             return destination;
         }
 
-        public override void activate(GameInit gameInit, Character interactingCharacter)
+        public Vector2 getDestinationTile()
+        {
+            return destinationTile;
+        }
+
+        public override void activate(GameInit gameInit, Character interactingCharacter, int activationCode)
         {
         }
 
         public override void continueActivation(GameInit gameInit, Character interactingCharacter)
         {
+            
         }
     }
 }

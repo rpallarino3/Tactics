@@ -105,6 +105,7 @@
     <Compile Include="Game\Environment\ZoneFactories\TestZoneFactory.cs" />
     <Compile Include="KeyHandlers\Keybinds.cs" />
     <Compile Include="KeyHandlers\KeyHandler.cs" />
+    <Compile Include="Logic\ActionHandler.cs" />
     <Compile Include="Logic\LogicHandler.cs" />
     <Compile Include="Logic\MovementHandler.cs" />
     <Compile Include="Logic\ObjectHandler.cs" />
