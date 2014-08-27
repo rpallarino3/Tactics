@@ -33,5 +33,13 @@ namespace Tactics.Game.Environment.ManipulatableObjects.Objects
         {
 
         }
+
+        public override void finishActivation(GameInit gameInit)
+        {
+        }
+
+        public override void initialize()
+        {
+        }
     }
 }

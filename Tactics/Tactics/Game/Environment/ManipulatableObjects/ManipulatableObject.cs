@@ -23,8 +23,35 @@ namespace Tactics.Game.Environment.ManipulatableObjects
         protected bool rightInteract;
         protected bool leftInteract;
 
+        protected bool transitionReady;
+        protected bool chatWindow;
+
+        protected Vector2 drawOffset;
+
         public abstract void activate(GameInit gameInit, Character interactingCharacter, int activationCode);
         public abstract void continueActivation(GameInit gameInit, Character interactingCharacter);
+        public abstract void finishActivation(GameInit gameInit);
+        public abstract void initialize();
+
+        public Vector2 getDrawOffset()
+        {
+            return drawOffset;
+        }
+
+        public int getType()
+        {
+            return type;
+        }
+
+        public bool isTransitionReady()
+        {
+            return transitionReady;
+        }
+
+        public bool isChatWindow()
+        {
+            return chatWindow;
+        }
 
         public int getXLoc()
         {

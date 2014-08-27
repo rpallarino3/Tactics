@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Tactics.Game.Environment.ManipulatableObjects;
+
 using Microsoft.Xna.Framework;
 
 namespace Tactics.Game.Environment.Zones.TestArea
@@ -21,6 +23,7 @@ namespace Tactics.Game.Environment.Zones.TestArea
             containedZones = new List<Zone>();
             orderedTiles = new List<Tile>();
             trafficMap = new TrafficMap(tileWidth, tileHeight);
+            objectList = new List<ManipulatableObject>();
             fillZoneMap();
         }
 

@@ -26,6 +26,21 @@ namespace Tactics.Game.Environment
         protected int tileHeight;
         protected int tileWidth;
 
+        protected List<ManipulatableObject> objectList;
+
+        public void initializeObjects()
+        {
+            for (int i = 0; i < objectList.Count; i++)
+            {
+                objectList[i].initialize();
+            }
+        }
+
+        public List<ManipulatableObject> getObjectList()
+        {
+            return objectList;
+        }
+
         public TrafficMap getTrafficMap()
         {
             return trafficMap;
@@ -80,6 +95,7 @@ namespace Tactics.Game.Environment
         {
             trafficMap.getObjectBooleanMap()[x, y] = true;
             trafficMap.getObjectMap()[x, y] = obj;
+            objectList.Add(obj);
         }
 
         public void addCharacter(Character character, int x, int y)

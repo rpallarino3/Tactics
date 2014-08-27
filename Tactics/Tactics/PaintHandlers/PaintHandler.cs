@@ -9,6 +9,7 @@ using Tactics.Game;
 using Tactics.ContentHandlers;
 using Tactics.Game.Environment;
 using Tactics.Game.Characters;
+using Tactics.Game.Environment.ManipulatableObjects;
 
 namespace Tactics.PaintHandlers
 {
@@ -220,7 +221,21 @@ namespace Tactics.PaintHandlers
                         }
                     }
                 }
-                
+
+                if (gameInit.getFreeRoamState().getCurrentZone().getTrafficMap().getObjectBooleanMap()[(int)orderedTileList[i].X, (int)orderedTileList[i].Y])
+                {
+                    ManipulatableObject obj = gameInit.getFreeRoamState().getCurrentZone().getTrafficMap().getObjectMap()[(int)orderedTileList[i].X, (int)orderedTileList[i].Y];
+                    Texture2D texture = contentHandler.getRegionContent()[gameInit.getFreeRoamState().getCurrentRegion()].getObjectContent()[obj.getObjectAnimation().getID()];
+                    int rectX = obj.getObjectAnimation().getColumn() * (int)obj.getObjectAnimation().getSectionSize().X;
+                    int rectY = obj.getObjectAnimation().getRow() * (int)obj.getObjectAnimation().getSectionSize().Y;
+                    int xSize = (int)obj.getObjectAnimation().getSpriteSize().X;
+                    int ySize = (int)obj.getObjectAnimation().getSpriteSize().Y;
+                    Rectangle rect = new Rectangle(rectX, rectY, xSize, ySize);
+                    spriteBatch.Draw(texture, drawLoc + obj.getDrawOffset(), rect, color);
+                }
+
+                // do the same for characters
+
                 if (orderedTileList[i].X == gameInit.getParty().getPartyMembers()[0].getX())
                 {
                     if (orderedTileList[i].Y == gameInit.getParty().getPartyMembers()[0].getY())

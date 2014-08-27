@@ -15,8 +15,8 @@ namespace Tactics.Game.Environment.ManipulatableObjects.Animations
             currentColumn = 0;
             currentRow = 0;
             animations = new List<int>();
-            spriteSize = new Vector2(40, 40);
-            sectionSize = new Vector2(50, 50);
+            spriteSize = new Vector2(30, 40);
+            sectionSize = new Vector2(30, 40);
             fillAnimations();
         }
 
@@ -24,8 +24,8 @@ namespace Tactics.Game.Environment.ManipulatableObjects.Animations
         {
             animations.Add(1);
             animations.Add(1);
-            animations.Add(1);
-            animations.Add(1);
+            animations.Add(12);
+            animations.Add(12);
         }
         
     }

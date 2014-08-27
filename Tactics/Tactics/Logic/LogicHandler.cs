@@ -6,6 +6,7 @@ using System.Text;
 using Tactics.KeyHandlers;
 using Tactics.Game;
 using Tactics.ContentHandlers;
+using Tactics.Game.Environment.ManipulatableObjects.Objects;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -78,6 +79,11 @@ namespace Tactics.Logic
             else if (actionHandler.isActivating())
             {
                 actionHandler.continueActivation(gameInit);
+
+                if (actionHandler.isTransitionReady())
+                {
+                    transitionHandler.startTransition(gameInit, (Door)actionHandler.getTransitioningObject());
+                }
             }
             else
             {

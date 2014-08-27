@@ -112,6 +112,7 @@ namespace Tactics.Logic
                 gameInit.getParty().getPartyMembers()[0].setXPosition((int)destinationTile.X);
                 gameInit.getParty().getPartyMembers()[0].setYPosition((int)destinationTile.Y);
                 gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[(int)destinationTile.X, (int)destinationTile.Y].getWalkingHeight());
+                gameInit.getFreeRoamState().getCurrentZone().initializeObjects();
             }
         }
 

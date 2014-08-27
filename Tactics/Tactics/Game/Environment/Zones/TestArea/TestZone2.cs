@@ -5,6 +5,7 @@ using System.Text;
 
 using Microsoft.Xna.Framework;
 using Tactics.Game.Environment.ManipulatableObjects.Objects;
+using Tactics.Game.Environment.ManipulatableObjects;
 
 namespace Tactics.Game.Environment.Zones.TestArea
 {
@@ -22,6 +23,7 @@ namespace Tactics.Game.Environment.Zones.TestArea
             containedZones = new List<Zone>();
             orderedTiles = new List<Tile>();
             trafficMap = new TrafficMap(tileWidth, tileHeight);
+            objectList = new List<ManipulatableObject>();
             fillZoneMap();
         }
 
@@ -49,6 +51,7 @@ namespace Tactics.Game.Environment.Zones.TestArea
             addObject(new Barrel(35, 35), 37, 35);
             addObject(new Barrel(35, 35), 35, 37);
             addObject(new Barrel(35, 35), 37, 37);
+            addObject(new Door(13, 33, 2, new Vector2(0, 0), 1, false, 0, 6), 13, 33);
 
             tileMap[25, 0].createTransition(false, 0, 2, new Vector2(50, 99));
         }

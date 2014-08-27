@@ -38,6 +38,7 @@ namespace Tactics.ContentHandlers.Test
         private void loadObjects()
         {
             manipulatableObjects.Add(content.Load<Texture2D>("Images/Objects/testbarrel"));
+            manipulatableObjects.Add(content.Load<Texture2D>("Images/Objects/door"));
         }
 
         private void loadBlueTileImages()

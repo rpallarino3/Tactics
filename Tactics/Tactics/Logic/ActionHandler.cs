@@ -14,23 +14,30 @@ namespace Tactics.Logic
     class ActionHandler
     {
         private bool activating;
+        private bool transitionReady;
+        private ManipulatableObject transitioningObject;
 
         private List<Character> interactingCharacters;
         private List<ManipulatableObject> activatingObjects;
+        private List<ManipulatableObject> finishedObjects;
 
         public ActionHandler()
         {
             activating = false;
             interactingCharacters = new List<Character>();
             activatingObjects = new List<ManipulatableObject>();
+            finishedObjects = new List<ManipulatableObject>();
         }
 
 
         public bool checkActions(GameInit gameInit, KeyHandler keyHandler, ContentHandler content)
         {
-            if (checkMainAction(gameInit, keyHandler))
+            if (keyHandler.isActionReady())
             {
-                return true;
+                if (checkMainAction(gameInit, keyHandler))
+                {
+                    return true;
+                }
             }
 
             if (keyHandler.isBackReady())
@@ -52,24 +59,50 @@ namespace Tactics.Logic
 
         public void continueActivation(GameInit gameInit)
         {
+            finishedObjects.Clear();
             for (int i = 0; i < activatingObjects.Count; i++)
             {
                 ManipulatableObject currentObject = activatingObjects[i];
                 Character currentCharacter = interactingCharacters[i];
-                currentObject.continueActivation(gameInit, currentCharacter);
 
                 if (currentObject.isFinishedActivating())
                 {
                     activatingObjects.RemoveAt(i);
                     interactingCharacters.RemoveAt(i);
-                    // finish object activation
+                    finishedObjects.Add(currentObject);
                     i--;
+                }
+                else
+                {
+                    currentObject.continueActivation(gameInit, currentCharacter);
                 }
 
                 if (activatingObjects.Count == 0 || i == activatingObjects.Count - 1)
                 {
                     break;
                 }
+            }
+
+            finishActivation(gameInit);
+        }
+
+        public void finishActivation(GameInit gameInit)
+        {
+            for (int i = 0; i < finishedObjects.Count; i++)
+            {
+                finishedObjects[i].finishActivation(gameInit);
+                if (finishedObjects[i].isTransitionReady())
+                {
+                    transitionReady = true;
+                    transitioningObject = finishedObjects[i];
+                }
+
+                // set chat window stuff here
+            }
+
+            if (activatingObjects.Count == 0)
+            {
+                activating = false;
             }
         }
 
@@ -151,8 +184,20 @@ namespace Tactics.Logic
             {
                 if (gameInit.getFreeRoamState().getCurrentZone().getTrafficMap().getObjectBooleanMap()[targetX, targetY])
                 {
-                    //active object
-                    return true;
+                    ManipulatableObject obj = gameInit.getFreeRoamState().getCurrentZone().getTrafficMap().getObjectMap()[targetX, targetY];
+
+                    if (obj.checkForInteract(gameInit.getParty().getPartyMembers()[0].getFacingDirection()))
+                    {
+                        activatingObjects.Add(obj);
+                        interactingCharacters.Add(gameInit.getParty().getPartyMembers()[0]);
+                        obj.activate(gameInit, gameInit.getParty().getPartyMembers()[0], 0);
+                        activating = true;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 else
                 {
@@ -165,6 +210,16 @@ namespace Tactics.Logic
         public bool isActivating()
         {
             return activating;
+        }
+
+        public bool isTransitionReady()
+        {
+            return transitionReady;
+        }
+
+        public ManipulatableObject getTransitioningObject()
+        {
+            return transitioningObject;
         }
     }
 }
