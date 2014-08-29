@@ -236,20 +236,40 @@ namespace Tactics.PaintHandlers
 
                 // do the same for characters
 
-                if (orderedTileList[i].X == gameInit.getParty().getPartyMembers()[0].getX())
+                if (gameInit.getFreeRoamState().getCurrentZone().getTrafficMap().getCharacterBooleanMap()[(int)orderedTileList[i].X, (int)orderedTileList[i].Y])
                 {
-                    if (orderedTileList[i].Y == gameInit.getParty().getPartyMembers()[0].getY())
+                    Character character = gameInit.getFreeRoamState().getCurrentZone().getTrafficMap().getCharacterMap()[(int)orderedTileList[i].X, (int)orderedTileList[i].Y];
+
+                    if (character.getX() == orderedTileList[i].X && character.getY() == orderedTileList[i].Y)
                     {
-                        Texture2D texture = contentHandler.getCharacterContent().getSpriteSheets()[gameInit.getParty().getPartyMembers()[0].getType()];
-                        Character character = gameInit.getParty().getPartyMembers()[0];
+                        Texture2D texture = contentHandler.getCharacterContent().getSpriteSheets()[character.getType()];
                         int rectX = character.getCharacterAnimations().getCurrentAnimationColumn() * (int)character.getCharacterAnimations().getAnimations().getSectionSize().X;
                         int rectY = character.getCharacterAnimations().getCurrentAnimationRow() * (int)character.getCharacterAnimations().getAnimations().getSectionSize().Y;
                         int xSize = (int)character.getCharacterAnimations().getAnimations().getSpriteSize().X;
                         int ySize = (int)character.getCharacterAnimations().getAnimations().getSpriteSize().Y;
-                        Rectangle sourceRec = new Rectangle(rectX, rectY, xSize, ySize);
-                        spriteBatch.Draw(texture, NORMALPLAYERDRAWLOCATION, sourceRec, color);
+
+                        if (checkIfDisplay(drawLoc + character.getTileDrawOffset() - TILEOFFSET, (float)xSize, (float)ySize))
+                        {
+                            Rectangle rect = new Rectangle(rectX, rectY, xSize, ySize);
+                            spriteBatch.Draw(texture, drawLoc + character.getTileDrawOffset() - TILEOFFSET, rect, color);
+                        }
                     }
                 }
+
+                //if (orderedTileList[i].X == gameInit.getParty().getPartyMembers()[0].getX())
+                //{
+                //    if (orderedTileList[i].Y == gameInit.getParty().getPartyMembers()[0].getY())
+                //    {
+                //        Texture2D texture = contentHandler.getCharacterContent().getSpriteSheets()[gameInit.getParty().getPartyMembers()[0].getType()];
+                //        Character character = gameInit.getParty().getPartyMembers()[0];
+                //        int rectX = character.getCharacterAnimations().getCurrentAnimationColumn() * (int)character.getCharacterAnimations().getAnimations().getSectionSize().X;
+                //        int rectY = character.getCharacterAnimations().getCurrentAnimationRow() * (int)character.getCharacterAnimations().getAnimations().getSectionSize().Y;
+                //        int xSize = (int)character.getCharacterAnimations().getAnimations().getSpriteSize().X;
+                //        int ySize = (int)character.getCharacterAnimations().getAnimations().getSpriteSize().Y;
+                //        Rectangle sourceRec = new Rectangle(rectX, rectY, xSize, ySize);
+                        //spriteBatch.Draw(texture, NORMALPLAYERDRAWLOCATION, sourceRec, color);
+                //    }
+                //}
             }
         }
 

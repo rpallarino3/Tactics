@@ -27,7 +27,7 @@ namespace Tactics.Game.Environment.ManipulatableObjects.Objects
             this.orientation = orientation;
             this.heightDiff = heightDiff;
 
-            drawOffset = new Vector2(0, heightDiff * 8); // this needs to be changed
+            drawOffset = new Vector2(-2, heightDiff * 8 - 21);
 
             this.destination = destination;
             this.destinationTile = destinationTile;

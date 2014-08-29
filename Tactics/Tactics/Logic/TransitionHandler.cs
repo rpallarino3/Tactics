@@ -108,10 +108,15 @@ namespace Tactics.Logic
             }
             else
             {
+                int x = gameInit.getParty().getPartyMembers()[0].getX();
+                int y = gameInit.getParty().getPartyMembers()[0].getY();
+
+                gameInit.getFreeRoamState().getCurrentZone().clearCharacter(x, y);
                 gameInit.getFreeRoamState().setCurrentZone(destination);
                 gameInit.getParty().getPartyMembers()[0].setXPosition((int)destinationTile.X);
                 gameInit.getParty().getPartyMembers()[0].setYPosition((int)destinationTile.Y);
                 gameInit.getParty().getPartyMembers()[0].setHeight(gameInit.getFreeRoamState().getCurrentZone().getTileMap()[(int)destinationTile.X, (int)destinationTile.Y].getWalkingHeight());
+                gameInit.getFreeRoamState().getCurrentZone().addCharacter(gameInit.getParty().getPartyMembers()[0], (int)destinationTile.X, (int)destinationTile.Y);
                 gameInit.getFreeRoamState().getCurrentZone().initializeObjects();
             }
         }

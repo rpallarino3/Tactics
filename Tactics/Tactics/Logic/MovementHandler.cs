@@ -214,6 +214,8 @@ namespace Tactics.Logic
 
                 int heightDiff = currentTile.getWalkingHeight() - destinationTile.getWalkingHeight();
 
+                gameInit.getFreeRoamState().getCurrentZone().addCharacter(gameInit.getParty().getPartyMembers()[0], x - 1, y);
+
                 if (heightDiff == 0)
                 {
                     if (currentTile.isSloped())
@@ -352,6 +354,8 @@ namespace Tactics.Logic
 
                 int heightDiff = currentTile.getWalkingHeight() - destinationTile.getWalkingHeight();
 
+                gameInit.getFreeRoamState().getCurrentZone().addCharacter(gameInit.getParty().getPartyMembers()[0], x + 1, y);
+
                 if (heightDiff == 0)
                 {
                     if (currentTile.isSloped())
@@ -488,6 +492,8 @@ namespace Tactics.Logic
 
                 int heightDiff = currentTile.getWalkingHeight() - destinationTile.getWalkingHeight();
 
+                gameInit.getFreeRoamState().getCurrentZone().addCharacter(gameInit.getParty().getPartyMembers()[0], x, y - 1);
+
                 if (heightDiff == 0)
                 {
                     if (currentTile.isSloped())
@@ -622,6 +628,8 @@ namespace Tactics.Logic
                 Tile destinationTile = gameInit.getFreeRoamState().getCurrentZone().getTileMap()[x, y + 1];
 
                 int heightDiff = currentTile.getWalkingHeight() - destinationTile.getWalkingHeight();
+
+                gameInit.getFreeRoamState().getCurrentZone().addCharacter(gameInit.getParty().getPartyMembers()[0], x, y + 1);
 
                 if (heightDiff == 0)
                 {
@@ -794,6 +802,26 @@ namespace Tactics.Logic
             if (movementIndex == movementOffsets.Count - 1)
             {
                 moving = false;
+                int direction = gameInit.getParty().getPartyMembers()[0].getFacingDirection();
+                int x = gameInit.getParty().getPartyMembers()[0].getX();
+                int y = gameInit.getParty().getPartyMembers()[0].getY();
+
+                if (direction == 0)
+                {
+                    gameInit.getFreeRoamState().getCurrentZone().clearCharacter(x + 1, y);
+                }
+                else if (direction == 1)
+                {
+                    gameInit.getFreeRoamState().getCurrentZone().clearCharacter(x - 1, y);
+                }
+                else if (direction == 2)
+                {
+                    gameInit.getFreeRoamState().getCurrentZone().clearCharacter(x, y + 1);
+                }
+                else if (direction == 3)
+                {
+                    gameInit.getFreeRoamState().getCurrentZone().clearCharacter(x, y - 1);
+                }
             }
         }
 
