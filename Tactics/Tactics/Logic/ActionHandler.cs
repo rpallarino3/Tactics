@@ -14,6 +14,10 @@ namespace Tactics.Logic
     class ActionHandler
     {
         private bool activating;
+
+        private bool bigChat;
+        private bool chatWindow;
+
         private bool transitionReady;
         private ManipulatableObject transitioningObject;
 
@@ -178,6 +182,8 @@ namespace Tactics.Logic
             if (gameInit.getFreeRoamState().getCurrentZone().getTrafficMap().getCharacterBooleanMap()[targetX, targetY])
             {
                 // talk to character
+                Character character = gameInit.getFreeRoamState().getCurrentZone().getTrafficMap().getCharacterMap()[targetX, targetY];
+                
                 return true;
             }
             else
@@ -191,7 +197,16 @@ namespace Tactics.Logic
                         activatingObjects.Add(obj);
                         interactingCharacters.Add(gameInit.getParty().getPartyMembers()[0]);
                         obj.activate(gameInit, gameInit.getParty().getPartyMembers()[0], 0);
-                        activating = true;
+
+                        if (obj.showChatWindow())
+                        {
+                            activating = false;
+                            chatWindow = true;
+                        }
+                        else
+                        {
+                            activating = true;
+                        }
                         return true;
                     }
                     else
@@ -215,6 +230,16 @@ namespace Tactics.Logic
         public bool isTransitionReady()
         {
             return transitionReady;
+        }
+
+        public bool showBigChat()
+        {
+            return bigChat;
+        }
+
+        public bool showChatWindow()
+        {
+            return chatWindow;
         }
 
         public ManipulatableObject getTransitioningObject()

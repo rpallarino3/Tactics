@@ -48,7 +48,7 @@ namespace Tactics.Game.Environment.ManipulatableObjects
             return transitionReady;
         }
 
-        public bool isChatWindow()
+        public bool showChatWindow()
         {
             return chatWindow;
         }

@@ -85,6 +85,12 @@ namespace Tactics.Logic
                     transitionHandler.startTransition(gameInit, (Door)actionHandler.getTransitioningObject());
                 }
             }
+            else if (actionHandler.showBigChat())
+            {
+            }
+            else if (actionHandler.showChatWindow())
+            {
+            }
             else
             {
                 if (!actionHandler.checkActions(gameInit, keyHandler, content))
