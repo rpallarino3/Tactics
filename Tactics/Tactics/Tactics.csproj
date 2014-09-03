@@ -83,6 +83,8 @@
     <Compile Include="Game\Animations\HumanoidAnimations.cs" />
     <Compile Include="Game\Characters\CharacterAnimation\HumanoidCharacterAnimations.cs" />
     <Compile Include="Game\Characters\CharacterFactory.cs" />
+    <Compile Include="Game\Chat\MessageBlock.cs" />
+    <Compile Include="Game\Chat\MessageBlockFactory.cs" />
     <Compile Include="Game\Environment\ManipulatableObjects\Animations\DoorAnimation.cs" />
     <Compile Include="Game\Environment\ManipulatableObjects\ManipulatableObject.cs" />
     <Compile Include="Game\Environment\ManipulatableObjects\Objects\Barrel.cs" />
@@ -100,6 +102,8 @@
     <Compile Include="Game\FreeRoamState.cs" />
     <Compile Include="Game\GameInit.cs" />
     <Compile Include="Game\GameState.cs" />
+    <Compile Include="Game\Inventory\Bag.cs" />
+    <Compile Include="Game\Inventory\Item.cs" />
     <Compile Include="Game\Party.cs" />
     <Compile Include="Game\Environment\RegionFactory.cs" />
     <Compile Include="Game\Environment\ZoneFactories\TestZoneFactory.cs" />
