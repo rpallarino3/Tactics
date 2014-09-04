@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 
 using Tactics.Game.Environment.ManipulatableObjects.Animations;
 using Tactics.Game.Characters;
+using Tactics.Game.Chat;
 
 namespace Tactics.Game.Environment.ManipulatableObjects
 {
@@ -26,16 +27,32 @@ namespace Tactics.Game.Environment.ManipulatableObjects
         protected bool transitionReady;
         protected bool chatWindow;
 
+        protected bool item;
+
+        protected int messageBlockIndex;
+        protected int optionIndex;
+
         protected Vector2 drawOffset;
 
         public abstract void activate(GameInit gameInit, Character interactingCharacter, int activationCode);
         public abstract void continueActivation(GameInit gameInit, Character interactingCharacter);
         public abstract void finishActivation(GameInit gameInit);
+        public abstract void talk(GameInit gameInit);
         public abstract void initialize();
 
         public Vector2 getDrawOffset()
         {
             return drawOffset;
+        }
+
+        public bool giveItem()
+        {
+            return item;
+        }
+
+        public void noItem()
+        {
+            item = false;
         }
 
         public int getType()
@@ -114,6 +131,86 @@ namespace Tactics.Game.Environment.ManipulatableObjects
             else
             {
                 return false;
+            }
+        }
+
+        public void advanceMessage(GameInit gameInit)
+        {
+            MessageBlock mb = gameInit.getMessageBlockFactory().getObjectBlock(type);
+            int destination = mb.getDestination(messageBlockIndex)[optionIndex];
+
+            if (destination < 0)
+            {
+                if (destination == -1)
+                {
+                    chatWindow = false;
+                }
+                else
+                {
+                    item = true;
+                }
+            }
+            else
+            {
+                messageBlockIndex = destination;
+                optionIndex = 0;
+            }
+        }
+
+        public void backAdvanceMessage(GameInit gameInit)
+        {
+            MessageBlock mb = gameInit.getMessageBlockFactory().getObjectBlock(type);
+
+            if (mb.getOptions(messageBlockIndex).Count == 0)
+            {
+                advanceMessage(gameInit);
+            }
+            else
+            {
+                optionIndex = mb.getOptions(messageBlockIndex).Count - 1;
+                advanceMessage(gameInit);
+            }
+        }
+
+        public void moveUpOptionIndex(GameInit gameInit)
+        {
+            MessageBlock mb = gameInit.getMessageBlockFactory().getObjectBlock(type);
+
+            if (mb.getOptions(messageBlockIndex).Count == 0)
+            {
+                optionIndex = 0;
+            }
+            else
+            {
+                if (optionIndex == 0)
+                {
+                    optionIndex = mb.getOptions(messageBlockIndex).Count - 1;
+                }
+                else
+                {
+                    optionIndex--;
+                }
+            }
+        }
+
+        public void moveDownOptionIndex(GameInit gameInit)
+        {
+            MessageBlock mb = gameInit.getMessageBlockFactory().getObjectBlock(type);
+
+            if (mb.getOptions(messageBlockIndex).Count == 0)
+            {
+                optionIndex = 0;
+            }
+            else
+            {
+                if (optionIndex == mb.getOptions(messageBlockIndex).Count - 1)
+                {
+                    optionIndex = 0;
+                }
+                else
+                {
+                    optionIndex++;
+                }
             }
         }
     }

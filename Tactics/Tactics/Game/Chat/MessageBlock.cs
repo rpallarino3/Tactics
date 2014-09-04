@@ -12,21 +12,21 @@ namespace Tactics.Game.Chat
         private List<string> messages;
         private List<List<string>> options;
         private List<List<int>> destinations;
-        private List<Item> items;
+        private List<int> items;
 
         public MessageBlock()
         {
             messages = new List<string>();
-            options = new List<List<string>();
+            options = new List<List<string>>();
             destinations = new List<List<int>>();
-            items = new List<Item>();
+            items = new List<int>();
         }
 
         public void giveItem(Bag bag, int index)
         {
         }
 
-        public void addItem(Item item)
+        public void addItem(int item)
         {
             items.Add(item);
         }

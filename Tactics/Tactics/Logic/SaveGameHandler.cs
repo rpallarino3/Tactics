@@ -32,7 +32,7 @@ namespace Tactics.Logic
             gameInit.getParty().getPartyMembers()[0].setHeight(2);
             gameInit.getParty().getPartyMembers()[0].setFacingDirection(0);
             gameInit.getFreeRoamState().getCurrentZone().addCharacter(gameInit.getParty().getPartyMembers()[0], 50, 50);
-
+            gameInit.getMessageBlockFactory().createRegionCharacterBlocks(0);
             gameInit.getGameState().setFreeRoamState();
         }
     }

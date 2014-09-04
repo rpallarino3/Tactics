@@ -16,8 +16,9 @@ namespace Tactics.Game.Environment.ManipulatableObjects.Objects
         private Vector2 destinationTile;
         private int orientation;
         private int heightDiff;
+        private int keyId;
 
-        public Door(int x, int y, int destination, Vector2 destinationTile, int side, bool locked, int orientation, int heightDiff)
+        public Door(int x, int y, int destination, Vector2 destinationTile, int side, bool locked, int orientation, int heightDiff, int keyID)
         {
             
             xLoc = x;
@@ -26,6 +27,12 @@ namespace Tactics.Game.Environment.ManipulatableObjects.Objects
             animation = new DoorAnimation();
             this.orientation = orientation;
             this.heightDiff = heightDiff;
+            keyId = keyID;
+
+            messageBlockIndex = 0;
+            optionIndex = 0;
+
+            chatWindow = false;
 
             drawOffset = new Vector2(-2, heightDiff * 8 - 21);
 
@@ -81,12 +88,15 @@ namespace Tactics.Game.Environment.ManipulatableObjects.Objects
         {
             if (locked)
             {
+                chatWindow = true;
                 if (false)
                 {
+                    messageBlockIndex = 1;
+                    locked = false;
                 }
                 else
                 {
-                    Console.WriteLine("locked");
+                    messageBlockIndex = 0;
                 }
             }
             else
@@ -116,6 +126,22 @@ namespace Tactics.Game.Environment.ManipulatableObjects.Objects
         public override void finishActivation(GameInit gameInit)
         {
             transitionReady = true;
+        }
+
+        public override void talk(GameInit gameInit)
+        {
+            gameInit.getFreeRoamState().setChatWindow(true);
+
+            if (messageBlockIndex == 0)
+            {
+                gameInit.getFreeRoamState().setMessage(gameInit.getMessageBlockFactory().getObjectBlock(type).getMessage(messageBlockIndex));
+                gameInit.getFreeRoamState().setOptions(gameInit.getMessageBlockFactory().getObjectBlock(type).getOptions()[messageBlockIndex]);
+            }
+            else if (messageBlockIndex == 1)
+            {
+                gameInit.getFreeRoamState().setMessage(gameInit.getMessageBlockFactory().getObjectBlock(type).getMessage(messageBlockIndex)); // add key after
+                gameInit.getFreeRoamState().setOptions(gameInit.getMessageBlockFactory().getObjectBlock(type).getOptions()[messageBlockIndex]);
+            }
         }
 
         public override void initialize()

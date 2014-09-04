@@ -13,10 +13,15 @@ namespace Tactics.Logic
 {
     class ActionHandler
     {
+        private readonly int CHAT_THRESHOLD = 10;
+
         private bool activating;
 
         private bool bigChat;
         private bool chatWindow;
+        private bool objectChat;
+        private ManipulatableObject chatObject;
+        private int chatCounter;
 
         private bool transitionReady;
         private ManipulatableObject transitioningObject;
@@ -28,6 +33,9 @@ namespace Tactics.Logic
         public ActionHandler()
         {
             activating = false;
+            chatWindow = false;
+            objectChat = false;
+            chatCounter = 0;
             interactingCharacters = new List<Character>();
             activatingObjects = new List<ManipulatableObject>();
             finishedObjects = new List<ManipulatableObject>();
@@ -202,6 +210,9 @@ namespace Tactics.Logic
                         {
                             activating = false;
                             chatWindow = true;
+                            objectChat = true;
+                            chatObject = obj;
+                            chatCounter = 0;
                         }
                         else
                         {
@@ -221,6 +232,61 @@ namespace Tactics.Logic
             }
         }
 
+        public void continueChatWindow(GameInit gameInit, KeyHandler keyHandler)
+        {
+            chatCounter++;
+
+            if (chatCounter > CHAT_THRESHOLD)
+            {
+                if (keyHandler.isActionReady())
+                {
+                    chatObject.advanceMessage(gameInit);
+                }
+                else if (keyHandler.isBackReady())
+                {
+                    chatObject.backAdvanceMessage(gameInit);
+                }
+                else if (keyHandler.getUpTime() >= keyHandler.getDownTime())
+                {
+                    if (keyHandler.getUpTime() >= 3)
+                    {
+                        chatObject.moveUpOptionIndex(gameInit);
+                    }
+                }
+                else if (keyHandler.getDownTime() >= 3)
+                {
+                    chatObject.moveDownOptionIndex(gameInit);
+                }
+            }
+            else
+            {
+                if (keyHandler.getUpTime() >= keyHandler.getDownTime())
+                {
+                    if (keyHandler.getUpTime() >= 3)
+                    {
+                        chatObject.moveUpOptionIndex(gameInit);
+                    }
+                }
+                else if (keyHandler.getDownTime() >= 3)
+                {
+                    chatObject.moveDownOptionIndex(gameInit);
+                }
+            }
+
+            if (!chatObject.showChatWindow())
+            {
+                chatWindow = false;
+            }
+            else
+            {
+                chatObject.talk(gameInit);
+            }
+
+            if (chatObject.giveItem())
+            {
+                chatObject.noItem();
+            }
+        }
 
         public bool isActivating()
         {

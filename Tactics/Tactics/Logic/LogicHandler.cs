@@ -90,6 +90,7 @@ namespace Tactics.Logic
             }
             else if (actionHandler.showChatWindow())
             {
+                actionHandler.continueChatWindow(gameInit, keyHandler);
             }
             else
             {

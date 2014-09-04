@@ -11,11 +11,45 @@ namespace Tactics.Game
     {
         private int currentRegion;
         private int currentZone;
+        private bool chatWindow;
+        private string message;
+        private List<string> options;
+
 
         private List<Zone> currentZones;
 
         public FreeRoamState()
         {
+        }
+
+        public bool showChatWindow()
+        {
+            return chatWindow;
+        }
+
+        public void setChatWindow(bool b)
+        {
+            chatWindow = b;
+        }
+
+        public void setMessage(string message)
+        {
+            this.message = message;
+        }
+
+        public void setOptions(List<string> options)
+        {
+            this.options = options;
+        }
+
+        public string getMessage()
+        {
+            return message;
+        }
+
+        public List<string> getOptions()
+        {
+            return options;
         }
 
         public void setCurrentZones(List<Zone> newZones)

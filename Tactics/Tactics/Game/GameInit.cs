@@ -5,6 +5,7 @@ using System.Text;
 
 using Tactics.Game.Characters;
 using Tactics.Game.Environment;
+using Tactics.Game.Chat;
 
 namespace Tactics.Game
 {
@@ -16,6 +17,7 @@ namespace Tactics.Game
         private RegionFactory regionFactory;
         private CharacterFactory characterFactory;
         private Party party;
+        private MessageBlockFactory messageBlockFactory;
 
         public GameInit()
         {
@@ -23,12 +25,18 @@ namespace Tactics.Game
             freeRoamState = new FreeRoamState();
             regionFactory = new RegionFactory();
             characterFactory = new CharacterFactory();
+            messageBlockFactory = new MessageBlockFactory();
             party = new Party();
         }
 
         public GameState getGameState()
         {
             return gameState;
+        }
+
+        public MessageBlockFactory getMessageBlockFactory()
+        {
+            return messageBlockFactory;
         }
 
         public FreeRoamState getFreeRoamState()
