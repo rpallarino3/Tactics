@@ -241,10 +241,40 @@ namespace Tactics.Logic
                 if (keyHandler.isActionReady())
                 {
                     chatObject.advanceMessage(gameInit);
+
+                    if (!chatObject.showChatWindow())
+                    {
+                        chatWindow = false;
+                        gameInit.getFreeRoamState().setChatWindow(false);
+                    }
+                    else
+                    {
+                        chatObject.talk(gameInit);
+                    }
+
+                    if (chatObject.giveItem())
+                    {
+                        chatObject.noItem();
+                    }
                 }
                 else if (keyHandler.isBackReady())
                 {
                     chatObject.backAdvanceMessage(gameInit);
+
+                    if (!chatObject.showChatWindow())
+                    {
+                        chatWindow = false;
+                        gameInit.getFreeRoamState().setChatWindow(false);
+                    }
+                    else
+                    {
+                        chatObject.talk(gameInit);
+                    }
+
+                    if (chatObject.giveItem())
+                    {
+                        chatObject.noItem();
+                    }
                 }
                 else if (keyHandler.getUpTime() >= keyHandler.getDownTime())
                 {
@@ -273,19 +303,7 @@ namespace Tactics.Logic
                 }
             }
 
-            if (!chatObject.showChatWindow())
-            {
-                chatWindow = false;
-            }
-            else
-            {
-                chatObject.talk(gameInit);
-            }
-
-            if (chatObject.giveItem())
-            {
-                chatObject.noItem();
-            }
+            
         }
 
         public bool isActivating()

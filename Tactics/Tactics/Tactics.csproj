@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContentHandlers\CharacterContentHandler.cs" />
+    <Compile Include="ContentHandlers\ChatContentHandler.cs" />
     <Compile Include="ContentHandlers\ContentHandler.cs" />
     <Compile Include="ContentHandlers\RegionContentHandler.cs" />
     <Compile Include="ContentHandlers\Test\TestRegionContentHandler.cs" />

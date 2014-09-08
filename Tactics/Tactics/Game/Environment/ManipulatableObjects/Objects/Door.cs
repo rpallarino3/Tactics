@@ -136,11 +136,13 @@ namespace Tactics.Game.Environment.ManipulatableObjects.Objects
             {
                 gameInit.getFreeRoamState().setMessage(gameInit.getMessageBlockFactory().getObjectBlock(type).getMessage(messageBlockIndex));
                 gameInit.getFreeRoamState().setOptions(gameInit.getMessageBlockFactory().getObjectBlock(type).getOptions()[messageBlockIndex]);
+                gameInit.getFreeRoamState().setParsedMessage(gameInit.getMessageBlockFactory().getObjectBlock(type).getParsedMessage(messageBlockIndex));
             }
             else if (messageBlockIndex == 1)
             {
                 gameInit.getFreeRoamState().setMessage(gameInit.getMessageBlockFactory().getObjectBlock(type).getMessage(messageBlockIndex)); // add key after
                 gameInit.getFreeRoamState().setOptions(gameInit.getMessageBlockFactory().getObjectBlock(type).getOptions()[messageBlockIndex]);
+                gameInit.getFreeRoamState().setParsedMessage(gameInit.getMessageBlockFactory().getObjectBlock(type).getParsedMessage(messageBlockIndex));
             }
         }
 

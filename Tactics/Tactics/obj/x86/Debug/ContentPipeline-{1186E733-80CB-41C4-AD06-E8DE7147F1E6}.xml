@@ -352,6 +352,339 @@
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\Objects\door.xnb</Output>
       <Time>2014-08-26T23:07:21.0983902-04:00</Time>
     </Item>
+    <Item>
+      <Source>Images\ChatWindows\1option.png</Source>
+      <Name>Images\ChatWindows\1option</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\1option.xnb</Output>
+      <Time>2014-09-07T19:19:53.5358355-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by100.png</Source>
+      <Name>Images\ChatWindows\25by100</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by100.xnb</Output>
+      <Time>2014-09-07T19:19:53.5538365-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by110.png</Source>
+      <Name>Images\ChatWindows\25by110</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by110.xnb</Output>
+      <Time>2014-09-07T19:19:53.5618369-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by120.png</Source>
+      <Name>Images\ChatWindows\25by120</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by120.xnb</Output>
+      <Time>2014-09-07T19:19:53.562837-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by130.png</Source>
+      <Name>Images\ChatWindows\25by130</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by130.xnb</Output>
+      <Time>2014-09-07T19:19:53.5648371-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by140.png</Source>
+      <Name>Images\ChatWindows\25by140</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by140.xnb</Output>
+      <Time>2014-09-07T19:19:53.5668372-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by150.png</Source>
+      <Name>Images\ChatWindows\25by150</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by150.xnb</Output>
+      <Time>2014-09-07T19:19:53.5678373-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by160.png</Source>
+      <Name>Images\ChatWindows\25by160</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by160.xnb</Output>
+      <Time>2014-09-07T19:19:53.5718375-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by170.png</Source>
+      <Name>Images\ChatWindows\25by170</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by170.xnb</Output>
+      <Time>2014-09-07T19:19:53.5728376-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by180.png</Source>
+      <Name>Images\ChatWindows\25by180</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by180.xnb</Output>
+      <Time>2014-09-07T19:19:53.5738376-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by190.png</Source>
+      <Name>Images\ChatWindows\25by190</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by190.xnb</Output>
+      <Time>2014-09-07T19:19:53.5748377-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by200.png</Source>
+      <Name>Images\ChatWindows\25by200</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by200.xnb</Output>
+      <Time>2014-09-07T19:19:53.5758377-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by50.png</Source>
+      <Name>Images\ChatWindows\25by50</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by50.xnb</Output>
+      <Time>2014-09-07T19:19:53.5438359-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by60.png</Source>
+      <Name>Images\ChatWindows\25by60</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by60.xnb</Output>
+      <Time>2014-09-07T19:19:53.545836-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by70.png</Source>
+      <Name>Images\ChatWindows\25by70</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by70.xnb</Output>
+      <Time>2014-09-07T19:19:53.5478361-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by80.png</Source>
+      <Name>Images\ChatWindows\25by80</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by80.xnb</Output>
+      <Time>2014-09-07T19:19:53.5488362-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\25by90.png</Source>
+      <Name>Images\ChatWindows\25by90</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\25by90.xnb</Output>
+      <Time>2014-09-07T19:19:53.5498363-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\2option.png</Source>
+      <Name>Images\ChatWindows\2option</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\2option.xnb</Output>
+      <Time>2014-09-07T19:19:53.5388356-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\3option.png</Source>
+      <Name>Images\ChatWindows\3option</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\3option.xnb</Output>
+      <Time>2014-09-07T19:19:53.5408357-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\4option.png</Source>
+      <Name>Images\ChatWindows\4option</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\4option.xnb</Output>
+      <Time>2014-09-07T19:19:53.5418358-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by100.png</Source>
+      <Name>Images\ChatWindows\50by100</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by100.xnb</Output>
+      <Time>2014-09-07T19:19:53.5828381-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by110.png</Source>
+      <Name>Images\ChatWindows\50by110</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by110.xnb</Output>
+      <Time>2014-09-07T19:19:53.5848383-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by120.png</Source>
+      <Name>Images\ChatWindows\50by120</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by120.xnb</Output>
+      <Time>2014-09-07T19:19:53.5858383-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by130.png</Source>
+      <Name>Images\ChatWindows\50by130</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by130.xnb</Output>
+      <Time>2014-09-07T19:19:53.5878384-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by140.png</Source>
+      <Name>Images\ChatWindows\50by140</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by140.xnb</Output>
+      <Time>2014-09-07T19:19:53.5888385-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by150.png</Source>
+      <Name>Images\ChatWindows\50by150</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by150.xnb</Output>
+      <Time>2014-09-07T19:19:53.5898385-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by160.png</Source>
+      <Name>Images\ChatWindows\50by160</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by160.xnb</Output>
+      <Time>2014-09-07T19:19:53.5908386-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by170.png</Source>
+      <Name>Images\ChatWindows\50by170</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by170.xnb</Output>
+      <Time>2014-09-07T19:19:53.5918387-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by180.png</Source>
+      <Name>Images\ChatWindows\50by180</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by180.xnb</Output>
+      <Time>2014-09-07T19:19:53.6028393-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by190.png</Source>
+      <Name>Images\ChatWindows\50by190</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by190.xnb</Output>
+      <Time>2014-09-07T19:19:53.6038393-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by200.png</Source>
+      <Name>Images\ChatWindows\50by200</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by200.xnb</Output>
+      <Time>2014-09-07T19:19:53.6048394-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by50.png</Source>
+      <Name>Images\ChatWindows\50by50</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by50.xnb</Output>
+      <Time>2014-09-07T19:19:53.5768378-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by60.png</Source>
+      <Name>Images\ChatWindows\50by60</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by60.xnb</Output>
+      <Time>2014-09-07T19:19:53.5778379-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by70.png</Source>
+      <Name>Images\ChatWindows\50by70</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by70.xnb</Output>
+      <Time>2014-09-07T19:19:53.5788379-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by80.png</Source>
+      <Name>Images\ChatWindows\50by80</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by80.xnb</Output>
+      <Time>2014-09-07T19:19:53.579838-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\50by90.png</Source>
+      <Name>Images\ChatWindows\50by90</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\50by90.xnb</Output>
+      <Time>2014-09-07T19:19:53.580838-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\ChatWindows\5option.png</Source>
+      <Name>Images\ChatWindows\5option</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\5option.xnb</Output>
+      <Time>2014-09-07T19:19:53.5428359-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{1186E733-80CB-41C4-AD06-E8DE7147F1E6}</ContentProjectGUID>

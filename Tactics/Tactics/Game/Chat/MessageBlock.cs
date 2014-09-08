@@ -13,6 +13,7 @@ namespace Tactics.Game.Chat
         private List<List<string>> options;
         private List<List<int>> destinations;
         private List<int> items;
+        private List<List<string>> parsedMessages;
 
         public MessageBlock()
         {
@@ -20,6 +21,7 @@ namespace Tactics.Game.Chat
             options = new List<List<string>>();
             destinations = new List<List<int>>();
             items = new List<int>();
+            parsedMessages = new List<List<string>>();
         }
 
         public void giveItem(Bag bag, int index)
@@ -36,6 +38,34 @@ namespace Tactics.Game.Chat
             this.messages.Add(message);
             this.destinations.Add(destinations);
             this.options.Add(options);
+            parseMessage(message);
+        }
+
+        private void parseMessage(string message)
+        {
+            List<string> parsedString = new List<string>();
+            int lastIndex = 0;
+
+            for (int j = 0; j < message.Length; j++)
+            {
+                if (j == message.Length - 1 || message[j] == ' ')
+                {
+                    parsedString.Add(message.Substring(lastIndex, j - lastIndex + 1));
+                    lastIndex = j + 1;
+                }
+            }
+
+            parsedMessages.Add(parsedString);
+        }
+
+        public List<List<string>> getParsedMessages()
+        {
+            return parsedMessages;
+        }
+
+        public List<string> getParsedMessage(int message)
+        {
+            return parsedMessages[message];
         }
 
         public List<string> getMessages()

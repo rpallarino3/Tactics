@@ -14,6 +14,7 @@ namespace Tactics.Game
         private bool chatWindow;
         private string message;
         private List<string> options;
+        private List<string> parsedMessage;
 
 
         private List<Zone> currentZones;
@@ -25,6 +26,11 @@ namespace Tactics.Game
         public bool showChatWindow()
         {
             return chatWindow;
+        }
+
+        public void setParsedMessage(List<string> message)
+        {
+            parsedMessage = message;
         }
 
         public void setChatWindow(bool b)
@@ -40,6 +46,11 @@ namespace Tactics.Game
         public void setOptions(List<string> options)
         {
             this.options = options;
+        }
+
+        public List<string> getParsedMessage()
+        {
+            return parsedMessage;
         }
 
         public string getMessage()

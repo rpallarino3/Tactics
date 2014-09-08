@@ -256,20 +256,61 @@ namespace Tactics.PaintHandlers
                     }
                 }
 
-                //if (orderedTileList[i].X == gameInit.getParty().getPartyMembers()[0].getX())
-                //{
-                //    if (orderedTileList[i].Y == gameInit.getParty().getPartyMembers()[0].getY())
-                //    {
-                //        Texture2D texture = contentHandler.getCharacterContent().getSpriteSheets()[gameInit.getParty().getPartyMembers()[0].getType()];
-                //        Character character = gameInit.getParty().getPartyMembers()[0];
-                //        int rectX = character.getCharacterAnimations().getCurrentAnimationColumn() * (int)character.getCharacterAnimations().getAnimations().getSectionSize().X;
-                //        int rectY = character.getCharacterAnimations().getCurrentAnimationRow() * (int)character.getCharacterAnimations().getAnimations().getSectionSize().Y;
-                //        int xSize = (int)character.getCharacterAnimations().getAnimations().getSpriteSize().X;
-                //        int ySize = (int)character.getCharacterAnimations().getAnimations().getSpriteSize().Y;
-                //        Rectangle sourceRec = new Rectangle(rectX, rectY, xSize, ySize);
-                        //spriteBatch.Draw(texture, NORMALPLAYERDRAWLOCATION, sourceRec, color);
-                //    }
-                //}
+                if (gameInit.getFreeRoamState().showChatWindow())
+                {
+                    SpriteFont chatBoxFont = contentHandler.getChatContentHandler().getChatBoxFont();
+                    string message = gameInit.getFreeRoamState().getMessage();
+                    int size = (int)chatBoxFont.MeasureString(message).X;
+
+                    int index;
+
+                    if (size > 200)
+                    {
+                        index = size / 20 - 4 + 16;
+                    }
+                    else
+                    {
+                        index = size / 10 - 4;
+                    }
+
+                    if (index < 0)
+                    {
+                        index = 0;
+                    }
+                    else if (index >= contentHandler.getChatContentHandler().getChatBoxes().Count)
+                    {
+                        index = contentHandler.getChatContentHandler().getChatBoxes().Count - 1;
+                    }
+
+                    Vector2 chatDrawLoc;
+
+                    int direction = gameInit.getParty().getPartyMembers()[0].getFacingDirection();
+
+                    if (direction == 0 || direction == 3)
+                    {
+                        if (size > 200)
+                        {
+                            chatDrawLoc = new Vector2(0, 0);
+                        }
+                        else
+                        {
+                            chatDrawLoc = new Vector2(0, 0);
+                        }
+                    }
+                    else
+                    {
+                        if (size > 200)
+                        {
+                            chatDrawLoc = new Vector2(0, 0);
+                        }
+                        else
+                        {
+                            chatDrawLoc = new Vector2(0, 0);
+                        }
+                    }
+
+                    spriteBatch.Draw(contentHandler.getChatContentHandler().getChatBox(index), chatDrawLoc, Color.White);
+                }
             }
         }
 

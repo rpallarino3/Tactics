@@ -20,6 +20,7 @@ namespace Tactics.ContentHandlers
 
         private RegionContentHandler testRegionContentHandler;
         private CharacterContentHandler characterContentHandler;
+        private ChatContentHandler chatContentHandler;
 
         private Dictionary<int, RegionContentHandler> regionContent;
         private Dictionary<int, CharacterContentHandler> characterContent;
@@ -38,6 +39,8 @@ namespace Tactics.ContentHandlers
             characterContent = new Dictionary<int, CharacterContentHandler>();
             characterContentHandler = new CharacterContentHandler(npcAnimationContent);
             characterContentHandler.loadContent(); // probably move this somewhere
+
+            chatContentHandler = new ChatContentHandler(menuContent);
         }
 
         public Dictionary<int, RegionContentHandler> getRegionContent()
@@ -48,6 +51,11 @@ namespace Tactics.ContentHandlers
         public CharacterContentHandler getCharacterContent()
         {
             return characterContentHandler;
+        }
+
+        public ChatContentHandler getChatContentHandler()
+        {
+            return chatContentHandler;
         }
     }
 }
