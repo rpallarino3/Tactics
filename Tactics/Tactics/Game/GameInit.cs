@@ -6,6 +6,7 @@ using System.Text;
 using Tactics.Game.Characters;
 using Tactics.Game.Environment;
 using Tactics.Game.Chat;
+using Tactics.Game.Inventory;
 
 namespace Tactics.Game
 {
@@ -18,6 +19,7 @@ namespace Tactics.Game
         private CharacterFactory characterFactory;
         private Party party;
         private MessageBlockFactory messageBlockFactory;
+        private Bag bag;
 
         public GameInit()
         {
@@ -26,12 +28,18 @@ namespace Tactics.Game
             regionFactory = new RegionFactory();
             characterFactory = new CharacterFactory();
             messageBlockFactory = new MessageBlockFactory();
+            bag = new Bag();
             party = new Party();
         }
 
         public GameState getGameState()
         {
             return gameState;
+        }
+
+        public Bag getBag()
+        {
+            return bag;
         }
 
         public MessageBlockFactory getMessageBlockFactory()

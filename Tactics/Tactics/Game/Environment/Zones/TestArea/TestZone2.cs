@@ -52,6 +52,7 @@ namespace Tactics.Game.Environment.Zones.TestArea
             addObject(new Barrel(35, 35), 35, 37);
             addObject(new Barrel(35, 35), 37, 37);
             addObject(new Door(13, 33, 2, new Vector2(0, 0), 1, false, 0, 7, -1), 13, 33);
+            addObject(new Door(13, 35, 2, new Vector2(0, 0), 1, true, 0, 7, -1), 13, 35);
 
             tileMap[25, 0].createTransition(false, 0, 2, new Vector2(50, 99));
         }

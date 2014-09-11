@@ -685,6 +685,24 @@
       <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\5option.xnb</Output>
       <Time>2014-09-07T19:19:53.5428359-04:00</Time>
     </Item>
+    <Item>
+      <Source>Images\ChatWindows\optionhighlight.png</Source>
+      <Name>Images\ChatWindows\optionhighlight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Images\ChatWindows\optionhighlight.xnb</Output>
+      <Time>2014-09-08T00:09:19.8811336-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\TestFont.spritefont</Source>
+      <Name>Fonts\TestFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryan\Documents\Visual Studio 2012\Projects\Tactics\Tactics\Tactics\bin\x86\Debug\Content\Fonts\TestFont.xnb</Output>
+      <Time>2014-09-07T20:26:39.1079411-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{1186E733-80CB-41C4-AD06-E8DE7147F1E6}</ContentProjectGUID>

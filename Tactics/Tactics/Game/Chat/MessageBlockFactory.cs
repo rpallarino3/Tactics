@@ -30,6 +30,15 @@ namespace Tactics.Game.Chat
 
         private void createObjectBlocks()
         {
+            objectBlocks.Add(new MessageBlock());
+
+            MessageBlock doorBlock = new MessageBlock();
+            List<int> destination = new List<int>();
+            destination.Add(-1);
+            List<string> option = new List<string>();
+            doorBlock.addMessage("It's locked.", destination, option);
+
+            objectBlocks.Add(doorBlock);
         }
 
         public List<MessageBlock> getCurrentCharacterBlocks()

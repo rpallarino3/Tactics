@@ -74,3 +74,5 @@ Content\Images\ChatWindows\50by70.xnb
 Content\Images\ChatWindows\50by80.xnb
 Content\Images\ChatWindows\50by90.xnb
 Content\Images\ChatWindows\5option.xnb
+Content\Images\ChatWindows\optionhighlight.xnb
+Content\Fonts\TestFont.xnb

@@ -201,13 +201,12 @@ namespace Tactics.Logic
                     ManipulatableObject obj = gameInit.getFreeRoamState().getCurrentZone().getTrafficMap().getObjectMap()[targetX, targetY];
 
                     if (obj.checkForInteract(gameInit.getParty().getPartyMembers()[0].getFacingDirection()))
-                    {
-                        activatingObjects.Add(obj);
-                        interactingCharacters.Add(gameInit.getParty().getPartyMembers()[0]);
+                    {                       
                         obj.activate(gameInit, gameInit.getParty().getPartyMembers()[0], 0);
 
                         if (obj.showChatWindow())
                         {
+                            obj.talk(gameInit);
                             activating = false;
                             chatWindow = true;
                             objectChat = true;
@@ -216,6 +215,8 @@ namespace Tactics.Logic
                         }
                         else
                         {
+                            activatingObjects.Add(obj);
+                            interactingCharacters.Add(gameInit.getParty().getPartyMembers()[0]);
                             activating = true;
                         }
                         return true;

@@ -26,6 +26,15 @@ namespace Tactics.PaintHandlers
         private readonly Vector2 NORMALPLAYERDRAWLOCATION = new Vector2(363, 233);
         private readonly Vector2 TILEOFFSET = new Vector2(-5, 20);
 
+        private readonly Vector2 BIGBOTDRAW = new Vector2(375, 300);
+        private readonly Vector2 SMALLBOTDRAW = new Vector2(375, 350);
+        private readonly Vector2 BIGTOPDRAW = new Vector2(375, 100);
+        private readonly Vector2 SMALLTOPDRAW = new Vector2(375, 100);
+
+        private readonly Vector2 TOPOPTION = new Vector2(550, 100);
+        private readonly Vector2 BOTOPTION = new Vector2(150, 100);
+
+        private readonly Vector2 CHATWINDOWOFFSET = new Vector2(5, 5);
 
         // something is wrong here
         private readonly Vector2 SLOPEBLOFF = new Vector2(1, 0);
@@ -290,26 +299,69 @@ namespace Tactics.PaintHandlers
                     {
                         if (size > 200)
                         {
-                            chatDrawLoc = new Vector2(0, 0);
+                            chatDrawLoc = BIGBOTDRAW - new Vector2((size - 200) / 2, 0);
                         }
                         else
                         {
-                            chatDrawLoc = new Vector2(0, 0);
+                            chatDrawLoc = SMALLBOTDRAW - new Vector2(size / 2, 0);
                         }
                     }
                     else
                     {
                         if (size > 200)
-                        {
-                            chatDrawLoc = new Vector2(0, 0);
+                        { 
+                            chatDrawLoc = BIGTOPDRAW - new Vector2((size - 200)/ 2, 0);
                         }
                         else
                         {
-                            chatDrawLoc = new Vector2(0, 0);
+                            chatDrawLoc = SMALLTOPDRAW - new Vector2(size / 2 , 0);
                         }
                     }
 
                     spriteBatch.Draw(contentHandler.getChatContentHandler().getChatBox(index), chatDrawLoc, Color.White);
+
+                    int distance = 0;
+                    int line = 0;
+
+                    for (int j = 0; j < gameInit.getFreeRoamState().getParsedMessage().Count; j++)
+                    {
+                        string currentString = gameInit.getFreeRoamState().getParsedMessage()[j];
+
+                        if (distance + (int)chatBoxFont.MeasureString(currentString).X > 50 + (index % 16) * 10)
+                        {
+                            distance = 0;
+                            line++;
+                        }
+
+                        spriteBatch.DrawString(chatBoxFont, currentString, chatDrawLoc + CHATWINDOWOFFSET + new Vector2(distance, 20 * line), Color.White);
+                        distance += (int)chatBoxFont.MeasureString(currentString).X;
+                    }
+
+                    List<string> options = gameInit.getFreeRoamState().getOptions();
+
+                    if (options.Count != 0)
+                    {
+                        if (direction == 0 || direction == 3)
+                        {
+                            chatDrawLoc = BOTOPTION;
+                        }
+                        else
+                        {
+                            chatDrawLoc = TOPOPTION;
+                        }
+
+                        spriteBatch.Draw(contentHandler.getChatContentHandler().getOptionBox(options.Count), chatDrawLoc, Color.White);
+                        line = 0;
+
+                        for (int j = 0; j < options.Count; j++)
+                        {
+                            spriteBatch.DrawString(chatBoxFont, options[j], drawLoc + CHATWINDOWOFFSET + new Vector2(0, line * 20), Color.White);
+                            line++;
+                        }
+                    }
+                    else
+                    {
+                    }
                 }
             }
         }
